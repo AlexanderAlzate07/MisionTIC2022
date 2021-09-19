@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "srpi2o68r6qdENQts1zz+o5rsUCmJe13ArKf8MQHC5h2ieRb/ncY06mAKSAnJmbvCAW1GE/n8rqL0m6gAn+/UQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\alexander.alzate\\Documents\\MisionTIC_2022\\MisionTIC2022\\TorneoDepartamental.App\\TorneoDepartamental.App.Servicios\\TorneoDepartamental.App.Servicios.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\alexander.alzate\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\alexander.alzate\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\alexander.alzate\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "C:\\Users\\alexander.alzate\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
+    "C:\\Users\\alexander.alzate\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "C:\\Users\\alexander.alzate\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
+  ],
+  "logs": []
+}
