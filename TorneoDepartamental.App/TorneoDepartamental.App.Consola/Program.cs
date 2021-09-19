@@ -1,4 +1,6 @@
 ﻿using System;
+using TorneoDepartamental.App.Dominio;
+using TorneoDepartamental.App.Persistencia;
 
 namespace TorneoDepartamental.App.Consola
 {

@@ -12,4 +12,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TorneoDepartamental.App.Persistencia\TorneoDepartamental.App.Persistencia.csproj" />
+    <ProjectReference Include="..\TorneoDepartamental.App.Dominio\TorneoDepartamental.App.Dominio.csproj" />
+  </ItemGroup>
+
 </Project>

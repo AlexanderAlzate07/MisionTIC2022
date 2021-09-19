@@ -1,0 +1,12 @@
+C:\Users\alexander.alzate\Documents\MisionTIC_2022\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Dominio\bin\Debug\net5.0\TorneoDepartamental.App.Dominio.deps.json
+C:\Users\alexander.alzate\Documents\MisionTIC_2022\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Dominio\bin\Debug\net5.0\TorneoDepartamental.App.Dominio.dll
+C:\Users\alexander.alzate\Documents\MisionTIC_2022\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Dominio\bin\Debug\net5.0\ref\TorneoDepartamental.App.Dominio.dll
+C:\Users\alexander.alzate\Documents\MisionTIC_2022\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Dominio\bin\Debug\net5.0\TorneoDepartamental.App.Dominio.pdb
+C:\Users\alexander.alzate\Documents\MisionTIC_2022\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Dominio\obj\Debug\net5.0\TorneoDepartamental.App.Dominio.csproj.AssemblyReference.cache
+C:\Users\alexander.alzate\Documents\MisionTIC_2022\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Dominio\obj\Debug\net5.0\TorneoDepartamental.App.Dominio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alexander.alzate\Documents\MisionTIC_2022\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Dominio\obj\Debug\net5.0\TorneoDepartamental.App.Dominio.AssemblyInfoInputs.cache
+C:\Users\alexander.alzate\Documents\MisionTIC_2022\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Dominio\obj\Debug\net5.0\TorneoDepartamental.App.Dominio.AssemblyInfo.cs
+C:\Users\alexander.alzate\Documents\MisionTIC_2022\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Dominio\obj\Debug\net5.0\TorneoDepartamental.App.Dominio.csproj.CoreCompileInputs.cache
+C:\Users\alexander.alzate\Documents\MisionTIC_2022\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Dominio\obj\Debug\net5.0\TorneoDepartamental.App.Dominio.dll
+C:\Users\alexander.alzate\Documents\MisionTIC_2022\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Dominio\obj\Debug\net5.0\ref\TorneoDepartamental.App.Dominio.dll
+C:\Users\alexander.alzate\Documents\MisionTIC_2022\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Dominio\obj\Debug\net5.0\TorneoDepartamental.App.Dominio.pdb
