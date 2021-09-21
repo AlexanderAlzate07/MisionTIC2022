@@ -16,7 +16,6 @@ namespace TorneoDepartamental.App.Persistencia
         public DbSet<Municipio> Municipios{get;set;}
         public DbSet<NovedadesPartido> NovedadesPartidos{get;set;}
         public DbSet<Partido> Partidos{get;set;}
-        public DbSet<Persona> Personas{get;set;}
         
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

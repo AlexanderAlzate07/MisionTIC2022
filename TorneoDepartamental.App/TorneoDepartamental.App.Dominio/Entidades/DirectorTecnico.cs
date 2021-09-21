@@ -1,7 +1,11 @@
 namespace TorneoDepartamental.App.Dominio
 {
-    public class DirectorTecnico : Persona
+    public class DirectorTecnico
     {
-        public string DiplomaDT {get; set;} //añdidura para que el DT se diferencie del arbitro y del jugador
+        public int Id { get; set; }
+        public string Nombre { get; set; }
+        public string Telefono { get; set; }
+        public string Documento { get; set; }
+        public Equipo Equipo { get; set; }
     }
 }
