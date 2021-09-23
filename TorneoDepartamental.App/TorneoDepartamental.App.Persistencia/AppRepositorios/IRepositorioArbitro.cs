@@ -10,6 +10,5 @@ namespace TorneoDepartamental.App.Persistencia
         void DeleteArbitro(int idArbitro);
         Arbitro GetArbitro(int idArbitro);
         IEnumerable<Arbitro> GetAllArbitros();
-
     }
 }

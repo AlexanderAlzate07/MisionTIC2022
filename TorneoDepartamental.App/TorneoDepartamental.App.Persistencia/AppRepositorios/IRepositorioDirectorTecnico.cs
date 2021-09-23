@@ -5,8 +5,8 @@ namespace TorneoDepartamental.App.Persistencia
 {
     public interface IRepositorioDirectorTecnico
     {
-        DirectorTecnico AddDirectorTecnico(DirectorTecnico equipo);
-        DirectorTecnico UpdateDirectorTecnico(DirectorTecnico equipo);
+        DirectorTecnico AddDirectorTecnico(DirectorTecnico tecnico);
+        DirectorTecnico UpdateDirectorTecnico(DirectorTecnico tecnico);
         void DeleteDirectorTecnico(int idDirectorTecnico);
         DirectorTecnico GetDirectorTecnico(int idDirectorTecnico);
         IEnumerable<DirectorTecnico> GetAllDirectorTecnicos();

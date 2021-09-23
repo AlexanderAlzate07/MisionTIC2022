@@ -11,12 +11,14 @@ namespace TorneoDepartamental.App.Persistencia
         {
         }
 
-        public Equipo AddEquipo(Equipo equipo){
+        public Equipo AddEquipo(Equipo equipo)
+        {
             var equipoAdicionado = _appContext.Equipos.Add(equipo);
             _appContext.SaveChanges();
             return equipoAdicionado.Entity;
         }
-        public Equipo UpdateEquipo(Equipo equipo){
+        public Equipo UpdateEquipo(Equipo equipo)
+        {
             var equipoEncontrado = _appContext.Equipos.FirstOrDefault(e => e.Id == equipo.Id);
             if(equipoEncontrado != null){
                 equipoEncontrado.Nombre = equipo.Nombre;
@@ -25,20 +27,24 @@ namespace TorneoDepartamental.App.Persistencia
             }
             return equipoEncontrado;
         }
-        public void DeleteEquipo(int idEquipo){
+        public void DeleteEquipo(int idEquipo)
+        {
             var equipoEncontrado = _appContext.Equipos.FirstOrDefault(e => e.Id == idEquipo);
             if(equipoEncontrado == null)
                 return;
             _appContext.Equipos.Remove(equipoEncontrado);
             _appContext.SaveChanges();
         }
-        public Equipo GetEquipo(int idEquipo){
+        public Equipo GetEquipo(int idEquipo)
+        {
             return _appContext.Equipos.FirstOrDefault(e => e.Id == idEquipo);
         }
-        public IEnumerable<Equipo> GetAllEquipos(){
+        public IEnumerable<Equipo> GetAllEquipos()
+        {
             return _appContext.Equipos;
         }
-        public Municipio AsignarMunicipio(int idEquipo,int idMunicipio){
+        public Municipio AsignarMunicipio(int idEquipo,int idMunicipio)
+        {
             var equipoEncontrado = _appContext.Equipos.FirstOrDefault(e => e.Id == idEquipo);
             if(equipoEncontrado != null)
             {
