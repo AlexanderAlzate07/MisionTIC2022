@@ -12,6 +12,6 @@ namespace TorneoDepartamental.App.Dominio
         public Equipo EquipoVisitante { get; set;}
         public int MarcadorVisitante { get; set;}
         public Arbitro Arbitro { get; set;}
-        public System.Collections.Generic.List<NovedadesPartido> NovedadesDelPartido { get; set; } //Puede tener una o varias novedades un partido
+        // public System.Collections.Generic.List<NovedadesPartido> NovedadesDelPartido { get; set; } //Puede tener una o varias novedades un partido
     }
 }
