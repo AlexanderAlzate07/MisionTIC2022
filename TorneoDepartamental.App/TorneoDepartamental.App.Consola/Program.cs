@@ -38,10 +38,12 @@ namespace TorneoDepartamental.App.Consola
             //--------------------------------------------------------
 
             //------------------------  CRUD JUGADOR -----------------
-            AddJugador("Alexander Alzate","7","volante");
-            AddJugador("Cristhian Gonzalez","9","delantero");
-            AddJugador("Juan Fernando","10","volante");
-            GetJugador(1);
+            // AddJugador("Alexander Alzate","7","volante");
+            // GetJugador(1);
+            AsignarEquipoAjugador(1,3);
+            AsignarEquipoAjugador(2,5);
+            // UpdateJugador(3,"Juan Ruiz","23","defensa",1);
+            // DeleteJugador(3);
 
             Console.WriteLine("Hello World!");
 
@@ -158,7 +160,7 @@ namespace TorneoDepartamental.App.Consola
             var jugador = new Jugador{
                 Nombre = nombre,
                 NumeroCamiseta = numeroCamiseta,
-                posicion = posicion
+                Posicion = posicion
             };
             _repoJugador.AddJugador(jugador);
         }
@@ -172,29 +174,25 @@ namespace TorneoDepartamental.App.Consola
         {
             _repoJugador.DeleteJugador(idJugador);
         }
-        private static void UpdateJugador(int idJugador,string nombreNuevo, string numeroCamisetaNueva, string posicionNueva, int idEquipoNueva)
+        private static void UpdateJugador(int idJugador,string nombreNuevo, string numeroCamisetaNueva, string posicionNueva, int idEquipoNuevo)
         {
             var jugadorEncontrado = _repoJugador.GetJugador(idJugador);
-            // var jugadorEncontrado = _repoJugador.GetJugador(idJugador);
-
-            
-                // var equipoEncontrado = _repoEquipo.GetEquipo(idEquipo);
-                // if(equipoEncontrado != null){
-                //     var jugadorEncontrado = _repoJugador.GetJugador(idJugador);
-                //     if(jugadorEncontrado != null){
-
-                //     }
-                // }
-                    
-            
-            // var municipioNuevo = _repoMunicipio.GetMunicipio(idMunicipioNuevo);
-            // if(municipioNuevo != null){
-            //     var estadioEncontrado = _repoEstadio.GetEstadio(idEstadio);
-            //     estadioEncontrado.Nombre = nombreNuevo;
-            //     estadioEncontrado.Direccion = direccionNueva;
-            //     estadioEncontrado.Municipio = municipioNuevo;
-            //     _repoEstadio.UpdateEstadio(estadioEncontrado);
-            // }
+            if(jugadorEncontrado != null)
+            {
+                var equipoEncontrado = _repoEquipo.GetEquipo(idEquipoNuevo);
+                if(equipoEncontrado != null)
+                {
+                    jugadorEncontrado.Nombre = nombreNuevo;
+                    jugadorEncontrado.NumeroCamiseta = numeroCamisetaNueva;
+                    jugadorEncontrado.Posicion = posicionNueva;
+                    jugadorEncontrado.Equipo = equipoEncontrado;
+                    _repoJugador.UpdateJugador(jugadorEncontrado);
+                }
+            }
+        }
+        private static void AsignarEquipoAjugador(int idJugador,int idEquipo)
+        {
+            _repoJugador.AsignarEquipo(idJugador,idEquipo);
         }
 
     }
