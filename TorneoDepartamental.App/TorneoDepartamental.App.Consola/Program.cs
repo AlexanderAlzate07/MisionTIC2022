@@ -12,6 +12,7 @@ namespace TorneoDepartamental.App.Consola
         private static IRepositorioEstadio _repoEstadio = new RepositorioEstadio(new Persistencia.AppContext());
         private static IRepositorioJugador _repoJugador = new RepositorioJugador(new Persistencia.AppContext());
         private static IRepositorioDirectorTecnico _repoTecnico = new RepositorioDirectorTecnico(new Persistencia.AppContext());
+        private static IRepositorioArbitro _repoArbitro = new RepositorioArbitro(new Persistencia.AppContext());
         static void Main(string[] args)
         {
             //------------------------  CRUD MUNICIPIO----------------
@@ -49,10 +50,15 @@ namespace TorneoDepartamental.App.Consola
             //------------------------  CRUD DIRECTOR TECNICO -----------------
             // AddDirectorTecnico("Hernan Darío","3323422","123465");
             // AsignarEquipoAtecnico(2,4);
-            // AsignarEquipoAtecnico(3,1);
             // UpdateDirectorTecnico(4,"Alfredo Arias","23452345","1235465",5);
             // GetDirectorTecnico(1);
             // DeleteDirectorTecnico(5);
+
+            //------------------------  CRUD ARBITRO -------------------------
+            // AddArbitro("Wilmar Roldan","23452346","23463457","Universidad coperativa de Colombia");
+            // UpdateArbitro(4,"Alexander Alzate Zapata","32462534","234653547","FIFA");
+            // GetArbitro(1);
+            // DeleteArbitro(5);
 
             Console.WriteLine("Hello World!");
 
@@ -229,14 +235,11 @@ namespace TorneoDepartamental.App.Consola
         private static void UpdateDirectorTecnico(int idDirectorTecnico, string nombreNuevo, string telefonoNuevo, string documentoNuevo, int idEquipoNuevo)
         {
             var tecnicoEncontrado = _repoTecnico.GetDirectorTecnico(idDirectorTecnico);
-            System.Console.WriteLine("director 5: "+tecnicoEncontrado.Nombre);
             if(tecnicoEncontrado != null)
             {
                 var equipoEncontrado = _repoEquipo.GetEquipo(idEquipoNuevo);
-                System.Console.WriteLine("equipo para tecnico encontrado: "+equipoEncontrado.Nombre);
                 if(equipoEncontrado != null)
                 {
-                    System.Console.WriteLine("equipo para tecnico encontrado: "+equipoEncontrado.Nombre);
                     tecnicoEncontrado.Nombre = nombreNuevo;
                     tecnicoEncontrado.Telefono = telefonoNuevo;
                     tecnicoEncontrado.Documento = documentoNuevo;
@@ -249,5 +252,40 @@ namespace TorneoDepartamental.App.Consola
         {
             _repoTecnico.AsignarEquipo(idDirectorTecnico,idEquipo);
         }
+
+        //****************************************************************
+        //----------------------- CRUD ARBITRO ---------------------------
+        private static void AddArbitro(string nombre, string telefono, string documento, string colegioArbitro)
+        {
+            var arbitro = new Arbitro{
+                Nombre = nombre,
+                Telefono = telefono,
+                Documento = documento,
+                ColegioArbitro = colegioArbitro
+            };
+            _repoArbitro.AddArbitro(arbitro);
+        }
+        private static void GetArbitro(int idArbitro)
+        {
+            var arbitroEncontrado = _repoArbitro.GetArbitro(idArbitro);
+            System.Console.WriteLine("Nombre del arbitro encontrado: "+arbitroEncontrado.Nombre);
+        }
+        private static void DeleteArbitro(int idArbitro)
+        {
+            _repoArbitro.DeleteArbitro(idArbitro);
+        }
+        private static void UpdateArbitro(int idArbitro, string nombreNuevo, string telefonoNuevo, string documentoNuevo, string colegioArbitroNuevo)
+        {
+            var arbitroEncontrado = _repoArbitro.GetArbitro(idArbitro);
+            if(arbitroEncontrado != null)
+            {
+                arbitroEncontrado.Nombre = nombreNuevo;
+                arbitroEncontrado.Telefono = telefonoNuevo;
+                arbitroEncontrado.Documento = documentoNuevo;
+                arbitroEncontrado.ColegioArbitro = colegioArbitroNuevo;
+                _repoArbitro.UpdateArbitro(arbitroEncontrado);
+            }
+        }
+
     }
 }
