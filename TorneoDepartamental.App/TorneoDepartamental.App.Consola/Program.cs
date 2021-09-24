@@ -11,6 +11,7 @@ namespace TorneoDepartamental.App.Consola
         private static IRepositorioEquipo _repoEquipo = new RepositorioEquipo(new Persistencia.AppContext());
         private static IRepositorioEstadio _repoEstadio = new RepositorioEstadio(new Persistencia.AppContext());
         private static IRepositorioJugador _repoJugador = new RepositorioJugador(new Persistencia.AppContext());
+        private static IRepositorioDirectorTecnico _repoTecnico = new RepositorioDirectorTecnico(new Persistencia.AppContext());
         static void Main(string[] args)
         {
             //------------------------  CRUD MUNICIPIO----------------
@@ -40,10 +41,18 @@ namespace TorneoDepartamental.App.Consola
             //------------------------  CRUD JUGADOR -----------------
             // AddJugador("Alexander Alzate","7","volante");
             // GetJugador(1);
-            AsignarEquipoAjugador(1,3);
-            AsignarEquipoAjugador(2,5);
+            // AsignarEquipoAjugador(1,3);
+            // AsignarEquipoAjugador(2,5);
             // UpdateJugador(3,"Juan Ruiz","23","defensa",1);
             // DeleteJugador(3);
+
+            //------------------------  CRUD DIRECTOR TECNICO -----------------
+            // AddDirectorTecnico("Hernan Darío","3323422","123465");
+            // AsignarEquipoAtecnico(2,4);
+            // AsignarEquipoAtecnico(3,1);
+            // UpdateDirectorTecnico(4,"Alfredo Arias","23452345","1235465",5);
+            // GetDirectorTecnico(1);
+            // DeleteDirectorTecnico(5);
 
             Console.WriteLine("Hello World!");
 
@@ -195,5 +204,50 @@ namespace TorneoDepartamental.App.Consola
             _repoJugador.AsignarEquipo(idJugador,idEquipo);
         }
 
+        //****************************************************************
+        //------------------------CRUD DIRECTOR TECNICO-------------------
+        private static void AddDirectorTecnico(string nombre, string telefono, string documento)
+        {
+            var tecnico = new DirectorTecnico{
+                Nombre = nombre,
+                Telefono = telefono,
+                Documento = documento
+            };
+            _repoTecnico.AddDirectorTecnico(tecnico);
+        }
+
+        private static void GetDirectorTecnico(int idDirectorTecnico)
+        {
+            var tecnicoEncontrado = _repoTecnico.GetDirectorTecnico(idDirectorTecnico);
+            System.Console.WriteLine("Nombre del tecnico encontrado: "+tecnicoEncontrado.Nombre);
+        }
+        private static void DeleteDirectorTecnico(int idDirectorTecnico)
+        {
+            _repoTecnico.DeleteDirectorTecnico(idDirectorTecnico);
+        }
+
+        private static void UpdateDirectorTecnico(int idDirectorTecnico, string nombreNuevo, string telefonoNuevo, string documentoNuevo, int idEquipoNuevo)
+        {
+            var tecnicoEncontrado = _repoTecnico.GetDirectorTecnico(idDirectorTecnico);
+            System.Console.WriteLine("director 5: "+tecnicoEncontrado.Nombre);
+            if(tecnicoEncontrado != null)
+            {
+                var equipoEncontrado = _repoEquipo.GetEquipo(idEquipoNuevo);
+                System.Console.WriteLine("equipo para tecnico encontrado: "+equipoEncontrado.Nombre);
+                if(equipoEncontrado != null)
+                {
+                    System.Console.WriteLine("equipo para tecnico encontrado: "+equipoEncontrado.Nombre);
+                    tecnicoEncontrado.Nombre = nombreNuevo;
+                    tecnicoEncontrado.Telefono = telefonoNuevo;
+                    tecnicoEncontrado.Documento = documentoNuevo;
+                    tecnicoEncontrado.Equipo = equipoEncontrado;
+                    _repoTecnico.UpdateDirectorTecnico(tecnicoEncontrado);
+                }
+            }
+        }
+        private static void AsignarEquipoAtecnico(int idDirectorTecnico,int idEquipo)
+        {
+            _repoTecnico.AsignarEquipo(idDirectorTecnico,idEquipo);
+        }
     }
 }
