@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace TorneoDepartamental.App.Persistencia
 {
-    public class IRepositorioNovedadesPartido
+    public class RepositorioNovedadesPartido
     {
          
     }
