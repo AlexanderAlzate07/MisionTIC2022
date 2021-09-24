@@ -37,6 +37,12 @@ namespace TorneoDepartamental.App.Consola
             // UpdateEstadio(4,"Old Trafford","Calle 45c # 27-42",5);
             //--------------------------------------------------------
 
+            //------------------------  CRUD JUGADOR -----------------
+            AddJugador("Alexander Alzate","7","volante");
+            AddJugador("Cristhian Gonzalez","9","delantero");
+            AddJugador("Juan Fernando","10","volante");
+            GetJugador(1);
+
             Console.WriteLine("Hello World!");
 
         }
@@ -166,14 +172,29 @@ namespace TorneoDepartamental.App.Consola
         {
             _repoJugador.DeleteJugador(idJugador);
         }
-        private static void UpdateJugador(int idJugador,string nombre, string numeroCamiseta, string posicion, int idEquipo )
+        private static void UpdateJugador(int idJugador,string nombreNuevo, string numeroCamisetaNueva, string posicionNueva, int idEquipoNueva)
         {
             var jugadorEncontrado = _repoJugador.GetJugador(idJugador);
-            if(jugadorEncontrado != null){
-                var equipoEncontrado = _repoEquipo.GetEquipo(idEquipo);
-                if(equipoEncontrado != null)
-                    _repoEstadio.UpdateEstadio(equipoEncontrado);
-            }
+            // var jugadorEncontrado = _repoJugador.GetJugador(idJugador);
+
+            
+                // var equipoEncontrado = _repoEquipo.GetEquipo(idEquipo);
+                // if(equipoEncontrado != null){
+                //     var jugadorEncontrado = _repoJugador.GetJugador(idJugador);
+                //     if(jugadorEncontrado != null){
+
+                //     }
+                // }
+                    
+            
+            // var municipioNuevo = _repoMunicipio.GetMunicipio(idMunicipioNuevo);
+            // if(municipioNuevo != null){
+            //     var estadioEncontrado = _repoEstadio.GetEstadio(idEstadio);
+            //     estadioEncontrado.Nombre = nombreNuevo;
+            //     estadioEncontrado.Direccion = direccionNueva;
+            //     estadioEncontrado.Municipio = municipioNuevo;
+            //     _repoEstadio.UpdateEstadio(estadioEncontrado);
+            // }
         }
 
     }
