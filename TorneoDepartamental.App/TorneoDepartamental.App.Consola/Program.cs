@@ -76,6 +76,11 @@ namespace TorneoDepartamental.App.Consola
 
             //------------------------ CRUD NOVEDADES PARTIDO--------------------------
             //ya está listo el repositorio con la interface y la implementación de la misma
+            //faltaría solo agregar los metodos en el Program.cs en Consola
+
+            //------------------------ CRUD ESTADISTICAS TORNEO--------------------------
+            //ya está listo el repositorio con la interface y la implementación de la misma
+            //faltaría solo agregar los metodos en el Program.cs en Consola
 
             Console.WriteLine("Hello World!");
 
