@@ -62,11 +62,21 @@ namespace TorneoDepartamental.App.Consola
             // DeleteArbitro(5);
 
             //------------------------ CRUD PARTIDO --------------------------
-            DateTime fecha_partido = DateTime.Date;
-            DateTime hora_partido = DateTime.Time;
-            System.Console.WriteLine(fecha_partido +"--"+hora_partido);
-            AddPartido(DateTime.Now,DateTime.Now,0,0);
-            
+            // DateTime fecha_partido = DateTime.Now.Date;
+            // DateTime hora_partido = DateTime.Now;
+            // System.Console.WriteLine(fecha_partido +"--"+hora_partido);
+            // AddPartido(DateTime.Now,DateTime.Now,0,0);
+            // AsignarEquipoLocalApartido(3,1);
+            // AsignarEquipoVisitanteApartido(3,3);
+            // AsignarEstadioApartido(3,1);
+            // AsignarArbitroApartido(3,1);
+            // GetPartido(3);
+            // DeletePartido(2);
+            // UpdatePartido(3,fecha_partido,hora_partido,0,0);
+
+            //------------------------ CRUD NOVEDADES PARTIDO--------------------------
+            //ya está listo el repositorio con la interface y la implementación de la misma
+
             Console.WriteLine("Hello World!");
 
         }
@@ -298,7 +308,7 @@ namespace TorneoDepartamental.App.Consola
         //----------------------- CRUD PARTIDO ---------------------------
         private static void AddPartido(DateTime fechaPartido, DateTime horaPartido, int marcadorLocal, int marcadorVisitante)
         {
-            var partido = new DirectorTecnico{
+            var partido = new Partido{
                 FechaPartido = fechaPartido,
                 HoraPartido = horaPartido,
                 MarcadorLocal = marcadorLocal,
@@ -334,15 +344,15 @@ namespace TorneoDepartamental.App.Consola
         }
         private static void AsignarEquipoVisitanteApartido(int idPartido,int idEquipo)
         {
-            _repoPartido.AsignarEquipoLocal(idPartido,idEquipo);
+            _repoPartido.AsignarEquipoVisitante(idPartido,idEquipo);
         }
         private static void AsignarEstadioApartido(int idPartido,int idEstadio)
         {
-            _repoPartido.AsignarEquipoLocal(idPartido,idEstadio);
+            _repoPartido.AsignarEstadio(idPartido,idEstadio);
         }
         private static void AsignarArbitroApartido(int idPartido,int idArbitro)
         {
-            _repoPartido.AsignarEquipoLocal(idPartido,idArbitro);
+            _repoPartido.AsignarArbitro(idPartido,idArbitro);
         }
     }
 }
