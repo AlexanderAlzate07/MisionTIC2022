@@ -13,6 +13,7 @@ namespace TorneoDepartamental.App.Consola
         private static IRepositorioJugador _repoJugador = new RepositorioJugador(new Persistencia.AppContext());
         private static IRepositorioDirectorTecnico _repoTecnico = new RepositorioDirectorTecnico(new Persistencia.AppContext());
         private static IRepositorioArbitro _repoArbitro = new RepositorioArbitro(new Persistencia.AppContext());
+        private static IRepositorioPartido _repoPartido = new RepositorioPartido(new Persistencia.AppContext());
         static void Main(string[] args)
         {
             //------------------------  CRUD MUNICIPIO----------------
@@ -60,6 +61,12 @@ namespace TorneoDepartamental.App.Consola
             // GetArbitro(1);
             // DeleteArbitro(5);
 
+            //------------------------ CRUD PARTIDO --------------------------
+            DateTime fecha_partido = DateTime.Date;
+            DateTime hora_partido = DateTime.Time;
+            System.Console.WriteLine(fecha_partido +"--"+hora_partido);
+            AddPartido(DateTime.Now,DateTime.Now,0,0);
+            
             Console.WriteLine("Hello World!");
 
         }
@@ -287,5 +294,55 @@ namespace TorneoDepartamental.App.Consola
             }
         }
 
+        //****************************************************************
+        //----------------------- CRUD PARTIDO ---------------------------
+        private static void AddPartido(DateTime fechaPartido, DateTime horaPartido, int marcadorLocal, int marcadorVisitante)
+        {
+            var partido = new DirectorTecnico{
+                FechaPartido = fechaPartido,
+                HoraPartido = horaPartido,
+                MarcadorLocal = marcadorLocal,
+                MarcadorVisitante = marcadorVisitante
+            };
+            _repoPartido.AddPartido(partido);
+        }
+
+        private static void GetPartido(int idPartido)
+        {
+            var partidoEncontrado = _repoPartido.GetPartido(idPartido);
+            System.Console.WriteLine("Id del partido encontrado: "+partidoEncontrado.Id);
+        }
+        private static void DeletePartido(int idPartido)
+        {
+            _repoPartido.DeletePartido(idPartido);
+        }
+        private static void UpdatePartido(int idPartido, DateTime fechaPartido, DateTime horaPartido, int marcadorLocal, int marcadorVisitante)
+        {
+            var partidoEncontrado = _repoPartido.GetPartido(idPartido);
+            if(partidoEncontrado != null)
+            {
+                partidoEncontrado.FechaPartido = fechaPartido;
+                partidoEncontrado.HoraPartido = horaPartido;
+                partidoEncontrado.MarcadorLocal = marcadorLocal;
+                partidoEncontrado.MarcadorVisitante = marcadorVisitante;
+                _repoPartido.UpdatePartido(partidoEncontrado);
+            }
+        }
+        private static void AsignarEquipoLocalApartido(int idPartido,int idEquipo)
+        {
+            _repoPartido.AsignarEquipoLocal(idPartido,idEquipo);
+        }
+        private static void AsignarEquipoVisitanteApartido(int idPartido,int idEquipo)
+        {
+            _repoPartido.AsignarEquipoLocal(idPartido,idEquipo);
+        }
+        private static void AsignarEstadioApartido(int idPartido,int idEstadio)
+        {
+            _repoPartido.AsignarEquipoLocal(idPartido,idEstadio);
+        }
+        private static void AsignarArbitroApartido(int idPartido,int idArbitro)
+        {
+            _repoPartido.AsignarEquipoLocal(idPartido,idArbitro);
+        }
     }
 }
