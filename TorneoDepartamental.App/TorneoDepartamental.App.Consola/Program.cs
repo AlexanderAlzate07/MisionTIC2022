@@ -18,6 +18,7 @@ namespace TorneoDepartamental.App.Consola
         private static IRepositorioEstadisticasTorneo _repoEstTorneo = new RepositorioEstadisticasTorneo(new Persistencia.AppContext());
         static void Main(string[] args)
         {
+              Console.WriteLine("Hello World!");
             //------------------------  CRUD MUNICIPIO----------------
             // AddMunicipio("Bello");
             // GetMunicipio(4);
@@ -35,7 +36,7 @@ namespace TorneoDepartamental.App.Consola
             //--------------------------------------------------------
 
             //------------------------  CRUD ESTADIO -----------------
-            // AddEstadio("Old Trafford","Calle 38d # 55a-69");
+            // AddEstadio("Pascual Guerreo","cra 39 # 5 -38");
             // GetEstadio(2);
             // DeleteEstadio(5);
             // AsignarMunicipioAestadio(4,5);
@@ -43,8 +44,8 @@ namespace TorneoDepartamental.App.Consola
             //--------------------------------------------------------
 
             //------------------------  CRUD JUGADOR -----------------
-            // AddJugador("Alexander Alzate","7","volante");
-            // GetJugador(1);
+            //AddJugador("Cristhian Gonzalez","9","Delantero");
+            //GetJugador(2);
             // AsignarEquipoAjugador(1,3);
             // AsignarEquipoAjugador(2,5);
             // UpdateJugador(3,"Juan Ruiz","23","defensa",1);
@@ -81,14 +82,11 @@ namespace TorneoDepartamental.App.Consola
             // AsignarJugadorAnovedad(1,1);
             // AsignarEquipoAnovedad(1,1);
             // AsignarPartidoAnovedad(1,3);
+
             //------------------------ CRUD ESTADISTICAS TORNEO--------------------------
-            //ya está listo el repositorio con la interface y la implementación de la misma
-            //faltaría solo agregar los metodos en el Program.cs en Consola /// Cristhian gonzalez
-
-            //Jorge Estuvo aqui
-
-            Console.WriteLine("Hello World!");
-
+            // AddEstadisticasTorneo();
+            //AsignarEquipoAestTorneo(1,1);
+            
         }
 
         //************************************************************
@@ -209,7 +207,7 @@ namespace TorneoDepartamental.App.Consola
         private static void GetJugador(int idJugador)
         {
             var jugadorEncontrado = _repoJugador.GetJugador(idJugador);
-            System.Console.WriteLine("Nombre del jugador encontrado: "+jugadorEncontrado.Nombre);
+            System.Console.WriteLine("Nombre del jugador encontrado: "+jugadorEncontrado.Nombre+" Posicion: "+jugadorEncontrado.Posicion+" Numero Camiseta: "+ jugadorEncontrado.NumeroCamiseta);
         }
 
         private static void DeleteJugador(int idJugador)
@@ -388,5 +386,26 @@ namespace TorneoDepartamental.App.Consola
         {
             _repoNovPartido.AsignarJugador(idNovedadPartido,idJugador);
         }
+
+        //****************************************************************************
+        //----------------------- CRUD ESTADÍSTICAS TORNEO ---------------------------
+        private static void AddEstadisticasTorneo()
+        {
+            var estadisticaTorneo = new EstadisticaTorneo
+            {
+                CantidadPartidosJugados = 1,
+                CantidadPartidosGanados = 0,
+                CantidadPartidosEmpatados = 1,
+                GolesAfavor = 2,
+                GolesEnContra = 0,
+                Puntos = 1
+            };
+            _repoEstTorneo.AddEstadisticasTorneo(estadisticaTorneo);
+        }
+        private static void AsignarEquipoAestTorneo(int idEstadisticasTorneo, int idEquipo)
+        {
+            _repoEstTorneo.AsignarEquipo(idEstadisticasTorneo,idEquipo);
+        }
+
     }
 }

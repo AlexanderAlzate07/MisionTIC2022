@@ -16,3 +16,21 @@ C:\Users\alexander.alzate\Documents\MisionTIC_2022\MisionTIC2022\TorneoDepartame
 C:\Users\alexander.alzate\Documents\MisionTIC_2022\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Persistencia\obj\Debug\net5.0\ref\TorneoDepartamental.App.Persistencia.dll
 C:\Users\alexander.alzate\Documents\MisionTIC_2022\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Persistencia\obj\Debug\net5.0\TorneoDepartamental.App.Persistencia.pdb
 C:\Users\alexander.alzate\Documents\MisionTIC_2022\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Persistencia\obj\Debug\net5.0\TorneoDepartamental.App.Persistencia.genruntimeconfig.cache
+C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Persistencia\bin\Debug\net5.0\TorneoDepartamental.App.Persistencia.deps.json
+C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Persistencia\bin\Debug\net5.0\TorneoDepartamental.App.Persistencia.runtimeconfig.json
+C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Persistencia\bin\Debug\net5.0\TorneoDepartamental.App.Persistencia.runtimeconfig.dev.json
+C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Persistencia\bin\Debug\net5.0\TorneoDepartamental.App.Persistencia.dll
+C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Persistencia\bin\Debug\net5.0\ref\TorneoDepartamental.App.Persistencia.dll
+C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Persistencia\bin\Debug\net5.0\TorneoDepartamental.App.Persistencia.pdb
+C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Persistencia\bin\Debug\net5.0\TorneoDepartamental.App.Dominio.dll
+C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Persistencia\bin\Debug\net5.0\TorneoDepartamental.App.Dominio.pdb
+C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Persistencia\obj\Debug\net5.0\TorneoDepartamental.App.Persistencia.csproj.AssemblyReference.cache
+C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Persistencia\obj\Debug\net5.0\TorneoDepartamental.App.Persistencia.GeneratedMSBuildEditorConfig.editorconfig
+C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Persistencia\obj\Debug\net5.0\TorneoDepartamental.App.Persistencia.AssemblyInfoInputs.cache
+C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Persistencia\obj\Debug\net5.0\TorneoDepartamental.App.Persistencia.AssemblyInfo.cs
+C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Persistencia\obj\Debug\net5.0\TorneoDepartamental.App.Persistencia.csproj.CoreCompileInputs.cache
+C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Persistencia\obj\Debug\net5.0\TorneoDepartamental.App.Persistencia.csproj.CopyComplete
+C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Persistencia\obj\Debug\net5.0\TorneoDepartamental.App.Persistencia.dll
+C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Persistencia\obj\Debug\net5.0\ref\TorneoDepartamental.App.Persistencia.dll
+C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Persistencia\obj\Debug\net5.0\TorneoDepartamental.App.Persistencia.pdb
+C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Persistencia\obj\Debug\net5.0\TorneoDepartamental.App.Persistencia.genruntimeconfig.cache

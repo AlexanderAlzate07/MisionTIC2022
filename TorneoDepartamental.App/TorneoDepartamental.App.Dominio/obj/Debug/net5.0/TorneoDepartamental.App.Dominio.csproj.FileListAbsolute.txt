@@ -10,3 +10,15 @@ C:\Users\alexander.alzate\Documents\MisionTIC_2022\MisionTIC2022\TorneoDepartame
 C:\Users\alexander.alzate\Documents\MisionTIC_2022\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Dominio\obj\Debug\net5.0\TorneoDepartamental.App.Dominio.dll
 C:\Users\alexander.alzate\Documents\MisionTIC_2022\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Dominio\obj\Debug\net5.0\ref\TorneoDepartamental.App.Dominio.dll
 C:\Users\alexander.alzate\Documents\MisionTIC_2022\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Dominio\obj\Debug\net5.0\TorneoDepartamental.App.Dominio.pdb
+C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Dominio\bin\Debug\net5.0\TorneoDepartamental.App.Dominio.deps.json
+C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Dominio\bin\Debug\net5.0\TorneoDepartamental.App.Dominio.dll
+C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Dominio\bin\Debug\net5.0\ref\TorneoDepartamental.App.Dominio.dll
+C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Dominio\bin\Debug\net5.0\TorneoDepartamental.App.Dominio.pdb
+C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Dominio\obj\Debug\net5.0\TorneoDepartamental.App.Dominio.csproj.AssemblyReference.cache
+C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Dominio\obj\Debug\net5.0\TorneoDepartamental.App.Dominio.GeneratedMSBuildEditorConfig.editorconfig
+C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Dominio\obj\Debug\net5.0\TorneoDepartamental.App.Dominio.AssemblyInfoInputs.cache
+C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Dominio\obj\Debug\net5.0\TorneoDepartamental.App.Dominio.AssemblyInfo.cs
+C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Dominio\obj\Debug\net5.0\TorneoDepartamental.App.Dominio.csproj.CoreCompileInputs.cache
+C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Dominio\obj\Debug\net5.0\TorneoDepartamental.App.Dominio.dll
+C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Dominio\obj\Debug\net5.0\ref\TorneoDepartamental.App.Dominio.dll
+C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Dominio\obj\Debug\net5.0\TorneoDepartamental.App.Dominio.pdb
