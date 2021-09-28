@@ -14,6 +14,8 @@ namespace TorneoDepartamental.App.Consola
         private static IRepositorioDirectorTecnico _repoTecnico = new RepositorioDirectorTecnico(new Persistencia.AppContext());
         private static IRepositorioArbitro _repoArbitro = new RepositorioArbitro(new Persistencia.AppContext());
         private static IRepositorioPartido _repoPartido = new RepositorioPartido(new Persistencia.AppContext());
+        private static IRepositorioNovedadesPartido _repoNovPartido = new RepositorioNovedadesPartido(new Persistencia.AppContext());
+        private static IRepositorioEstadisticasTorneo _repoEstTorneo = new RepositorioEstadisticasTorneo(new Persistencia.AppContext());
         static void Main(string[] args)
         {
             //------------------------  CRUD MUNICIPIO----------------
@@ -75,9 +77,10 @@ namespace TorneoDepartamental.App.Consola
             // UpdatePartido(3,fecha_partido,hora_partido,0,0);
 
             //------------------------ CRUD NOVEDADES PARTIDO--------------------------
-            //ya está listo el repositorio con la interface y la implementación de la misma
-            //faltaría solo agregar los metodos en el Program.cs en Consola
-
+            // AddNovedadesPartido("59'","Amarilla",1);
+            // AsignarJugadorAnovedad(1,1);
+            // AsignarEquipoAnovedad(1,1);
+            // AsignarPartidoAnovedad(1,3);
             //------------------------ CRUD ESTADISTICAS TORNEO--------------------------
             //ya está listo el repositorio con la interface y la implementación de la misma
             //faltaría solo agregar los metodos en el Program.cs en Consola
@@ -358,6 +361,30 @@ namespace TorneoDepartamental.App.Consola
         private static void AsignarArbitroApartido(int idPartido,int idArbitro)
         {
             _repoPartido.AsignarArbitro(idPartido,idArbitro);
+        }
+
+        //**************************************************************************
+        //----------------------- CRUD NOVEDADES PARTIDO ---------------------------
+        private static void AddNovedadesPartido(string minutoPartido, string tarjeta, int gol)
+        {
+            var novedadPartido = new NovedadesPartido{
+                MinutoPartido = minutoPartido,
+                Tarjeta = tarjeta,
+                Gol = gol
+            };
+            _repoNovPartido.AddNovedadesPartido(novedadPartido);
+        }
+        private static void AsignarPartidoAnovedad(int idNovedadPartido, int idPartido)
+        {
+            _repoNovPartido.AsignarPartido(idNovedadPartido,idPartido);
+        }
+        private static void AsignarEquipoAnovedad(int idNovedadPartido, int idEquipo)
+        {
+            _repoNovPartido.AsignarEquipo(idNovedadPartido,idEquipo);
+        }
+        private static void AsignarJugadorAnovedad(int idNovedadPartido, int idJugador)
+        {
+            _repoNovPartido.AsignarJugador(idNovedadPartido,idJugador);
         }
     }
 }
