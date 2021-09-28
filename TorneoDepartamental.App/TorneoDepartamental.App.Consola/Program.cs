@@ -29,7 +29,7 @@ namespace TorneoDepartamental.App.Consola
 
             //------------------------  CRUD EQUIPO-------------------
             // AddEquipo("Barcelona");
-            // AsignarMunicipioAequipo(3,2);
+            // AsignarMunicipioAequipo(1,1);
             // UpdateEquipo(10,"Atletico Madrid",1);
             // GetEquipo(10);
             // DeleteEquipo(10);
@@ -39,27 +39,27 @@ namespace TorneoDepartamental.App.Consola
             // AddEstadio("Pascual Guerreo","cra 39 # 5 -38");
             // GetEstadio(2);
             // DeleteEstadio(5);
-            // AsignarMunicipioAestadio(4,5);
+            // AsignarMunicipioAestadio(1,1);
             // UpdateEstadio(4,"Old Trafford","Calle 45c # 27-42",5);
             //--------------------------------------------------------
 
             //------------------------  CRUD JUGADOR -----------------
             //AddJugador("Cristhian Gonzalez","9","Delantero");
             //GetJugador(2);
-            // AsignarEquipoAjugador(1,3);
-            // AsignarEquipoAjugador(2,5);
+            // AsignarEquipoAjugador(1,1);
+            // AsignarEquipoAjugador(2,1);
             // UpdateJugador(3,"Juan Ruiz","23","defensa",1);
             // DeleteJugador(3);
 
             //------------------------  CRUD DIRECTOR TECNICO -----------------
-            // AddDirectorTecnico("Hernan Darío","3323422","123465");
+            // AddDirectorTecnico("Javier Hernandez","167854412","3125547785");
             // AsignarEquipoAtecnico(2,4);
             // UpdateDirectorTecnico(4,"Alfredo Arias","23452345","1235465",5);
             // GetDirectorTecnico(1);
             // DeleteDirectorTecnico(5);
 
             //------------------------  CRUD ARBITRO -------------------------
-            // AddArbitro("Wilmar Roldan","23452346","23463457","Universidad coperativa de Colombia");
+            //AddArbitro("Federico Rivera","167882145","3124557899","Universidad FIFA de Colombia");
             // UpdateArbitro(4,"Alexander Alzate Zapata","32462534","234653547","FIFA");
             // GetArbitro(1);
             // DeleteArbitro(5);
