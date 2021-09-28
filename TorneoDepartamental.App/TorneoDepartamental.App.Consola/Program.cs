@@ -85,6 +85,8 @@ namespace TorneoDepartamental.App.Consola
             //ya está listo el repositorio con la interface y la implementación de la misma
             //faltaría solo agregar los metodos en el Program.cs en Consola
 
+            //Jorge Estuvo aqui
+
             Console.WriteLine("Hello World!");
 
         }
