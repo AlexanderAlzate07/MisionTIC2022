@@ -81,12 +81,10 @@ namespace TorneoDepartamental.App.Consola
             // AsignarJugadorAnovedad(1,1);
             // AsignarEquipoAnovedad(1,1);
             // AsignarPartidoAnovedad(1,3);
+
             //------------------------ CRUD ESTADISTICAS TORNEO--------------------------
-            //ya está listo el repositorio con la interface y la implementación de la misma
-            //faltaría solo agregar los metodos en el Program.cs en Consola /// Cristhian gonzalez
-
-            //Jorge Estuvo aqui
-
+            // AddEstadisticasTorneo();
+            AsignarEquipoAestTorneo(1,1);
             Console.WriteLine("Hello World!");
 
         }
@@ -388,5 +386,26 @@ namespace TorneoDepartamental.App.Consola
         {
             _repoNovPartido.AsignarJugador(idNovedadPartido,idJugador);
         }
+
+        //****************************************************************************
+        //----------------------- CRUD ESTADÍSTICAS TORNEO ---------------------------
+        private static void AddEstadisticasTorneo()
+        {
+            var estadisticaTorneo = new EstadisticaTorneo
+            {
+                CantidadPartidosJugados = 1,
+                CantidadPartidosGanados = 0,
+                CantidadPartidosEmpatados = 1,
+                GolesAfavor = 2,
+                GolesEnContra = 0,
+                Puntos = 1
+            };
+            _repoEstTorneo.AddEstadisticasTorneo(estadisticaTorneo);
+        }
+        private static void AsignarEquipoAestTorneo(int idEstadisticasTorneo, int idEquipo)
+        {
+            _repoEstTorneo.AsignarEquipo(idEstadisticasTorneo,idEquipo);
+        }
+
     }
 }
