@@ -83,7 +83,7 @@ namespace TorneoDepartamental.App.Consola
             // AsignarPartidoAnovedad(1,3);
             //------------------------ CRUD ESTADISTICAS TORNEO--------------------------
             //ya está listo el repositorio con la interface y la implementación de la misma
-            //faltaría solo agregar los metodos en el Program.cs en Consola
+            //faltaría solo agregar los metodos en el Program.cs en Consola /// Cristhian gonzalez
 
             Console.WriteLine("Hello World!");
 
