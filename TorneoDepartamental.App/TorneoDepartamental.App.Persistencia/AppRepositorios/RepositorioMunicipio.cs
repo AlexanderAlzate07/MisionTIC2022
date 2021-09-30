@@ -8,9 +8,7 @@ namespace TorneoDepartamental.App.Persistencia
     {
         private readonly AppContext _appContext = new AppContext();
 
-        public RepositorioMunicipio(AppContext appContext){
-
-        }
+       
         public Municipio AddMunicipio(Municipio municipio){
             var municipioAdicionado = _appContext.Municipios.Add(municipio);
             _appContext.SaveChanges();

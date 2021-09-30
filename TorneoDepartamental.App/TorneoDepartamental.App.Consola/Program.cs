@@ -7,7 +7,7 @@ namespace TorneoDepartamental.App.Consola
 {
     class Program
     {
-        private static IRepositorioMunicipio _repoMunicipio = new RepositorioMunicipio(new Persistencia.AppContext());
+        private static IRepositorioMunicipio _repoMunicipio = new RepositorioMunicipio();
         private static IRepositorioEquipo _repoEquipo = new RepositorioEquipo(new Persistencia.AppContext());
         private static IRepositorioEstadio _repoEstadio = new RepositorioEstadio(new Persistencia.AppContext());
         private static IRepositorioJugador _repoJugador = new RepositorioJugador(new Persistencia.AppContext());
