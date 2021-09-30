@@ -7,9 +7,7 @@ namespace TorneoDepartamental.App.Persistencia
     public class RepositorioArbitro : IRepositorioArbitro
     {
         private readonly AppContext _appContext = new AppContext();
-        public RepositorioArbitro(AppContext appContext)
-        {
-        }
+     
         public Arbitro AddArbitro(Arbitro arbitro)
         {
             var arbitroAdicionado = _appContext.Arbitros.Add(arbitro);

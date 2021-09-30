@@ -1,0 +1,31 @@
+﻿@page
+@model TorneoDepartamental.App.Frontend.Pages.Arbitros.IndexModel
+@{
+}
+<h1>Listado De Arbitros</h1>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Telefono</th>
+            <th scope="col">Documento</th>
+            <th scope="col">ColegioArbitro</th>
+        </tr>
+    </thead>
+    </tbody>
+        @foreach (var arbitro in Model.arbitros)
+        {
+            <tr>
+                <td>@arbitro.Nombre</td>
+                <td>@arbitro.Telefono</td>
+                <td>@arbitro.Documento</td>
+                <td>@arbitro.ColegioArbitro</td>
+                
+                
+            </tr>
+            
+        }
+
+    </tbody>
+
+</table>
