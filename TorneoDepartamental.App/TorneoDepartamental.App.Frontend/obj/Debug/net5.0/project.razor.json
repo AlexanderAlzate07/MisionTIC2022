@@ -15624,6 +15624,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\reto 3 mision tic\\MisionTIC2022\\TorneoDepartamental.App\\TorneoDepartamental.App.Frontend\\Pages\\Arbitros\\Edit.cshtml",
+      "TargetPath": "Pages\\Arbitros\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\reto 3 mision tic\\MisionTIC2022\\TorneoDepartamental.App\\TorneoDepartamental.App.Frontend\\Pages\\Municipios\\Index.cshtml",
       "TargetPath": "Pages\\Municipios\\Index.cshtml",
       "FileKind": "mvc"

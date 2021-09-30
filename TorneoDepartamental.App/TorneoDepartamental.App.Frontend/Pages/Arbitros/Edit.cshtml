@@ -1,0 +1,38 @@
+﻿@page
+@using TorneoDepartamental.App.Dominio
+@model TorneoDepartamental.App.Frontend.Pages.Arbitros.EditModel
+@{
+}
+<h1>Editar Arbitro</h1>
+<form method="post">
+    <div class="form-group">
+        <label asp-for="arbitro.Id"></label>
+        <input asp-for="arbitro.Id" class="form-control" readonly>
+    </div>
+    <div class="form-group">
+        <label asp-for="arbitro.Nombre"></label>
+        <input asp-for="arbitro.Nombre" class="form-control">
+        <span asp-validation-for="arbitro.Nombre" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="arbitro.Telefono"></label>
+        <input asp-for="arbitro.Telefono" class="form-control">
+        <span asp-validation-for="arbitro.Telefono" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="arbitro.Documento"></label>
+        <input asp-for="arbitro.Documento" class="form-control">
+        <span asp-validation-for="arbitro.Documento" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="arbitro.ColegioArbitro"></label>
+        <input asp-for="arbitro.ColegioArbitro" class="form-control">
+        <span asp-validation-for="arbitro.ColegioArbitro" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Editar</button>
+
+</form>
+<a class="btn btn-secondary" asp-page="./Index">Volver</a>
