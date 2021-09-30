@@ -28,6 +28,13 @@ namespace TorneoDepartamental.App.Frontend
             services.AddRazorPages();
             services.AddSingleton<IRepositorioMunicipio, RepositorioMunicipio>();
             services.AddSingleton<IRepositorioEquipo, RepositorioEquipo>();
+            services.AddSingleton<IRepositorioArbitro, RepositorioArbitro>();
+            services.AddSingleton<IRepositorioDirectorTecnico, RepositorioDirectorTecnico>();
+            services.AddSingleton<IRepositorioEstadio, RepositorioEstadio>();
+            services.AddSingleton<IRepositorioEstadisticasTorneo, RepositorioEstadisticasTorneo>();
+            services.AddSingleton<IRepositorioJugador, RepositorioJugador>();
+            services.AddSingleton<IRepositorioNovedadesPartido, RepositorioNovedadesPartido>();
+            services.AddSingleton<IRepositorioPartido, RepositorioPartido>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

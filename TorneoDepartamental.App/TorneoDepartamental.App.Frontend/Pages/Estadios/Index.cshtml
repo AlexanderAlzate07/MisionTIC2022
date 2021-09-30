@@ -1,0 +1,26 @@
+﻿@page
+@model TorneoDepartamental.App.Frontend.Pages.Estadios.IndexModel
+@{
+}
+<h1>Listado de Estadios</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Direccion</th>
+            <th scope="col">Municipio</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var estadio in Model.Estadios)
+        {
+            <tr>
+                <td>@estadio.Id</td>
+                <td>@estadio.Nombre</td>
+                <td>@estadio.Direccion</td>
+                <td>@estadio.Municipio</td>
+            </tr>
+        }
+    </tbody>
+</table>

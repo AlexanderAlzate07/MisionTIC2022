@@ -1,0 +1,34 @@
+﻿@page
+@model TorneoDepartamental.App.Frontend.Pages.EstadisticasTorneo.IndexModel
+@{
+}
+<h1>Listado de EStadisticas del Torneo</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Cantidad Partidos Jugados</th>
+            <th scope="col">Cantidad Partidos Ganados</th>
+            <th scope="col">Cantidad Partidos Empatados</th>
+            <th scope="col">Goles A favor</th>
+            <th scope="col">Goles En Contra</th>
+            <th scope="col">Puntos</th>
+            <th scope="col">Equipo</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var estadistica in Model.EstadisticaTorneos)
+        {
+            <tr>
+                <td>@estadistica.Id</td>
+                <td>@estadistica.CantidadPartidosJugados</td>
+                <td>@estadistica.CantidadPartidosGanados</td>
+                <td>@estadistica.CantidadPartidosEmpatados</td>
+                <td>@estadistica.GolesAfavor</td>
+                <td>@estadistica.GolesEnContra</td>
+                <td>@estadistica.Puntos</td>
+                <td>@estadistica.Equipo</td>
+            </tr>
+        }
+    </tbody>
+</table>

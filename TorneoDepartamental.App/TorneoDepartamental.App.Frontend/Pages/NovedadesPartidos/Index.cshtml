@@ -1,0 +1,26 @@
+﻿@page
+@model TorneoDepartamental.App.Frontend.Pages.NovedadesPartidos.IndexModel
+@{
+}
+<h1>Listado de Novedades de Partidos</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Minuto Partido</th>
+            <th scope="col">Tarjeta</th>
+            <th scope="col">Gol</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var novPartido in Model.NovedadesPartidos)
+        {
+            <tr>
+                <td>@novPartido.Id</td>
+                <td>@novPartido.MinutoPartido</td>
+                <td>@novPartido.Tarjeta</td>
+                <td>@novPartido.Gol</td>
+            </tr>
+        }
+    </tbody>
+</table>

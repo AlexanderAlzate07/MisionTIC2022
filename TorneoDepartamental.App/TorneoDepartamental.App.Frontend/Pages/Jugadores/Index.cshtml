@@ -1,0 +1,28 @@
+﻿@page
+@model TorneoDepartamental.App.Frontend.Pages.Jugadores.IndexModel
+@{
+}
+<h1>Listado de Jugadores</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Numero Camiseta</th>
+            <th scope="col">Posicion</th>
+            <th scope="col">Equipo</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var jugador in Model.Jugadores)
+        {
+            <tr>
+                <td>@jugador.Id</td>
+                <td>@jugador.Nombre</td>
+                <td>@jugador.NumeroCamiseta</td>
+                <td>@jugador.Posicion</td>
+                <td>@jugador.Equipo</td>
+            </tr>
+        }
+    </tbody>
+</table>
