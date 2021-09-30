@@ -17,8 +17,24 @@ namespace TorneoDepartamental.App.Frontend.Pages.Municipios
         {
             _repoMunicipio = repoMunicipio;
         }
-        public void OnGet()
+        
+        public IActionResult OnGet(int id)
         {
+            municipio = _repoMunicipio.GetMunicipio(id);
+            if(municipio == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Page();
+            }
+        }
+
+        public IActionResult OnPost(Municipio municipio)
+        {
+            _repoMunicipio.UpdateMunicipio(municipio);
+            return RedirectToPage("Index");
         }
     }
 }
