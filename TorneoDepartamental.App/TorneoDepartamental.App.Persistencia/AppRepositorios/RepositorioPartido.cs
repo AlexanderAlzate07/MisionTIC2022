@@ -8,10 +8,8 @@ namespace TorneoDepartamental.App.Persistencia
     {
         private readonly AppContext _appContext = new AppContext();
 
-        public RepositorioPartido(AppContext appContext)
+        public RepositorioPartido()
         {
-            // appContext.MarcadorLocal = 0;
-            // appContext.MarcadorVisitante = 0;
         }
 
         public Partido AddPartido(Partido partido)

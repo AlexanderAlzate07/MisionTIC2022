@@ -8,9 +8,8 @@ namespace TorneoDepartamental.App.Persistencia
     {
         private readonly AppContext _appContext = new AppContext();
 
-        public RepositorioJugador(AppContext appContext)
+        public RepositorioJugador()
         {
-            _appContext = appContext;
         }
 
         public Jugador AddJugador(Jugador jugador)

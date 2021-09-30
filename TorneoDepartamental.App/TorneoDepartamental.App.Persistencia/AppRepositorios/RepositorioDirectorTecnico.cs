@@ -8,7 +8,7 @@ namespace TorneoDepartamental.App.Persistencia
     {
         private readonly AppContext _appContext = new AppContext();
 
-        public RepositorioDirectorTecnico(AppContext appContext)
+        public RepositorioDirectorTecnico()
         {    
         }
 

@@ -8,7 +8,7 @@ namespace TorneoDepartamental.App.Persistencia
     {
         private readonly AppContext _appContext = new AppContext();
 
-        public RepositorioMunicipio(AppContext appContext){
+        public RepositorioMunicipio(){
 
         }
         public Municipio AddMunicipio(Municipio municipio){
