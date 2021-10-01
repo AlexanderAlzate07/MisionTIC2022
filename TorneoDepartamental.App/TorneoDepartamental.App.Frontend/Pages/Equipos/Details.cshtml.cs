@@ -22,6 +22,7 @@ namespace TorneoDepartamental.App.Frontend.Pages.Equipos
             if(equipo == null){
                 return NotFound();
             }else{
+                
                 return Page();
             }
         }

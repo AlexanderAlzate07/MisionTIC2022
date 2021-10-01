@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using TorneoDepartamental.App.Dominio;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
 namespace TorneoDepartamental.App.Persistencia
@@ -37,8 +38,15 @@ namespace TorneoDepartamental.App.Persistencia
             _appContext.SaveChanges();
         }
         public NovedadesPartido GetNovedadesPartido(int idNovedadesPartido)
-        {
-            return  _appContext.NovedadesPartidos.FirstOrDefault(np => np.Id == idNovedadesPartido);
+        {   
+            var novPartido = _appContext.NovedadesPartidos
+            .Where(e => e.Id == idNovedadesPartido)
+            .Include(p => p.Partido)
+            .Include(e => e.Equipo)
+            .Include(j => j.Jugador)
+            .FirstOrDefault();
+            return novPartido;
+            // return  _appContext.NovedadesPartidos.FirstOrDefault(np => np.Id == idNovedadesPartido);
         }
         public IEnumerable<NovedadesPartido> GetAllNovedadesPartidos()
         {

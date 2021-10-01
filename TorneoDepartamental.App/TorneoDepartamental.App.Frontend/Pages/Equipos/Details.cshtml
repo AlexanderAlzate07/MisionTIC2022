@@ -14,7 +14,17 @@
     </tr>
     <tr>
         <th scope="col">Municipio</th>
-        <td>@Model.equipo.Municipio</td>
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+            </tr>
+            <tr>
+                <td>@Model.equipo.Municipio.Id</td>
+                <td>@Model.equipo.Municipio.Nombre</td>
+            </tr>
+        </table>
+        
     </tr>
 </table>
 <a class="btn btn-primary" asp-page="./Index">Volver</a>

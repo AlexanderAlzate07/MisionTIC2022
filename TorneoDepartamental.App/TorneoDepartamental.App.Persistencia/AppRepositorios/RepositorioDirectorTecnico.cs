@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using TorneoDepartamental.App.Dominio;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
 namespace TorneoDepartamental.App.Persistencia
@@ -39,8 +40,13 @@ namespace TorneoDepartamental.App.Persistencia
             _appContext.SaveChanges();
         }
         public DirectorTecnico GetDirectorTecnico(int idDirectorTecnico)
-        {
-            return _appContext.DirectoresTecnicos.FirstOrDefault(dt => dt.Id == idDirectorTecnico);
+        {   
+            var tecnico = _appContext.DirectoresTecnicos
+            .Where(d => d.Id == idDirectorTecnico)
+            .Include(e => e.Equipo)
+            .FirstOrDefault();
+            return tecnico;
+            // return _appContext.DirectoresTecnicos.FirstOrDefault(dt => dt.Id == idDirectorTecnico);
         }
         public IEnumerable<DirectorTecnico> GetAllDirectorTecnicos()
         {
