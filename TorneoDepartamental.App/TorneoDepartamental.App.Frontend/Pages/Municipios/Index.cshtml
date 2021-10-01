@@ -7,6 +7,7 @@
 <table class="table">
     <thead class="thead-dark">
         <tr>
+            <th scope="col">Id</th>
             <th scope="col">Nombre</th>
         </tr>
     </thead>
@@ -14,6 +15,7 @@
         @foreach (var municipio in Model.municipios)
         {
             <tr>
+                <td>@municipio.Id</td>
                 <td>@municipio.Nombre</td>
                 <td><a class="btn btn-primary" asp-page="./Edit" asp-route-id="@municipio.Id">Editar</a></td>
             </tr>

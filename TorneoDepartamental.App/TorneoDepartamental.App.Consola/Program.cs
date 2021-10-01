@@ -8,10 +8,10 @@ namespace TorneoDepartamental.App.Consola
     class Program
     {
         private static IRepositorioMunicipio _repoMunicipio = new RepositorioMunicipio();
-        private static IRepositorioEquipo _repoEquipo = new RepositorioEquipo(new Persistencia.AppContext());
-        private static IRepositorioEstadio _repoEstadio = new RepositorioEstadio(new Persistencia.AppContext());
+        private static IRepositorioEquipo _repoEquipo = new RepositorioEquipo();
+        private static IRepositorioEstadio _repoEstadio = new RepositorioEstadio();
         private static IRepositorioJugador _repoJugador = new RepositorioJugador(new Persistencia.AppContext());
-        private static IRepositorioDirectorTecnico _repoTecnico = new RepositorioDirectorTecnico(new Persistencia.AppContext());
+        private static IRepositorioDirectorTecnico _repoTecnico = new RepositorioDirectorTecnico();
         private static IRepositorioArbitro _repoArbitro = new RepositorioArbitro();
         private static IRepositorioPartido _repoPartido = new RepositorioPartido(new Persistencia.AppContext());
         private static IRepositorioNovedadesPartido _repoNovPartido = new RepositorioNovedadesPartido(new Persistencia.AppContext());

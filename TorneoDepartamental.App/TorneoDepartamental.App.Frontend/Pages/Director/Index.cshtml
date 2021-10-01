@@ -1,0 +1,23 @@
+﻿@page
+@model TorneoDepartamental.App.Frontend.Pages.Director.IndexModel
+@{
+}
+<h1>Lista de Directores tecnicos</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var tecnico in Model.directorTecnicos)
+        {
+            <tr>
+                <td>@tecnico.Id</td>
+                <td>@tecnico.Nombre</td>
+            </tr>
+            
+        }
+    </tbody>
+</table>

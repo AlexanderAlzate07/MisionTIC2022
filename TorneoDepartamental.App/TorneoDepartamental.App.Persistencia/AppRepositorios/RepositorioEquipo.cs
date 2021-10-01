@@ -7,9 +7,7 @@ namespace TorneoDepartamental.App.Persistencia
     public class RepositorioEquipo : IRepositorioEquipo
     {
         private readonly AppContext _appContext = new AppContext();
-        public RepositorioEquipo(AppContext appContext)
-        {
-        }
+      
 
         public Equipo AddEquipo(Equipo equipo)
         {

@@ -8,10 +8,7 @@ namespace TorneoDepartamental.App.Persistencia
     {
         private readonly AppContext _appContext = new AppContext();
 
-        public RepositorioDirectorTecnico(AppContext appContext)
-        {    
-        }
-
+       
         public DirectorTecnico AddDirectorTecnico(DirectorTecnico tecnico)
         {
             var tecnicoAdicionado = _appContext.DirectoresTecnicos.Add(tecnico);

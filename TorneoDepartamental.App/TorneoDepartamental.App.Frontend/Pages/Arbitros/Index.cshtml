@@ -3,30 +3,32 @@
 @{
 }
 <h1>Listado De Arbitros</h1>
-<a class="btn btn-primary" asp-page=./Create>Nuevo arbitro</a>
+<a class="btn btn-primary" asp-page=./Create>Nuevo Estadio</a>
 <table class="table">
     <thead class="thead-dark">
         <tr>
+            <th scope="col">Id</th>
             <th scope="col">Nombre</th>
             <th scope="col">Telefono</th>
             <th scope="col">Documento</th>
-            <th scope="col">ColegioArbitro</th>
+            
         </tr>
     </thead>
     </tbody>
-        @foreach (var arbitro in Model.arbitros)
-        {
-            <tr>
-                <td>@arbitro.Nombre</td>
-                <td>@arbitro.Telefono</td>
-                <td>@arbitro.Documento</td>
-                <td>@arbitro.ColegioArbitro</td>
-                <td><a class="btn btn-primary" asp-page="./Edit" asp-route-id="@arbitro.Id">Editar</a></td>
-                
-                
-            </tr>
-            
-        }
+    @foreach (var arbitro in Model.arbitros)
+    {
+        <tr>
+            <td>@arbitro.Id</td>
+            <td>@arbitro.Nombre</td>
+            <td>@arbitro.Telefono</td>
+            <td>@arbitro.Documento</td>
+            <td><a class="btn btn-primary" asp-page="./Details" asp-route-id="@arbitro.Id">Detalles</a></td>
+            <td><a class="btn btn-primary" asp-page="./Edit" asp-route-id="@arbitro.Id">Editar</a></td>
+
+
+        </tr>
+
+    }
 
     </tbody>
 
