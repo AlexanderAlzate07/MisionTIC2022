@@ -2,3 +2,40 @@
 @model TorneoDepartamental.App.Frontend.Pages.EstadisticasTorneo.DetailsModel
 @{
 }
+<h1>Estadisticas del Torneo</h1>
+<table>  
+
+    <tr>
+        <th scope="col">Id</th>
+        <td>@Model.estadistica.Id</td>
+    </tr>
+    <tr>
+        <th scope="col">Cantidad Partidos Jugados</th>
+        <td>@Model.estadistica.CantidadPartidosJugados</td>
+    </tr>
+    <tr>
+        <th scope="col">Cantidad Partidos Ganados</th>
+        <td>@Model.estadistica.CantidadPartidosGanados</td>
+    </tr>
+    <tr>
+        <th scope="col">Cantidad Partidos Empatados</th>
+        <td>@Model.estadistica.CantidadPartidosEmpatados</td>
+    </tr>
+    <tr>
+        <th scope="col">Goles A favor</th>
+        <td>@Model.estadistica.GolesAfavor</td>
+    </tr>
+    <tr>
+        <th scope="col">Goles En Contra</th>
+        <td>@Model.estadistica.GolesEnContra</td>
+    </tr>
+    <tr>
+        <th scope="col">Puntos</th>
+        <td>@Model.estadistica.Puntos</td>
+    </tr>
+    <tr>
+        <th scope="col">Equipo</th>
+        <td>@Model.estadistica.Equipo</td>
+    </tr>
+</table>
+<a class="btn btn-primary" asp-page="./Index">Volver</a>

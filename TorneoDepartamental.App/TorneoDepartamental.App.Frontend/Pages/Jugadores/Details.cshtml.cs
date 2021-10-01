@@ -11,8 +11,19 @@ namespace TorneoDepartamental.App.Frontend.Pages.Jugadores
 {
     public class DetailsModel : PageModel
     {
-        public void OnGet()
+        private readonly IRepositorioJugador _repoJugador;
+        public Jugador jugador{get;set;}
+        public DetailsModel(IRepositorioJugador repoJugador){
+            _repoJugador = repoJugador;
+        }
+        public IActionResult OnGet(int id)
         {
+            jugador = _repoJugador.GetJugador(id);
+            if(jugador == null){
+                return NotFound();
+            }else{
+                return Page();
+            }
         }
     }
 }

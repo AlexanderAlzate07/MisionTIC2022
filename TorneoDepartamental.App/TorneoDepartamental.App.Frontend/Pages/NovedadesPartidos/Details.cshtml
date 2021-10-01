@@ -2,3 +2,35 @@
 @model TorneoDepartamental.App.Frontend.Pages.NovedadesPartidos.DetailsModel
 @{
 }
+<h1>Novedades del Partido</h1>
+<table>  
+    <tr>
+        <th scope="col">Id</th>
+        <td>@Model.novPartido.Id</td>
+    </tr>
+    <tr>
+        <th scope="col">Minuto Partido</th>
+        <td>@Model.novPartido.MinutoPartido</td>
+    </tr>
+    <tr>
+        <th scope="col">Tarjeta</th>
+        <td>@Model.novPartido.Tarjeta</td>
+    </tr>
+    <tr>
+        <th scope="col">Gol</th>
+        <td>@Model.novPartido.Gol</td>
+    </tr>
+    <tr>
+        <th scope="col">Partido</th>
+        <td>@Model.novPartido.Partido</td>
+    </tr>
+    <tr>
+        <th scope="col">Equipo</th>
+        <td>@Model.novPartido.Equipo</td>
+    </tr>
+    <tr>
+        <th scope="col">Jugador</th>
+        <td>@Model.novPartido.Jugador</td>
+    </tr>
+</table>
+<a class="btn btn-primary" asp-page="./Index">Volver</a>

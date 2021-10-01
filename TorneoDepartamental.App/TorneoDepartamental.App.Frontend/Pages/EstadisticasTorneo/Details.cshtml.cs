@@ -11,8 +11,19 @@ namespace TorneoDepartamental.App.Frontend.Pages.EstadisticasTorneo
 {
     public class DetailsModel : PageModel
     {
-        public void OnGet()
+        private readonly IRepositorioEstadisticasTorneo _repoEstadisticaTorneo;
+        public EstadisticaTorneo estadistica{get;set;}
+        public DetailsModel(IRepositorioEstadisticasTorneo repoEstadisticaTorneo){
+            _repoEstadisticaTorneo = repoEstadisticaTorneo;
+        }
+        public IActionResult OnGet(int id)
         {
+            estadistica = _repoEstadisticaTorneo.GetEstadisticasTorneo(id);
+            if(estadistica == null){
+                return NotFound();
+            }else{
+                return Page();
+            }
         }
     }
 }

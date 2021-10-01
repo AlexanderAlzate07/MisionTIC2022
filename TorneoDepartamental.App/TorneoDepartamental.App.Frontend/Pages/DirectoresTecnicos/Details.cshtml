@@ -2,3 +2,27 @@
 @model TorneoDepartamental.App.Frontend.Pages.DirectoresTecnicos.DetailsModel
 @{
 }
+<h1>Detalles del Director Tecnico</h1>
+<table>            
+    <tr>
+        <th scope="col">Id</th>
+        <td>@Model.tecnico.Id</td>
+    </tr>
+    <tr>
+        <th scope="col">Nombre</th>
+        <td>@Model.tecnico.Nombre</td>
+    </tr>
+    <tr>
+        <th scope="col">Telefono</th>
+        <td>@Model.tecnico.Telefono</td>
+    </tr>
+    <tr>
+        <th scope="col">Documento</th>
+        <td>@Model.tecnico.Documento</td>
+    </tr>
+    <tr>
+        <th scope="col">Equipo</th>
+        <td>@Model.tecnico.Equipo</td>
+    </tr>
+</table>
+<a class="btn btn-primary" asp-page="./Index">Volver</a>

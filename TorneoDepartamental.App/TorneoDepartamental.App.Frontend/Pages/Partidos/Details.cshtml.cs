@@ -11,8 +11,19 @@ namespace TorneoDepartamental.App.Frontend.Pages.Partidos
 {
     public class DetailsModel : PageModel
     {
-        public void OnGet()
+        private readonly IRepositorioPartido _repoPartido;
+        public Partido partido{get;set;}
+        public DetailsModel(IRepositorioPartido repoPartido){
+            _repoPartido = repoPartido;
+        }
+        public IActionResult OnGet(int id)
         {
+            partido = _repoPartido.GetPartido(id);
+            if(partido == null){
+                return NotFound();
+            }else{
+                return Page();
+            }
         }
     }
 }
