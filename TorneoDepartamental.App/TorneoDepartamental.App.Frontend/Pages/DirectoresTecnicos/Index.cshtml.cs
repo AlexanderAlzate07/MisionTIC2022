@@ -8,7 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using TorneoDepartamental.App.Dominio;
 using TorneoDepartamental.App.Persistencia;
 
-namespace TorneoDepartamental.App.Frontend.Pages.Director
+namespace TorneoDepartamental.App.Frontend.Pages.DirectoresTecnicos
 {
     public class IndexModel : PageModel
     {
