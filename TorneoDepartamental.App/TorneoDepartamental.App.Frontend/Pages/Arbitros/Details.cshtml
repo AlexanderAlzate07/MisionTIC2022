@@ -1,0 +1,28 @@
+﻿@page
+@model TorneoDepartamental.App.Frontend.Pages.Arbitros.DetailsModel
+@{
+}
+<h1>Detalles Arbitros</h1>
+<table>
+    <tr>
+        <th scope="col">Id</th>
+        <td>@Model.arbitro.Id</td>
+    </tr>
+    <tr>
+        <th scope="col">Nombre</th>
+        <td>@Model.arbitro.Nombre</td>
+    </tr>
+    <tr>
+        <th scope="col">Telefono</th>
+        <td>@Model.arbitro.Telefono</td>
+    </tr>
+    <tr>
+        <th scope="col">Documento</th>
+        <td>@Model.arbitro.Documento</td>
+    </tr>
+    <tr>
+        <th scope="col">Colegio Arbitro</th>
+        <td>@Model.arbitro.ColegioArbitro</td>
+    </tr>
+</table>
+<a class="btn btn-primary" asp-page="./Index">Volver</a>
