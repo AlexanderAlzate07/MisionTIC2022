@@ -88,3 +88,4 @@ C:\Users\alexander.alzate\Documents\MisionTIC_2022\MisionTIC2022\TorneoDepartame
 C:\Users\alexander.alzate\Documents\MisionTIC_2022\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Frontend\obj\Debug\net5.0\Razor\Pages\Jugadores\Details.cshtml.g.cs
 C:\Users\alexander.alzate\Documents\MisionTIC_2022\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Frontend\obj\Debug\net5.0\Razor\Pages\NovedadesPartidos\Details.cshtml.g.cs
 C:\Users\alexander.alzate\Documents\MisionTIC_2022\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Frontend\obj\Debug\net5.0\Razor\Pages\Partidos\Details.cshtml.g.cs
+C:\Users\alexander.alzate\Documents\MisionTIC_2022\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Frontend\obj\Debug\net5.0\Razor\Pages\Municipios\Create.cshtml.g.cs
