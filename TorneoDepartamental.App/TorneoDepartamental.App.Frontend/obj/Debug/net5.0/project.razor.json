@@ -15704,6 +15704,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\reto 3 mision tic\\MisionTIC2022\\TorneoDepartamental.App\\TorneoDepartamental.App.Frontend\\Pages\\DirectoresTecnicos\\AddEquipo.cshtml",
+      "TargetPath": "Pages\\DirectoresTecnicos\\AddEquipo.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\reto 3 mision tic\\MisionTIC2022\\TorneoDepartamental.App\\TorneoDepartamental.App.Frontend\\Pages\\Equipos\\Index.cshtml",
       "TargetPath": "Pages\\Equipos\\Index.cshtml",
       "FileKind": "mvc"

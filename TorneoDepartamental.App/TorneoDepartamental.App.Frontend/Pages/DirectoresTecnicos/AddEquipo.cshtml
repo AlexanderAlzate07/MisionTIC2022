@@ -1,0 +1,22 @@
+﻿@page
+@model TorneoDepartamental.App.Frontend.Pages.DirectoresTecnicos.AddEquipoModel
+@{
+}
+<h1>Asignar Equipo</h1>
+<form method="post">
+    <div class="form-group">
+        <label for="idDirectorTecnico">Director tecnico</label>
+        <input id="tecnico.Id" type="text" name="idDirectorTecnico" value="@Model.tecnico.Id" class="form-control" readonly>
+    </div>
+     <div class="form-group">
+        <label for="idEquipo">Equipo</label>
+        <select name="idEquipo" id="idEquipo" class="form-control">
+            @foreach (var equipo in Model.equipos)
+            {
+                <option value="@equipo.Id">@equipo.Nombre</option>
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Asignar equipo</button>     
+</form>
+<a class="btn btn-secondary" asp-page="./Index">Volver</a>
