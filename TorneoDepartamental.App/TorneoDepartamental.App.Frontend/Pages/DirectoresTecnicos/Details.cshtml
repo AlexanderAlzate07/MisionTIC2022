@@ -2,3 +2,27 @@
 @model TorneoDepartamental.App.Frontend.Pages.DirectoresTecnicos.DetailsModel
 @{
 }
+<h1>Detalles del Director tecnico</h1>
+<table class="table table-dark">
+    <tr>
+        <th scope="col">Telefono</th>
+        <td>@Model.tecnico.Telefono</td>
+    </tr>
+    <tr>
+        <th scope="col">Documento</th>
+        <td>@Model.tecnico.Documento</td>
+    </tr>
+    <tr>
+        <th scope="col">Equipo</th>
+        @if (Model.tecnico.Equipo == null)
+        {
+            <td>
+                <a class="btn btn-primary" asp-page="./AddEquipo" asp-route-id="@Model.tecnico.Id">Asignar equipo</a></td>
+        }
+        else
+        {
+            <td>@Model.tecnico.Equipo.Nombre</td>
+        }
+    </tr>
+</table>
+<a class="btn btn-primary" asp-page="./Index">Volver</a>

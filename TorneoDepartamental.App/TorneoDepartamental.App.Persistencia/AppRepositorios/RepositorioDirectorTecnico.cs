@@ -1,6 +1,7 @@
 using System.Collections.Generic;
-using TorneoDepartamental.App.Dominio;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
+using TorneoDepartamental.App.Dominio;
 
 namespace TorneoDepartamental.App.Persistencia
 {
@@ -8,7 +9,7 @@ namespace TorneoDepartamental.App.Persistencia
     {
         private readonly AppContext _appContext = new AppContext();
 
-       
+
         public DirectorTecnico AddDirectorTecnico(DirectorTecnico tecnico)
         {
             var tecnicoAdicionado = _appContext.DirectoresTecnicos.Add(tecnico);
@@ -18,7 +19,8 @@ namespace TorneoDepartamental.App.Persistencia
         public DirectorTecnico UpdateDirectorTecnico(DirectorTecnico tecnico)
         {
             var tecnicoEncontrado = _appContext.DirectoresTecnicos.FirstOrDefault(dt => dt.Id == tecnico.Id);
-            if(tecnicoEncontrado != null){
+            if (tecnicoEncontrado != null)
+            {
                 tecnicoEncontrado.Nombre = tecnico.Nombre;
                 tecnicoEncontrado.Telefono = tecnico.Telefono;
                 tecnicoEncontrado.Documento = tecnico.Documento;
@@ -30,26 +32,30 @@ namespace TorneoDepartamental.App.Persistencia
         public void DeleteDirectorTecnico(int idDirectorTecnico)
         {
             var tecnicoEncontrado = _appContext.DirectoresTecnicos.FirstOrDefault(dt => dt.Id == idDirectorTecnico);
-            if(tecnicoEncontrado == null)
+            if (tecnicoEncontrado == null)
                 return;
             _appContext.DirectoresTecnicos.Remove(tecnicoEncontrado);
             _appContext.SaveChanges();
         }
         public DirectorTecnico GetDirectorTecnico(int idDirectorTecnico)
         {
-            return _appContext.DirectoresTecnicos.FirstOrDefault(dt => dt.Id == idDirectorTecnico);
+            var tecnico = _appContext.DirectoresTecnicos
+                    .Where(t => t.Id == idDirectorTecnico)
+                    .Include(t => t.Equipo)
+                    .FirstOrDefault();
+            return tecnico;
         }
         public IEnumerable<DirectorTecnico> GetAllDirectorTecnicos()
         {
             return _appContext.DirectoresTecnicos;
         }
-        public Equipo AsignarEquipo(int idDirectorTecnico,int idEquipo)
+        public Equipo AsignarEquipo(int idDirectorTecnico, int idEquipo)
         {
             var tecnicoEncontrado = _appContext.DirectoresTecnicos.FirstOrDefault(dt => dt.Id == idDirectorTecnico);
-            if(tecnicoEncontrado != null)
+            if (tecnicoEncontrado != null)
             {
                 var equipoEncontrado = _appContext.Equipos.FirstOrDefault(e => e.Id == idEquipo);
-                if(equipoEncontrado != null)
+                if (equipoEncontrado != null)
                 {
                     tecnicoEncontrado.Equipo = equipoEncontrado;
                     _appContext.SaveChanges();

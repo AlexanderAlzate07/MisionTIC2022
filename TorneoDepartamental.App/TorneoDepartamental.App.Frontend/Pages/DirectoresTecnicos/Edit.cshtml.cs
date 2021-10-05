@@ -9,18 +9,18 @@ using TorneoDepartamental.App.Persistencia;
 
 namespace TorneoDepartamental.App.Frontend.Pages.DirectoresTecnicos
 {
-    public class DetailsModel : PageModel
+    public class EditModel : PageModel
     {
-        private readonly IRepositorioDirectorTecnico _repoDirectorTecnico;
-        public DirectorTecnico tecnico {get;set;}
-        public DetailsModel(IRepositorioDirectorTecnico repoDirectorTecnico)
+        private readonly IRepositorioDirectorTecnico _repoTecnico;
+        public DirectorTecnico tecnico { get; set; }
+        public EditModel(IRepositorioDirectorTecnico repoTecnico)
         {
-            _repoDirectorTecnico = repoDirectorTecnico;
+            _repoTecnico = repoTecnico;
         }
         public IActionResult OnGet(int id)
         {
-            tecnico = _repoDirectorTecnico.GetDirectorTecnico(id); 
-            if(tecnico == null)
+            tecnico = _repoTecnico.GetDirectorTecnico(id);
+            if (tecnico == null)
             {
                 return NotFound();
             }
@@ -29,5 +29,12 @@ namespace TorneoDepartamental.App.Frontend.Pages.DirectoresTecnicos
                 return Page();
             }
         }
+        
+        public IActionResult OnPost(DirectorTecnico tecnico)
+        {
+            _repoTecnico.UpdateDirectorTecnico(tecnico);
+            return RedirectToPage("Index");
+        }
+
     }
 }

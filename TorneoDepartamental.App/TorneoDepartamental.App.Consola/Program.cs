@@ -28,8 +28,8 @@ namespace TorneoDepartamental.App.Consola
             //--------------------------------------------------------
 
             //------------------------  CRUD EQUIPO-------------------
-            // AddEquipo("Barcelona");
-            // AsignarMunicipioAequipo(1,1);
+            // AddEquipo("America");
+            // AsignarMunicipioAequipo(2,2);
             // UpdateEquipo(10,"Atletico Madrid",1);
             // GetEquipo(10);
             // DeleteEquipo(10);
@@ -39,7 +39,7 @@ namespace TorneoDepartamental.App.Consola
             // AddEstadio("Pascual Guerreo","cra 39 # 5 -38");
             // GetEstadio(2);
             // DeleteEstadio(5);
-            // AsignarMunicipioAestadio(1,1);
+            // AsignarMunicipioAestadio(2,2);
             // UpdateEstadio(4,"Old Trafford","Calle 45c # 27-42",5);
             //--------------------------------------------------------
 
@@ -53,7 +53,7 @@ namespace TorneoDepartamental.App.Consola
 
             //------------------------  CRUD DIRECTOR TECNICO -----------------
             // AddDirectorTecnico("Javier Hernandez","167854412","3125547785");
-            // AsignarEquipoAtecnico(2,4);
+            // AsignarEquipoAtecnico(2,2);
             // UpdateDirectorTecnico(4,"Alfredo Arias","23452345","1235465",5);
             // GetDirectorTecnico(1);
             // DeleteDirectorTecnico(5);
