@@ -9,18 +9,25 @@ using TorneoDepartamental.App.Persistencia;
 
 namespace TorneoDepartamental.App.Frontend.Pages.Equipos
 {
-    public class IndexModel : PageModel
+    public class CreateModel : PageModel
     {
         private readonly IRepositorioEquipo _repoEquipo;
-        public IEnumerable<Equipo> equipos { get; set; }
-        public IndexModel(IRepositorioEquipo repoEquipo)
+        public Equipo equipo { get; set; }
+        public CreateModel(IRepositorioEquipo repoEquipo)
         {
             _repoEquipo = repoEquipo;
         }
-
-        public void OnGet()
+         public IActionResult OnPost(Equipo equipo)
         {
-            equipos = _repoEquipo.GetAllEquipos();
-        }
+            if (ModelState.IsValid)
+            {
+                _repoEquipo.AddEquipo(equipo);
+                return RedirectToPage("Index");
+            }
+            else
+            {
+                return Page();
+            }
     }
+}
 }

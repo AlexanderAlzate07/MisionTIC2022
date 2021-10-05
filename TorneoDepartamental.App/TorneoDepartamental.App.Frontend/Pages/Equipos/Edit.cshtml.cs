@@ -9,19 +9,18 @@ using TorneoDepartamental.App.Persistencia;
 
 namespace TorneoDepartamental.App.Frontend.Pages.Equipos
 {
-    public class DetailsModel : PageModel
+    public class EditModel : PageModel
     {
-        
         private readonly IRepositorioEquipo _repoEquipo;
         public Equipo equipo { get; set; }
-        public DetailsModel(IRepositorioEquipo repoEquipo)
+        public EditModel(IRepositorioEquipo repoEquipo)
         {
             _repoEquipo = repoEquipo;
         }
         public IActionResult OnGet(int id)
         {
             equipo = _repoEquipo.GetEquipo(id);
-            if(equipo == null)
+            if (equipo == null)
             {
                 return NotFound();
             }
@@ -29,6 +28,12 @@ namespace TorneoDepartamental.App.Frontend.Pages.Equipos
             {
                 return Page();
             }
+        }
+
+        public IActionResult OnPost(Equipo equipo)
+        {
+            _repoEquipo.UpdateEquipo(equipo);
+            return RedirectToPage("Index");
         }
     }
 }
