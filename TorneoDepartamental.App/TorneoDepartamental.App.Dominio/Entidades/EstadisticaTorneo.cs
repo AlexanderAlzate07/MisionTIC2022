@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 namespace TorneoDepartamental.App.Dominio
 {
     public class EstadisticaTorneo
