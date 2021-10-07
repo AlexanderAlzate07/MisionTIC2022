@@ -12,8 +12,28 @@ namespace TorneoDepartamental.App.Frontend.Pages.DirectoresTecnicos
 {
     public class CreateModel : PageModel
     {
+        private readonly IRepositorioDirectorTecnico _repoDirectorTecnico;
+
+        public CreateModel(IRepositorioDirectorTecnico repoDirectorTecnico)
+        {
+            _repoDirectorTecnico = repoDirectorTecnico;
+            
+        }
+
+        public DirectorTecnico tecnico{get;set;}
+        
         public void OnGet()
         {
+            tecnico = new DirectorTecnico();
+        }
+        public IActionResult OnPost(DirectorTecnico tecnico)
+        {
+            if(!ModelState.IsValid){
+                return Page();
+            }
+            _repoDirectorTecnico.AddDirectorTecnico(tecnico);
+            return RedirectToPage("Index");
+            
         }
     }
 }

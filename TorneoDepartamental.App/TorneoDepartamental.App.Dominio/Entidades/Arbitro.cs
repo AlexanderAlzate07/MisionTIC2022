@@ -14,7 +14,7 @@ namespace TorneoDepartamental.App.Dominio
         [Display(Name="Documento del arbitro")]
         public string Documento { get; set; }
         [Required(ErrorMessage="El colegio arbitro es obligatorio")]
-        [Display(Name="Colegio de arbitros")]
+        [Display(Name="Colegio de arbitro")]
         public string ColegioArbitro {get; set;}
     }
 }

@@ -2,3 +2,39 @@
 @model TorneoDepartamental.App.Frontend.Pages.EstadisticasTorneo.CreateModel
 @{
 }
+<h1>Nueva Estadistica Torneo</h1>
+<form method="post">
+    <div class="form-group">
+        <label asp-for="estadistica.CantidadPartidosJugados"></label>
+        <input asp-for="estadistica.CantidadPartidosJugados" class="form-control">
+        <span class="text-danger" asp-validation-for="estadistica.CantidadPartidosJugados"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="estadistica.CantidadPartidosGanados"></label>
+        <input asp-for="estadistica.CantidadPartidosGanados" class="form-control">
+        <span class="text-danger" asp-validation-for="estadistica.CantidadPartidosGanados"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="estadistica.CantidadPartidosEmpatados"></label>
+        <input asp-for="estadistica.CantidadPartidosEmpatados" class="form-control">
+        <span class="text-danger" asp-validation-for="estadistica.CantidadPartidosEmpatados"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="estadistica.GolesAfavor"></label>
+        <input asp-for="estadistica.GolesAfavor" class="form-control">
+        <span class="text-danger" asp-validation-for="estadistica.GolesAfavor"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="estadistica.GolesEnContra"></label>
+        <input asp-for="estadistica.GolesEnContra" class="form-control">
+        <span class="text-danger" asp-validation-for="estadistica.GolesEnContra"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="estadistica.Puntos"></label>
+        <input asp-for="estadistica.Puntos" class="form-control">
+        <span class="text-danger" asp-validation-for="estadistica.Puntos"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Crear Estadistica Torneo</button>
+</form>
+<a class="btn btn-primary" asp-page="./Index">Volver</a>
