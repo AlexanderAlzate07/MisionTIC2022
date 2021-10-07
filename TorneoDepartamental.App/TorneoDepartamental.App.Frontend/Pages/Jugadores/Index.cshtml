@@ -3,6 +3,7 @@
 @{
 }
 <h1>Listado de Jugadores</h1>
+<a class="btn btn-primary" asp-page="./Create">Nuevo Jugador</a>
 <table class="table">
     <thead>
         <tr>
@@ -22,7 +23,10 @@
                 @* <td>@jugador.NumeroCamiseta</td>
                 <td>@jugador.Posicion</td>
                 <td>@jugador.Equipo</td> *@
-                <td><a class="btn btn-primary" asp-page="./Details" asp-route-id="@jugador.Id">Detalle</a></td>
+                <td>
+                    <a class="btn btn-primary" asp-page="./Details" asp-route-id="@jugador.Id">Detalle</a>
+                    <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@jugador.Id">Editar</a>
+                </td>
             </tr>
         }
     </tbody>

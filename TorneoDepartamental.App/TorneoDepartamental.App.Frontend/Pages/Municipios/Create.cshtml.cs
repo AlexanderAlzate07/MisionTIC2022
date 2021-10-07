@@ -12,13 +12,14 @@ namespace TorneoDepartamental.App.Frontend.Pages.Municipios
     public class CreateModel : PageModel
     {
         private readonly IRepositorioMunicipio _repoMunicipio;
+        public Municipio municipio{get;set;}
 
         public CreateModel(IRepositorioMunicipio repoMunicipio)
         {
             _repoMunicipio = repoMunicipio;
         }
 
-        public Municipio municipio{get;set;}
+        
         public void OnGet()
         {
             municipio = new Municipio();

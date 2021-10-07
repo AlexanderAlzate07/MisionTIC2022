@@ -3,6 +3,7 @@
 @{
 }
 <h1>Listado de Novedades de Partidos</h1>
+<a class="btn btn-primary" asp-page="./Create">Crear Nodedad de Partido</a>
 <table class="table">
     <thead>
         <tr>
@@ -16,7 +17,10 @@
             <tr>
                 <td>@novPartido.Id</td>
                 @* <td>@novPartido.Partido.FechaPartido</td> *@
-                <td><a class="btn btn-primary" asp-page="./Details" asp-route-id="@novPartido.Id">Detalle</a></td>
+                <td>
+                    <a class="btn btn-primary" asp-page="./Details" asp-route-id="@novPartido.Id">Detalle</a>
+                    <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@novPartido.Id">Editar</a>    
+                </td>
             </tr>
         }
     </tbody>

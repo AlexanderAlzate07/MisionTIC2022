@@ -7,6 +7,7 @@ namespace TorneoDepartamental.App.Dominio
         [Required(ErrorMessage="El nombre es obligatorio")]
         [Display(Name="Nombre del tecnico")]
         public string Nombre { get; set; }
+        [Required(ErrorMessage="El Telefono es obligatorio")]
         [Display(Name="Telefono del director tecnico")]
         public string Telefono { get; set; }
         [Required(ErrorMessage="El Documento es obligatorio")]
