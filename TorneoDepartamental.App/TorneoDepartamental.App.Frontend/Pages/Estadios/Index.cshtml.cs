@@ -16,12 +16,16 @@ namespace TorneoDepartamental.App.Frontend.Pages.Estadios
         public IndexModel(IRepositorioEstadio repoEstadio)
         {
             _repoEstadio = repoEstadio;
+            
         }
+        
         public void OnGet()
         {
             estadios = _repoEstadio.GetAllEstadios();
             
             
         }
+       
+      
     }
 }

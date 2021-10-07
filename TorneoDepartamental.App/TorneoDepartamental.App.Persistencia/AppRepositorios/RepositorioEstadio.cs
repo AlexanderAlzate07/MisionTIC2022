@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TorneoDepartamental.App.Dominio;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace TorneoDepartamental.App.Persistencia
 {
@@ -37,7 +38,11 @@ namespace TorneoDepartamental.App.Persistencia
         }
         public Estadio GetEstadio(int idEstadio)
         {
-            return _appContext.Estadios.FirstOrDefault(e => e.Id == idEstadio);
+            var estadio = _appContext.Estadios
+                    .Where(t => t.Id == idEstadio)
+                    .Include(t => t.Municipio)
+                    .FirstOrDefault();
+            return estadio;
         }
         public IEnumerable<Estadio> GetAllEstadios()
         {

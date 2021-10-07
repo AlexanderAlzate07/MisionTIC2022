@@ -2,3 +2,20 @@
 @model TorneoDepartamental.App.Frontend.Pages.Estadios.DetailsModel
 @{
 }
+<h1>Detalles de Estadios</h1>
+<table class="table table-dark">
+    <tr>
+        <th scope="col">Municipio</th>
+        @if (Model.estadio.Municipio == null)
+        {
+            <td>
+                <a class="btn btn-primary" asp-page="./AddMunicipio" asp-route-id="@Model.estadio.Id">Asignar Municipio</a></td>
+        }
+        else
+        {
+             
+            <td>@Model.estadio.Municipio.Nombre</td>
+        }
+    </tr>
+</table>
+<a class="btn btn-primary" asp-page="./Index">Volver</a>

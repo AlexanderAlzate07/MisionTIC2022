@@ -9,22 +9,22 @@ using TorneoDepartamental.App.Persistencia;
 
 namespace TorneoDepartamental.App.Frontend.Pages.Estadios
 {
-    public class DetailsModel : PageModel
+    public class CreateModel : PageModel
     {
+        
          private readonly IRepositorioEstadio _repoEstadio;
         public Estadio estadio { get; set; }
-        public DetailsModel(IRepositorioEstadio repoEstadio)
+        public CreateModel(IRepositorioEstadio repoEstadio)
         {
             _repoEstadio = repoEstadio;
             
         }
-        
-        public IActionResult OnGet(int id)
+        public IActionResult OnPost(Estadio estadio)
         {
-            estadio = _repoEstadio.GetEstadio(id); 
-            if(estadio == null)
+             if (ModelState.IsValid)
             {
-                return NotFound();
+                _repoEstadio.AddEstadio(estadio);
+                return RedirectToPage("Index");
             }
             else
             {
