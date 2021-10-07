@@ -13,15 +13,14 @@ namespace TorneoDepartamental.App.Frontend.Pages.DirectoresTecnicos
     public class CreateModel : PageModel
     {
         private readonly IRepositorioDirectorTecnico _repoDirectorTecnico;
+        [BindProperty]
+        public DirectorTecnico tecnico{get;set;}
 
         public CreateModel(IRepositorioDirectorTecnico repoDirectorTecnico)
         {
             _repoDirectorTecnico = repoDirectorTecnico;
             
         }
-
-        public DirectorTecnico tecnico{get;set;}
-        
         public void OnGet()
         {
             tecnico = new DirectorTecnico();

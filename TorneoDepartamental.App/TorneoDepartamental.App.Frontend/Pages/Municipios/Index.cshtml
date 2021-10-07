@@ -18,8 +18,10 @@
                 <td>@municipio.Id</td>
                 <td>@municipio.Nombre</td>
                 <td>
-                    <a class="btn btn-primary" asp-page="./Details" asp-route-id="@municipio.Id">Detalle</a>
-                    <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@municipio.Id">Editar</a>
+                    @* <a class="btn btn-primary" asp-page="./Details" asp-route-id="@municipio.Id">Detalle</a>
+                    <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@municipio.Id">Editar</a> *@
+                    <a class="btn btn-primary" asp-page="./Details" asp-route-id="@municipio.Id"><i class="fas fa-info-circle fa-lg" aria-hidden="true"></i></a>
+                    <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@municipio.Id"><i class="fas fa-address-book fa-lg" aria-hidden="true"></i></a>
                 </td>
             </tr>
         }

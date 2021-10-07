@@ -4,7 +4,7 @@
 }
 <h1>Editar Municipio</h1>
 <form method="post">
-    
+    <input type="hidden" asp-for="municipio.Id">
     <div class="form-group">
         <label asp-for="municipio.Nombre"></label>
         <input asp-for="municipio.Nombre" class="form-control">

@@ -2,3 +2,29 @@
 @model TorneoDepartamental.App.Frontend.Pages.Partidos.CreateModel
 @{
 }
+<h1>Nuevo Partido</h1>
+<form method="post">
+    <div class="form-group">
+        <label asp-for="partido.FechaPartido"></label>
+        <input asp-for="partido.FechaPartido" class="form-control">
+        <span class="text-danger" asp-validation-for="partido.FechaPartido"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="partido.HoraPartido"></label>
+        <input asp-for="partido.HoraPartido" class="form-control">
+        <span class="text-danger" asp-validation-for="partido.HoraPartido"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="partido.MarcadorLocal"></label>
+        <input asp-for="partido.MarcadorLocal" class="form-control">
+        <span class="text-danger" asp-validation-for="partido.MarcadorLocal"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="partido.MarcadorVisitante"></label>
+        <input asp-for="partido.MarcadorVisitante" class="form-control">
+        <span class="text-danger" asp-validation-for="partido.MarcadorVisitante"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Crear Partido</button>
+</form>
+<a class="btn btn-primary" asp-page="./Index">Volver</a>

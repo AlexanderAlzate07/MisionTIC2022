@@ -13,13 +13,13 @@ namespace TorneoDepartamental.App.Frontend.Pages.Estadios
     public class CreateModel : PageModel
     {
         private readonly IRepositorioEstadio _repoEstadio;
-
+        public Estadio estadio{get;set;}
         public CreateModel(IRepositorioEstadio repoEstadio)
         {
             _repoEstadio = repoEstadio;
         }
 
-        public Estadio estadio{get;set;}
+        
         public void OnGet()
         {
             estadio = new Estadio();

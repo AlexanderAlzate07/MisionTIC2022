@@ -9,6 +9,8 @@ namespace TorneoDepartamental.App.Dominio
         [Required(ErrorMessage="La FechaPartido es obligatorio")]
         [Display(Name="FechaPartido")]
         public DateTime FechaPartido  { get; set; } // DateTime.Now.ToString("dd-MM-yyyy")
+        [Required(ErrorMessage="La Hora del partido es obligatoria")]
+        [Display(Name="HoraPartido")]
         public DateTime HoraPartido  { get; set; }  // DateTime.Now.ToString("hh-mm-ss")
         public Equipo EquipoLocal { get; set;}
         [Required(ErrorMessage="El MarcadorLocal es obligatorio")]

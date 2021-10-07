@@ -12,8 +12,33 @@ namespace TorneoDepartamental.App.Frontend.Pages.Partidos
 {
     public class EditModel : PageModel
     {
-        public void OnGet()
+        private readonly IRepositorioPartido _repoPartido;
+        [BindProperty]
+        public Partido partido{get;set;}
+        public EditModel(IRepositorioPartido repoPartido)
         {
+            _repoPartido = repoPartido;
+            
+        }
+        public IActionResult OnGet(int id)
+        {
+            
+            partido = _repoPartido.GetPartido(id);
+            if(partido == null)
+                return NotFound();
+            return Page();
+        }
+        public IActionResult OnPost(Partido partido)
+        {
+            if(!ModelState.IsValid)
+                return Page();
+            if(partido.Id>0){
+                partido = _repoPartido.UpdatePartido(partido);
+            }else{
+                _repoPartido.AddPartido(partido);
+            }
+            
+            return Page();
         }
     }
 }

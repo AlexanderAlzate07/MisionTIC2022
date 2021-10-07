@@ -12,6 +12,7 @@ namespace TorneoDepartamental.App.Frontend.Pages.Municipios
     public class EditModel : PageModel
     {
         private readonly IRepositorioMunicipio _repoMunicipio;
+        [BindProperty]
         public Municipio municipio{get;set;}
         public EditModel(IRepositorioMunicipio repoMunicipio)
         {
@@ -21,6 +22,7 @@ namespace TorneoDepartamental.App.Frontend.Pages.Municipios
         public IActionResult OnGet(int id)
         {
             municipio = _repoMunicipio.GetMunicipio(id);
+            System.Console.WriteLine("On get Id municipio: "+municipio.Id);
             if(municipio == null)
                 return NotFound();
             return Page();
