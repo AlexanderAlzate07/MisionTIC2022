@@ -30,6 +30,7 @@ namespace TorneoDepartamental.App.Frontend
             services.AddSingleton<IRepositorioEstadio, RepositorioEstadio>();
             services.AddSingleton<IRepositorioDirectorTecnico, RepositorioDirectorTecnico>();
             services.AddSingleton<IRepositorioEquipo, RepositorioEquipo>();
+            services.AddSingleton<IRepositorioJugador, RepositorioJugador>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

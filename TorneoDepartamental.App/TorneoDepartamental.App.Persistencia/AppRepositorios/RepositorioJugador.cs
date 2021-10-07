@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TorneoDepartamental.App.Dominio;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace TorneoDepartamental.App.Persistencia
 {
@@ -8,10 +9,6 @@ namespace TorneoDepartamental.App.Persistencia
     {
         private readonly AppContext _appContext = new AppContext();
 
-        public RepositorioJugador(AppContext appContext)
-        {
-            _appContext = appContext;
-        }
 
         public Jugador AddJugador(Jugador jugador)
         {
@@ -41,7 +38,11 @@ namespace TorneoDepartamental.App.Persistencia
         }
         public Jugador GetJugador(int idJugador)
         {
-            return _appContext.Jugadores.FirstOrDefault(j => j.Id == idJugador);
+            var jugador = _appContext.Jugadores
+                    .Where(j => j.Id == idJugador)
+                    .Include(j => j.Equipo)
+                    .FirstOrDefault();
+            return jugador;
         }
         public IEnumerable<Jugador> GetAllJugadores()
         {

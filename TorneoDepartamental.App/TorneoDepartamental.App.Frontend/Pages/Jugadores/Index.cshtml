@@ -2,3 +2,32 @@
 @model TorneoDepartamental.App.Frontend.Pages.Jugadores.IndexModel
 @{
 }
+<h1>Listado De Jugadores</h1>
+<a class="btn btn-primary" asp-page=./Create>Nuevo jugador</a>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre</th>
+            
+
+        </tr>
+    </thead>
+    </tbody>
+    @foreach (var jugador in Model.jugadores)
+    {
+        <tr>
+            <td>@jugador.Id</td>
+            <td>@jugador.Nombre</td>
+            <td><a class="btn btn-primary" asp-page="./Details" asp-route-id="@jugador.Id">Detalles</a></td>
+            <td><a class="btn btn-primary" asp-page="./Edit" asp-route-id="@jugador.Id">Editar</a></td>
+
+
+        </tr>
+
+
+    }
+
+    </tbody>
+
+</table>
