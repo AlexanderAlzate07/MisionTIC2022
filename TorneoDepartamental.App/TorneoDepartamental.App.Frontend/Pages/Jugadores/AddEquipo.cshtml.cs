@@ -7,28 +7,28 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using TorneoDepartamental.App.Dominio;
 using TorneoDepartamental.App.Persistencia;
 
-namespace TorneoDepartamental.App.Frontend.Pages.DirectoresTecnicos
+namespace TorneoDepartamental.App.Frontend.Pages.Jugadores
 {
     public class AddEquipoModel : PageModel
     {
-        private readonly IRepositorioDirectorTecnico _repoTecnico;
+        private readonly IRepositorioJugador _repoJugador;
         private readonly IRepositorioEquipo _repoEquipo;
-        public DirectorTecnico tecnico { get; set; }
+        public Jugador jugador { get; set; }
         public IEnumerable<Equipo> equipos { get; set; }
-        public AddEquipoModel(IRepositorioDirectorTecnico repoTecnico, IRepositorioEquipo repoEquipo)
+        public AddEquipoModel(IRepositorioJugador repoJugador, IRepositorioEquipo repoEquipo)
         {
-            _repoTecnico = repoTecnico;
+            _repoJugador = repoJugador;
             _repoEquipo = repoEquipo;
         }
         public void OnGet(int id)
         {
-            tecnico = _repoTecnico.GetDirectorTecnico(id);
+            jugador = _repoJugador.GetJugador(id);
             equipos = _repoEquipo.GetAllEquipos();
         }
 
-        public IActionResult OnPost(int idDirectorTecnico, int idEquipo)
+        public IActionResult OnPost(int idJugador, int idEquipo)
         {
-            _repoTecnico.AsignarEquipo(idDirectorTecnico, idEquipo);
+            _repoJugador.AsignarEquipo(idJugador, idEquipo);
             return RedirectToPage("Index");
         }
     }
