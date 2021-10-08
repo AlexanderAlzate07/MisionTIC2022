@@ -8,9 +8,6 @@ namespace TorneoDepartamental.App.Persistencia
     {
         private readonly AppContext _appContext = new AppContext();
 
-        public RepositorioEstadisticasTorneo(AppContext appContext)
-        {
-        }
 
         public EstadisticaTorneo AddEstadisticasTorneo(EstadisticaTorneo estadisticasTorneo)
         {

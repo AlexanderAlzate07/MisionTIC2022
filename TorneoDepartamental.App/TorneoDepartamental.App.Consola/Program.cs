@@ -10,12 +10,12 @@ namespace TorneoDepartamental.App.Consola
         private static IRepositorioMunicipio _repoMunicipio = new RepositorioMunicipio();
         private static IRepositorioEquipo _repoEquipo = new RepositorioEquipo();
         private static IRepositorioEstadio _repoEstadio = new RepositorioEstadio();
-        private static IRepositorioJugador _repoJugador = new RepositorioJugador(new Persistencia.AppContext());
+        private static IRepositorioJugador _repoJugador = new RepositorioJugador();
         private static IRepositorioDirectorTecnico _repoTecnico = new RepositorioDirectorTecnico();
         private static IRepositorioArbitro _repoArbitro = new RepositorioArbitro();
-        private static IRepositorioPartido _repoPartido = new RepositorioPartido(new Persistencia.AppContext());
-        private static IRepositorioNovedadesPartido _repoNovPartido = new RepositorioNovedadesPartido(new Persistencia.AppContext());
-        private static IRepositorioEstadisticasTorneo _repoEstTorneo = new RepositorioEstadisticasTorneo(new Persistencia.AppContext());
+        private static IRepositorioPartido _repoPartido = new RepositorioPartido();
+        private static IRepositorioNovedadesPartido _repoNovPartido = new RepositorioNovedadesPartido();
+        private static IRepositorioEstadisticasTorneo _repoEstTorneo = new RepositorioEstadisticasTorneo();
         static void Main(string[] args)
         {
               Console.WriteLine("Hello World!");
@@ -65,23 +65,23 @@ namespace TorneoDepartamental.App.Consola
             // DeleteArbitro(5);
 
             //------------------------ CRUD PARTIDO --------------------------
-            // DateTime fecha_partido = DateTime.Now.Date;
-            // DateTime hora_partido = DateTime.Now;
-            // System.Console.WriteLine(fecha_partido +"--"+hora_partido);
-            // AddPartido(DateTime.Now,DateTime.Now,0,0);
-            // AsignarEquipoLocalApartido(3,1);
-            // AsignarEquipoVisitanteApartido(3,3);
-            // AsignarEstadioApartido(3,1);
-            // AsignarArbitroApartido(3,1);
-            // GetPartido(3);
-            // DeletePartido(2);
+             //DateTime fecha_partido = DateTime.Now.Date;
+             //DateTime hora_partido = DateTime.Now;
+             //System.Console.WriteLine(fecha_partido +"--"+hora_partido);
+             //AddPartido(DateTime.Now,DateTime.Now,0,0);
+             //AsignarEquipoLocalApartido(1,2);
+             //AsignarEquipoVisitanteApartido(1,1);
+             //AsignarEstadioApartido(1,2);
+             //AsignarArbitroApartido(1,1);
+             //GetPartido(3);
+             //DeletePartido(2);
             // UpdatePartido(3,fecha_partido,hora_partido,0,0);
 
             //------------------------ CRUD NOVEDADES PARTIDO--------------------------
-            // AddNovedadesPartido("59'","Amarilla",1);
-            // AsignarJugadorAnovedad(1,1);
-            // AsignarEquipoAnovedad(1,1);
-            // AsignarPartidoAnovedad(1,3);
+             //AddNovedadesPartido("59'","Amarilla",1);
+             //AsignarJugadorAnovedad(1,1);
+             //AsignarEquipoAnovedad(1,1);
+             //AsignarPartidoAnovedad(1,1);
 
             //------------------------ CRUD ESTADISTICAS TORNEO--------------------------
             // AddEstadisticasTorneo();
