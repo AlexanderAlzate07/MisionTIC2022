@@ -15634,6 +15634,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\reto 3 mision tic\\MisionTIC2022\\TorneoDepartamental.App\\TorneoDepartamental.App.Frontend\\Pages\\Partidos\\Edit.cshtml",
+      "TargetPath": "Pages\\Partidos\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\reto 3 mision tic\\MisionTIC2022\\TorneoDepartamental.App\\TorneoDepartamental.App.Frontend\\Pages\\Arbitros\\Edit.cshtml",
       "TargetPath": "Pages\\Arbitros\\Edit.cshtml",
       "FileKind": "mvc"
@@ -15791,6 +15796,16 @@
     {
       "FilePath": "c:\\reto 3 mision tic\\MisionTIC2022\\TorneoDepartamental.App\\TorneoDepartamental.App.Frontend\\Pages\\Partidos\\Index.cshtml",
       "TargetPath": "Pages\\Partidos\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\reto 3 mision tic\\MisionTIC2022\\TorneoDepartamental.App\\TorneoDepartamental.App.Frontend\\Pages\\Partidos\\Create.cshtml",
+      "TargetPath": "Pages\\Partidos\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\reto 3 mision tic\\MisionTIC2022\\TorneoDepartamental.App\\TorneoDepartamental.App.Frontend\\Pages\\Partidos\\AddEstadio.cshtml",
+      "TargetPath": "Pages\\Partidos\\AddEstadio.cshtml",
       "FileKind": "mvc"
     },
     {
