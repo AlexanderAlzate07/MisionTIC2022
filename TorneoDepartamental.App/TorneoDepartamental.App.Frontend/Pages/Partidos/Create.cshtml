@@ -7,12 +7,12 @@
     <div class="form-group">
         <label asp-for="partido.FechaPartido"></label>
         <input asp-for="partido.FechaPartido" class="form-control">
-        <span class="text-danger" asp-validation-for="partido.FechaPartido"></span>
+        <span class="text-danger" asp-validation-for="partido.FechaPartido.Date"></span>
     </div>
     <div class="form-group">
         <label asp-for="partido.HoraPartido"></label>
         <input asp-for="partido.HoraPartido" class="form-control">
-        <span class="text-danger" asp-validation-for="partido.HoraPartido"></span>
+        <span class="text-danger" asp-validation-for="partido.HoraPartido.TimeOfDay"></span>
     </div>
     <div class="form-group">
         <label asp-for="partido.MarcadorLocal"></label>

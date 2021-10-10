@@ -36,7 +36,7 @@
         @if (Model.partido.EquipoLocal == null)
         {
             <td>
-                <a class="btn btn-primary" asp-page="./AddEquipo" asp-route-id="@Model.partido.Id">Asignar Equipo Local</a></td>
+                <a class="btn btn-primary" asp-page="./AddEquipoLocal" asp-route-id="@Model.partido.Id">Asignar Equipo Local</a></td>
         }
         else
         {
@@ -52,7 +52,7 @@
         @if (Model.partido.EquipoVisitante == null)
         {
             <td>
-                <a class="btn btn-primary" asp-page="./AddEquipo" asp-route-id="@Model.partido.Id">Asignar Equipo Visitante</a></td>
+                <a class="btn btn-primary" asp-page="./AddEquipoVisitante" asp-route-id="@Model.partido.Id">Asignar Equipo Visitante</a></td>
         }
         else
         {

@@ -33,7 +33,9 @@ namespace TorneoDepartamental.App.Frontend.Pages.Partidos
                 return Page();
             if(partido.Id>0){
                 partido = _repoPartido.UpdatePartido(partido);
-            }else{
+            }
+            else
+            {
                 _repoPartido.AddPartido(partido);
             }
             
