@@ -64,6 +64,21 @@ namespace TorneoDepartamental.App.Persistencia
             }
             return null;
         }
+        public Municipio AsignarMunicipio2(int idEquipo,int idMunicipio)
+        {
+            var equipoEncontrado = _appContext.Equipos.Find(idEquipo);
+            if(equipoEncontrado != null)
+            {
+                var municipioEncontrado = _appContext.Municipios.Find(idMunicipio);
+                if(municipioEncontrado != null)
+                {
+                    equipoEncontrado.Municipio = municipioEncontrado;
+                    _appContext.SaveChanges();
+                }
+                return municipioEncontrado;
+            }
+            return null;
+        }
 
     }
 }

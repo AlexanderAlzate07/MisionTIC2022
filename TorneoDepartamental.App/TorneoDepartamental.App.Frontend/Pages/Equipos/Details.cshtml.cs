@@ -12,6 +12,7 @@ namespace TorneoDepartamental.App.Frontend.Pages.Equipos
     public class DetailsModel : PageModel
     {
         private readonly IRepositorioEquipo _repoEquipo;
+        [BindProperty]
         public Equipo equipo{get;set;}
         public DetailsModel(IRepositorioEquipo repoEquipo){
             _repoEquipo = repoEquipo;
