@@ -1,0 +1,27 @@
+﻿@page
+@model TorneoDepartamental.App.Frontend.Pages.NovedadPartido.IndexModel
+@{
+}
+<h1>Listado de Novedades de Partidos</h1>
+<a class="btn btn-primary" asp-page="./Create">Crear Novedad de Partido</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Minuto Partido</th>
+            
+        </tr>
+    </thead>
+    </tbody>
+        @foreach (var novPartido in Model.NovedadesPartidos)
+        {
+            <tr>
+                <td>@novPartido.Id</td>
+                <td>@novPartido.MinutoPartido</td>
+                
+                <td><a class="btn btn-primary" asp-page="./Details" asp-route-id="@novPartido.Id">Detalle</a></td>
+                <td><a class="btn btn-primary" asp-page="./Edit" asp-route-id="@novPartido.Id">Editar</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
