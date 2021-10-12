@@ -15619,11 +15619,6 @@
   "RootNamespace": "TorneoDepartamental.App.Frontend",
   "Documents": [
     {
-      "FilePath": "c:\\reto 3 mision tic\\MisionTIC2022\\TorneoDepartamental.App\\TorneoDepartamental.App.Frontend\\Pages\\NovedadesPartido\\Details.cshtml",
-      "TargetPath": "Pages\\NovedadesPartido\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\reto 3 mision tic\\MisionTIC2022\\TorneoDepartamental.App\\TorneoDepartamental.App.Frontend\\Pages\\Index.cshtml",
       "TargetPath": "Pages\\Index.cshtml",
       "FileKind": "mvc"
@@ -15639,8 +15634,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\reto 3 mision tic\\MisionTIC2022\\TorneoDepartamental.App\\TorneoDepartamental.App.Frontend\\Pages\\NovedadPartido\\Index.cshtml",
+      "TargetPath": "Pages\\NovedadPartido\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\reto 3 mision tic\\MisionTIC2022\\TorneoDepartamental.App\\TorneoDepartamental.App.Frontend\\Pages\\Arbitros\\Edit.cshtml",
       "TargetPath": "Pages\\Arbitros\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\reto 3 mision tic\\MisionTIC2022\\TorneoDepartamental.App\\TorneoDepartamental.App.Frontend\\Pages\\NovedadPartido\\Details.cshtml",
+      "TargetPath": "Pages\\NovedadPartido\\Details.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15651,11 +15656,6 @@
     {
       "FilePath": "c:\\reto 3 mision tic\\MisionTIC2022\\TorneoDepartamental.App\\TorneoDepartamental.App.Frontend\\Pages\\EstadisticasTorneo\\Details.cshtml",
       "TargetPath": "Pages\\EstadisticasTorneo\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\reto 3 mision tic\\MisionTIC2022\\TorneoDepartamental.App\\TorneoDepartamental.App.Frontend\\Pages\\NovedadesPartido\\Index.cshtml",
-      "TargetPath": "Pages\\NovedadesPartido\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
