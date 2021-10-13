@@ -1,13 +1,13 @@
 using System.Collections.Generic;
-using TorneoDepartamental.App.Dominio;
 using System.Linq;
+using TorneoDepartamental.App.Dominio;
 
 namespace TorneoDepartamental.App.Persistencia
 {
     public class RepositorioArbitro : IRepositorioArbitro
     {
         private readonly AppContext _appContext = new AppContext();
-     
+
         public Arbitro AddArbitro(Arbitro arbitro)
         {
             var arbitroAdicionado = _appContext.Arbitros.Add(arbitro);
@@ -17,7 +17,8 @@ namespace TorneoDepartamental.App.Persistencia
         public Arbitro UpdateArbitro(Arbitro arbitro)
         {
             var arbitroEncontrado = _appContext.Arbitros.FirstOrDefault(a => a.Id == arbitro.Id);
-            if(arbitroEncontrado != null){
+            if (arbitroEncontrado != null)
+            {
                 arbitroEncontrado.Nombre = arbitro.Nombre;
                 arbitroEncontrado.Telefono = arbitro.Telefono;
                 arbitroEncontrado.Documento = arbitro.Documento;
@@ -29,7 +30,7 @@ namespace TorneoDepartamental.App.Persistencia
         public void DeleteArbitro(int idArbitro)
         {
             var arbitroEncontrado = _appContext.Arbitros.FirstOrDefault(a => a.Id == idArbitro);
-            if(arbitroEncontrado == null)
+            if (arbitroEncontrado == null)
                 return;
             _appContext.Arbitros.Remove(arbitroEncontrado);
             _appContext.SaveChanges();
@@ -41,6 +42,12 @@ namespace TorneoDepartamental.App.Persistencia
         public IEnumerable<Arbitro> GetAllArbitros()
         {
             return _appContext.Arbitros;
+        }
+
+        IEnumerable<Arbitro> IRepositorioArbitro.SearchArbitros(string nombre)
+        {
+            return _appContext.Arbitros
+                     .Where(a => a.Nombre.Contains(nombre));
         }
     }
 }

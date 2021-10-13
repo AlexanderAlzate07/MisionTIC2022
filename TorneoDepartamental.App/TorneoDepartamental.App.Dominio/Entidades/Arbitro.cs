@@ -1,3 +1,4 @@
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace TorneoDepartamental.App.Dominio
@@ -22,5 +23,7 @@ namespace TorneoDepartamental.App.Dominio
         [Required(ErrorMessage ="El nombre del colegio es obligatorio")]
         [StringLength(50,ErrorMessage ="Maximo 50 caracteres")]
         public string ColegioArbitro {get; set;}
+
+
     }
 }

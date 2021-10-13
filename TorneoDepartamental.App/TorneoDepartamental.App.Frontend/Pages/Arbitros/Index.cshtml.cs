@@ -13,13 +13,24 @@ namespace TorneoDepartamental.App.Frontend.Pages.Arbitros
     {
         private readonly IRepositorioArbitro _repoArbitro;
         public IEnumerable<Arbitro> arbitros { get; set; }
+        public string bActual { get; set; }
         public IndexModel(IRepositorioArbitro repoArbitro)
         {
             _repoArbitro = repoArbitro;
         }
-        public void OnGet()
+        public void OnGet(string b)
         {
-            arbitros = _repoArbitro.GetAllArbitros();
+            if (String.IsNullOrEmpty(b))
+            {
+                bActual = "";
+                arbitros = _repoArbitro.GetAllArbitros();
+            }
+            else
+            {
+                bActual = b;
+                arbitros = _repoArbitro.SearchArbitros(b);
+            }
         }
+
     }
 }
