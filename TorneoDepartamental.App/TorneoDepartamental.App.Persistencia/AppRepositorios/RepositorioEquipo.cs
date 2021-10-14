@@ -44,7 +44,7 @@ namespace TorneoDepartamental.App.Persistencia
         }
         public IEnumerable<Equipo> GetAllEquipos()
         {
-            return _appContext.Equipos;
+            return _appContext.Equipos.Include(m => m.Municipio).ToList();
         }
         public Municipio AsignarMunicipio(int idEquipo,int idMunicipio)
         {

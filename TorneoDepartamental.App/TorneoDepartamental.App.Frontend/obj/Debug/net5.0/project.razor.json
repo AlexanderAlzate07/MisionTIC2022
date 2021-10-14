@@ -15704,11 +15704,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\reto 3 mision tic\\MisionTIC2022\\TorneoDepartamental.App\\TorneoDepartamental.App.Frontend\\Pages\\Equipos\\Details.cshtml",
-      "TargetPath": "Pages\\Equipos\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\reto 3 mision tic\\MisionTIC2022\\TorneoDepartamental.App\\TorneoDepartamental.App.Frontend\\Pages\\_ViewImports.cshtml",
       "TargetPath": "Pages\\_ViewImports.cshtml",
       "FileKind": "mvc"
@@ -15791,11 +15786,6 @@
     {
       "FilePath": "c:\\reto 3 mision tic\\MisionTIC2022\\TorneoDepartamental.App\\TorneoDepartamental.App.Frontend\\Pages\\Estadios\\Create.cshtml",
       "TargetPath": "Pages\\Estadios\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\reto 3 mision tic\\MisionTIC2022\\TorneoDepartamental.App\\TorneoDepartamental.App.Frontend\\Pages\\Estadios\\Delete.cshtml",
-      "TargetPath": "Pages\\Estadios\\Delete.cshtml",
       "FileKind": "mvc"
     },
     {

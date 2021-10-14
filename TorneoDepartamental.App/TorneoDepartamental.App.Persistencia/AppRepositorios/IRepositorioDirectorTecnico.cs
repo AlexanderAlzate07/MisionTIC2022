@@ -11,5 +11,6 @@ namespace TorneoDepartamental.App.Persistencia
         DirectorTecnico GetDirectorTecnico(int idDirectorTecnico);
         IEnumerable<DirectorTecnico> GetAllDirectorTecnicos();
         Equipo AsignarEquipo(int idDirectorTecnico,int idEquipo);
+        IEnumerable<DirectorTecnico> SearchDirector(string nombre);
     }
 }

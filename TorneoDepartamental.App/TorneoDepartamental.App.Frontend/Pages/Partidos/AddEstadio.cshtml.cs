@@ -29,7 +29,7 @@ namespace TorneoDepartamental.App.Frontend.Pages.Partidos
         public IActionResult OnPost(int idPartido, int idEstadio)
         {
             _repoPartido.AsignarEstadio(idPartido, idEstadio);
-            return RedirectToPage("Index");
+            return Page();
         }
     }
 }

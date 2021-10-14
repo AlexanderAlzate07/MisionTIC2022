@@ -2,25 +2,53 @@
 @model TorneoDepartamental.App.Frontend.Pages.DirectoresTecnicos.IndexModel
 @{
 }
+<form method="get">
+    <div class="form-group">
+        <label for="b">Buscar</label>
+        <input name="b" id="b" asp-for="@Model.bActual" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Buscar</button>
+</form>
+
 <h1>Lista de Directores tecnicos</h1>
-<a class="btn btn-primary" asp-page=./Create>Nuevo Director Tecnico</a>
+
 <table class="table">
     <thead class="thead-dark">
         <tr>
             <th scope="col">Id</th>
             <th scope="col">Nombre</th>
+            <th scope="col">Telefono</th>
+            <th scope="col">Documento</th>
+            <th scope="col">Equipo</th>
+            <th scope="col">Acciones</th>
         </tr>
     </thead>
     </tbody>
-        @foreach (var tecnico in Model.directorTecnicos)
-        {
-            <tr>
-                <td>@tecnico.Id</td>
-                <td>@tecnico.Nombre</td>
-                 <td><a class="btn btn-primary" asp-page="./Details" asp-route-id="@tecnico.Id">Detalles</a></td>
-                 <td><a class="btn btn-primary" asp-page="./Edit" asp-route-id="@tecnico.Id">Editar</a></td>
-            </tr>
-            
-        }
+    @foreach (var tecnico in Model.directorTecnicos)
+    {
+        <tr>
+            <td>@tecnico.Id</td>
+            <td>@tecnico.Nombre</td>
+            <td>@tecnico.Telefono</td>
+            <td>@tecnico.Documento</td>
+            @if (tecnico.Equipo == null)
+            {
+                <td></td>
+            }
+            else
+            {
+                <td>@tecnico.Equipo.Nombre</td>
+            }
+
+
+            <td>
+                <a class="btn btn-primary" asp-page=./Create>Crear</a>
+                <a class="btn btn-primary" asp-page="./AddEquipo" asp-route-id="@tecnico.Id">Asignar equipo</a>
+                <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@tecnico.Id">Editar</a>
+                
+            </td>
+        </tr>
+
+    }
     </tbody>
 </table>

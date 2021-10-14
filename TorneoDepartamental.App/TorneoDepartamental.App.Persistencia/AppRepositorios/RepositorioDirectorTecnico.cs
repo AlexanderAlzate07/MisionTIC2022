@@ -47,7 +47,7 @@ namespace TorneoDepartamental.App.Persistencia
         }
         public IEnumerable<DirectorTecnico> GetAllDirectorTecnicos()
         {
-            return _appContext.DirectoresTecnicos;
+            return _appContext.DirectoresTecnicos.Include(e => e.Equipo).ToList();
         }
         public Equipo AsignarEquipo(int idDirectorTecnico, int idEquipo)
         {
@@ -63,6 +63,12 @@ namespace TorneoDepartamental.App.Persistencia
                 return equipoEncontrado;
             }
             return null;
+        }
+
+        IEnumerable<DirectorTecnico> IRepositorioDirectorTecnico.SearchDirector(string nombre)
+        {
+            return _appContext.DirectoresTecnicos
+                     .Where(d => d.Nombre.Contains(nombre));
         }
 
 

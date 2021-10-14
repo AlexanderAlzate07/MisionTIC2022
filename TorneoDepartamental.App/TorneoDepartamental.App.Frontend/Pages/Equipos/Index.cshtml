@@ -3,26 +3,38 @@
 @{
 }
 <h1>Lista de equipos</h1>
-<a class="btn btn-primary" asp-page=./Create>Nuevo equipo</a>                   
+
 <table class="table">
     <thead class="thead thead-dark">
         <tr>
             <th scope="col">Id</th>
             <th scope="col">Nombre</th>
-            <th scope="col">Acciones</th>
+            <th scope="col">Municipio</th>
+
         </tr>
     </thead>
     </tbody>
-        @foreach (var equipo in Model.equipos)
-        {
-            <tr>
-                <td>@equipo.Id</td>
-                <td>@equipo.Nombre</td>
-                 <td><a class="btn btn-primary" asp-page="./Details" asp-route-id="@equipo.Id">Detalles</a></td>
-                 <td><a class="btn btn-primary" asp-page="./Edit" asp-route-id="@equipo.Id">Editar</a></td>
-                 
-            </tr>
-            
-        }
+    @foreach (var equipo in Model.equipos)
+    {
+        <tr>
+            <td>@equipo.Id</td>
+            <td>@equipo.Nombre</td>
+            @if (equipo.Municipio == null)
+            {
+                <td></td>
+            }
+            else
+            {
+                <td>@equipo.Municipio.Nombre</td>
+            }
+            <td>
+                <a class="btn btn-primary" asp-page=./Create>Nuevo equipo</a>
+                <a class="btn btn-primary" asp-page="./AddMunicipio" asp-route-id="@equipo.Id">Asignar Municipio</a>
+                <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@equipo.Id">Editar</a>
+            </td>
+
+        </tr>
+
+    }
     </tbody>
 </table>
