@@ -13,12 +13,23 @@ namespace TorneoDepartamental.App.Frontend.Pages.Jugadores
     {
         private readonly IRepositorioJugador _repoJugador;
         public IEnumerable<Jugador> Jugadores{get;set;}
+        public string bActual {get;set;}
         public IndexModel(IRepositorioJugador repoJugador){
             _repoJugador = repoJugador;
         }
-        public void OnGet()
+        public void OnGet(string b)
         {
-            Jugadores = _repoJugador.GetAllJugadores();
+            if (String.IsNullOrEmpty(b))
+            {
+                bActual = "";
+                Jugadores = _repoJugador.GetAllJugadores();
+            }
+            else
+            {
+                bActual = b;
+                Jugadores = _repoJugador.SearchJugador(b);
+            }
+            
         }
     }
 }

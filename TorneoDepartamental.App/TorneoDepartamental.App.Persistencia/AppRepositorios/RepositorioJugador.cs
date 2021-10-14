@@ -67,6 +67,11 @@ namespace TorneoDepartamental.App.Persistencia
             }
             return null;
         }
+        public IEnumerable<Jugador> SearchJugador(string nombre)
+        {
+            return _appContext.Jugadores
+                     .Where(e => e.Nombre.Contains(nombre));
+        }
     }
 
 }

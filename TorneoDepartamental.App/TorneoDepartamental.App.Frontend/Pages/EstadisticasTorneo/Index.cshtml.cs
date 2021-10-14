@@ -13,12 +13,23 @@ namespace TorneoDepartamental.App.Frontend.Pages.EstadisticasTorneo
     {
         private readonly IRepositorioEstadisticasTorneo _repoEstadisticaTorneo;
         public IEnumerable<EstadisticaTorneo> EstadisticaTorneos{get;set;}
+        public string bActual {get;set;}
         public IndexModel(IRepositorioEstadisticasTorneo repoEstadisticaTorneo){
             _repoEstadisticaTorneo = repoEstadisticaTorneo;
         }
-        public void OnGet()
+        public void OnGet(string b)
         {
-            EstadisticaTorneos = _repoEstadisticaTorneo.GetAllEstadisticasTorneos();
+            if (String.IsNullOrEmpty(b))
+            {
+                bActual = "";
+                EstadisticaTorneos = _repoEstadisticaTorneo.GetAllEstadisticasTorneos();
+            }
+            else
+            {
+                bActual = b;
+                EstadisticaTorneos = _repoEstadisticaTorneo.SearchEstadisticasTorneo(b);
+            }
+            
         }
     }
 }

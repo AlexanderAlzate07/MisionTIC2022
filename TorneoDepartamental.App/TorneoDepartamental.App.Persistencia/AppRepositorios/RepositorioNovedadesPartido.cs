@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using TorneoDepartamental.App.Dominio;
 using Microsoft.EntityFrameworkCore;
@@ -99,6 +100,14 @@ namespace TorneoDepartamental.App.Persistencia
                 return jugadorEncontrado;
             }
             return null;
+        }
+        public IEnumerable<NovedadesPartido> SearchNovedadPartido(DateTime dia)
+        {
+            return _appContext.NovedadesPartidos
+                    .Include(e => e.Equipo)
+                    .Include(e => e.Jugador)
+                    .Include(e => e.Partido)
+                    .Where(e => e.Partido.FechaPartido.Day == dia.Day);
         }
     }
 }

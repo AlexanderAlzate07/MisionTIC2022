@@ -13,12 +13,24 @@ namespace TorneoDepartamental.App.Frontend.Pages.NovedadesPartidos
     {
         private readonly IRepositorioNovedadesPartido _repoNovedadesPartido;
         public IEnumerable<NovedadesPartido> NovedadesPartidos{get;set;}
+        public DateTime bActual {get;set;}
         public IndexModel(IRepositorioNovedadesPartido repoNovedadesPartido){
             _repoNovedadesPartido = repoNovedadesPartido;
         }
-        public void OnGet()
+        public void OnGet(DateTime b)
         {
-            NovedadesPartidos = _repoNovedadesPartido.GetAllNovedadesPartidos();
+            if (b.Day==1 && b.Month==1 && b.Year == 1)
+            {
+                bActual = new DateTime(0001, 1, 1, 0, 0, 0);
+                NovedadesPartidos = _repoNovedadesPartido.GetAllNovedadesPartidos();
+            }
+            else
+            {
+                bActual = b;
+                NovedadesPartidos = _repoNovedadesPartido.SearchNovedadPartido(b);
+            }
+            
+            
         }
     }
 }

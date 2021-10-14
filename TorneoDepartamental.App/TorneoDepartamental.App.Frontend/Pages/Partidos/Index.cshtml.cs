@@ -16,9 +16,20 @@ namespace TorneoDepartamental.App.Frontend.Pages.Partidos
         public IndexModel(IRepositorioPartido repoPartido){
             _repoPartido = repoPartido;
         }
-        public void OnGet()
+        public DateTime bActual {get;set;}
+        public void OnGet(DateTime b)
         {
-            Partidos = _repoPartido.GetAllPartidos();
+            if (b.Day==1 && b.Month==1 && b.Year == 1)
+            {
+                bActual = new DateTime(0001, 1, 1, 0, 0, 0);
+                Partidos = _repoPartido.GetAllPartidos();
+            }
+            else
+            {
+                bActual = b;
+                Partidos = _repoPartido.SearchPartido(b);
+            }   
+            
         }
     }
 }

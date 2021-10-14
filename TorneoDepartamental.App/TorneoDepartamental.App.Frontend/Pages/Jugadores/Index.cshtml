@@ -2,6 +2,14 @@
 @model TorneoDepartamental.App.Frontend.Pages.Jugadores.IndexModel
 @{
 }
+<h1>Buscar Jugador</h1>
+<form method="get">
+    <div class="form-group">
+        <label for="b">Buscar</label>
+        <input name="b" id="b" asp-for="@Model.bActual" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Buscar</button>
+</form>
 <h1>Listado de Jugadores</h1>
 <a class="btn btn-primary" asp-page="./Create">Nuevo Jugador</a>
 <table class="table">

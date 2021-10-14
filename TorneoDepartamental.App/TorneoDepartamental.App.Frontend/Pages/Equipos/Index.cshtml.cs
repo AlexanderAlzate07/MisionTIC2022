@@ -14,14 +14,25 @@ namespace TorneoDepartamental.App.Frontend.Pages.Equipos
         private readonly IRepositorioMunicipio _repoMunicipio;
         public IEnumerable<Equipo> Equipos{get;set;}
         public IEnumerable<Municipio> Municipios{get;set;}
+        public string bActual {get;set;}
         public IndexModel(IRepositorioEquipo repoEquipo,IRepositorioMunicipio repoMunicipio){
             _repoEquipo = repoEquipo;
             _repoMunicipio = repoMunicipio;
 
         }
-        public void OnGet()
+        public void OnGet(string b)
         {
-            Equipos = _repoEquipo.GetAllEquipos();
+            if (String.IsNullOrEmpty(b))
+            {
+                bActual = "";
+                Equipos = _repoEquipo.GetAllEquipos();
+            }
+            else
+            {
+                bActual = b;
+                Equipos = _repoEquipo.SearchEquipo(b);
+            }
+            // Equipos = _repoEquipo.GetAllEquipos();
             // Municipios = _repoMunicipio.GetAllMunicipios();
             // var muni = _repoMunicipio.GetMunicipio(1);
             // foreach (var equipo in Equipos)

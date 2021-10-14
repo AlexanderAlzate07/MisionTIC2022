@@ -13,12 +13,23 @@ namespace TorneoDepartamental.App.Frontend.Pages.Estadios
     {
         private readonly IRepositorioEstadio _repoEstadio;
         public IEnumerable<Estadio> Estadios{get;set;}
+        public string bActual {get;set;}
         public IndexModel(IRepositorioEstadio repoEstadio){
             _repoEstadio = repoEstadio;
         }
-        public void OnGet()
+        public void OnGet(string b)
         {
-            Estadios = _repoEstadio.GetAllEstadios();
+            if (String.IsNullOrEmpty(b))
+            {
+                bActual = "";
+                Estadios = _repoEstadio.GetAllEstadios();
+            }
+            else
+            {
+                bActual = b;
+                Estadios = _repoEstadio.SearchEstadio(b);
+            }
+            
         }
     }
 }

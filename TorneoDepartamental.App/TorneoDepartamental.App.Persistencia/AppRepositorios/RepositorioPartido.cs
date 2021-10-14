@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using TorneoDepartamental.App.Dominio;
 using Microsoft.EntityFrameworkCore;
@@ -123,6 +124,15 @@ namespace TorneoDepartamental.App.Persistencia
                 return arbitroEncontrado;
             }
             return null;
+        }
+        public IEnumerable<Partido> SearchPartido(DateTime dia)
+        {
+            return _appContext.Partidos
+            .Include(e => e.Estadio)
+            .Include(e => e.EquipoLocal)
+            .Include(e => e.EquipoVisitante)
+            .Include(e => e.Arbitro)
+            .Where(e => e.FechaPartido.Day == dia.Day);
         }
     }
 }
