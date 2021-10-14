@@ -22,13 +22,13 @@
         {
             <tr>
                 <td>@estadistica.Id</td>
-                @* <td>@estadistica.CantidadPartidosJugados</td>
-                <td>@estadistica.CantidadPartidosGanados</td>
-                <td>@estadistica.CantidadPartidosEmpatados</td>
-                <td>@estadistica.GolesAfavor</td>
-                <td>@estadistica.GolesEnContra</td>
-                <td>@estadistica.Puntos</td> *@
-                <td>@estadistica.Equipo</td>
+                @if (@estadistica.Equipo==null)
+                {
+                    <td><a class="btn btn-primary" asp-page="./AddEquipo" asp-route-id="@estadistica.Id">Asignar Equipo</a></td>
+                }else{
+                    <td>@estadistica.Equipo.Nombre</td>
+                }
+                
                 <td>
                     <a class="btn btn-primary" asp-page="./Details" asp-route-id="@estadistica.Id">Detalle</a>
                     <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@estadistica.Id">Editar</a>

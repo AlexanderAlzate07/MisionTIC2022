@@ -109,3 +109,12 @@ C:\Users\alexander.alzate\Documents\MisionTIC_2022\MisionTIC2022\TorneoDepartame
 C:\Users\alexander.alzate\Documents\MisionTIC_2022\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Frontend\obj\Debug\net5.0\Razor\Pages\Equipos\AddMunicipio.cshtml.g.cs
 C:\Users\alexander.alzate\Documents\MisionTIC_2022\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Frontend\obj\Debug\net5.0\Razor\Pages\DirectoresTecnicos\AddEquipo.cshtml.g.cs
 C:\Users\alexander.alzate\Documents\MisionTIC_2022\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Frontend\obj\Debug\net5.0\Razor\Pages\Estadios\AddMunicipio.cshtml.g.cs
+C:\Users\alexander.alzate\Documents\MisionTIC_2022\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Frontend\obj\Debug\net5.0\Razor\Pages\Jugadores\AddEquipo.cshtml.g.cs
+C:\Users\alexander.alzate\Documents\MisionTIC_2022\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Frontend\obj\Debug\net5.0\Razor\Pages\EstadisticasTorneo\AddEquipo.cshtml.g.cs
+C:\Users\alexander.alzate\Documents\MisionTIC_2022\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Frontend\obj\Debug\net5.0\Razor\Pages\Partidos\AddArbitro.cshtml.g.cs
+C:\Users\alexander.alzate\Documents\MisionTIC_2022\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Frontend\obj\Debug\net5.0\Razor\Pages\Partidos\AddEquipoLocal.cshtml.g.cs
+C:\Users\alexander.alzate\Documents\MisionTIC_2022\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Frontend\obj\Debug\net5.0\Razor\Pages\Partidos\AddEquipoVisitante.cshtml.g.cs
+C:\Users\alexander.alzate\Documents\MisionTIC_2022\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Frontend\obj\Debug\net5.0\Razor\Pages\Partidos\AddEstadio.cshtml.g.cs
+C:\Users\alexander.alzate\Documents\MisionTIC_2022\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Frontend\obj\Debug\net5.0\Razor\Pages\NovedadesPartidos\AddEquipo.cshtml.g.cs
+C:\Users\alexander.alzate\Documents\MisionTIC_2022\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Frontend\obj\Debug\net5.0\Razor\Pages\NovedadesPartidos\AddJugador.cshtml.g.cs
+C:\Users\alexander.alzate\Documents\MisionTIC_2022\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Frontend\obj\Debug\net5.0\Razor\Pages\NovedadesPartidos\AddPartido.cshtml.g.cs

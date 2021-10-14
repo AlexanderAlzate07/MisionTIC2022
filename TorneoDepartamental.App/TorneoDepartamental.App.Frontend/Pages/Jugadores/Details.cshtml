@@ -22,8 +22,21 @@
     </tr>
     <tr>
         <th scope="col">Equipo</th>
-        <td>@Model.jugador.Equipo.Id</td>
-        <td>@Model.jugador.Equipo.Nombre</td>
+        @if (Model.jugador.Equipo==null)
+        {
+            <td><a class="btn btn-primary" asp-page="./AddEquipo" asp-route-id="@Model.jugador.Id">Asignar Equipo</a></td>       
+        }else{
+            <table>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                </tr>
+                <tr>
+                    <td>@Model.jugador.Equipo.Id</td>
+                    <td>@Model.jugador.Equipo.Nombre</td>
+                </tr>
+            </table>
+        }
     </tr>
 </table>
 <a class="btn btn-primary" asp-page="./Index">Volver</a>

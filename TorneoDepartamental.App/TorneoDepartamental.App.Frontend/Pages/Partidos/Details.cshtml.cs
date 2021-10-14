@@ -17,6 +17,10 @@ namespace TorneoDepartamental.App.Frontend.Pages.Partidos
         public DetailsModel(IRepositorioPartido repoPartido){
             _repoPartido = repoPartido;
         }
+        public Estadio estadio{get;set;}
+        public Equipo equipoLocal{get;set;}
+        public Equipo equipoVisitante{get;set;}
+        public Arbitro arbitro{get;set;}
         public IActionResult OnGet(int id)
         {
             partido = _repoPartido.GetPartido(id);

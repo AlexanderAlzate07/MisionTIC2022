@@ -9,9 +9,6 @@
         <tr>
             <th scope="col">Id</th>
             <th scope="col">Nombre</th>
-            @* <th scope="col">Telefono</th>
-            <th scope="col">Documento</th>
-            <th scope="col">Equipo</th> *@
         </tr>
     </thead>
     <tbody>
@@ -20,9 +17,6 @@
             <tr>
                 <td>@tecnico.Id</td>
                 <td>@tecnico.Nombre</td>
-                @* <td>@tecnico.Telefono</td>
-                <td>@tecnico.Documento</td>
-                <td>@tecnico.Equipo</td> *@
                 <td>
                     <a class="btn btn-primary" asp-page="./Details" asp-route-id="@tecnico.Id">Detalle</a>
                     <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@tecnico.Id">Editar</a>

@@ -27,15 +27,15 @@
             <td><a class="btn btn-primary" asp-page="./AddEquipo" asp-route-id="@Model.tecnico.Id">Asignar Equipo</a></td>       
         }else{
             <table>
-            <tr>
-                <th>Id</th>
-                <th>Nombre</th>
-            </tr>
-            <tr>
-                <td>@Model.tecnico.Equipo.Id</td>
-                <td>@Model.tecnico.Equipo.Nombre</td>
-            </tr>
-        </table>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                </tr>
+                <tr>
+                    <td>@Model.tecnico.Equipo.Id</td>
+                    <td>@Model.tecnico.Equipo.Nombre</td>
+                </tr>
+            </table>
         }
         
     </tr>

@@ -58,7 +58,11 @@ namespace TorneoDepartamental.App.Persistencia
         }
         public IEnumerable<Partido> GetAllPartidos()
         {
-            return _appContext.Partidos;
+            return _appContext.Partidos
+            .Include(e => e.Estadio)
+            .Include(e => e.EquipoLocal)
+            .Include(e => e.EquipoVisitante)
+            .Include(e => e.Arbitro).ToList();
         }
         public Estadio AsignarEstadio(int idPartido,int idEstadio)
         {

@@ -22,15 +22,32 @@
     </tr>
     <tr>
         <th scope="col">Partido</th>
-        <td>@Model.novPartido.Partido.Id</td>
+        @if (Model.novPartido.Partido == null)
+        {
+            <td><a class="btn btn-primary" asp-page="./AddPartido" asp-route-id="@Model.novPartido.Id">Asignar Partido</a></td>
+        }else{
+            <td>@Model.novPartido.Partido.Id</td>
+        }
+        
     </tr>
     <tr>
         <th scope="col">Equipo</th>
-        <td>@Model.novPartido.Equipo.Nombre</td>
+        @if (Model.novPartido.Equipo == null)
+        {
+            <td><a class="btn btn-primary" asp-page="./AddEquipo" asp-route-id="@Model.novPartido.Id">Asignar Equipo</a></td>
+        }else{
+            <td>@Model.novPartido.Equipo.Nombre</td>
+        }
     </tr>
     <tr>
         <th scope="col">Jugador</th>
-        <td>@Model.novPartido.Jugador.Nombre</td>
+        @if (Model.novPartido.Jugador == null)
+        {
+            <td><a class="btn btn-primary" asp-page="./AddJugador" asp-route-id="@Model.novPartido.Id">Asignar Jugador</a></td>
+        }else{
+            <td>@Model.novPartido.Jugador.Nombre</td>
+        }
+        
     </tr>
 </table>
 <a class="btn btn-primary" asp-page="./Index">Volver</a>

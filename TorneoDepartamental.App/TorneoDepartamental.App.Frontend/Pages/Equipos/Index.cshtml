@@ -9,7 +9,7 @@
         <tr>
             <th scope="col">Id</th>
             <th scope="col">Nombre</th>
-            <th scope="col">MunicipioId</th>
+            <th scope="col">Municipio</th>
         </tr>
     </thead>
     <tbody>
@@ -18,18 +18,17 @@
             <tr>
                 <td>@equipo.Id</td>
                 <td>@equipo.Nombre</td>
+                @if (equipo.Municipio==null)
+                {
+                    <td></td>
+                }else{
+                    <td>@equipo.Municipio.Nombre</td>
+                }
+                
                 <td>
-                @* @if(equipo.Municipio.Nombre == null){
-                    <a class="btn btn-primary" asp-route-id="@equipo.Id">Asignar municipio</a>
-                }else{ *@
-                    @* <a class="btn btn-primary" asp-page="./Details" asp-route-id="@equipo.Id">Detalle</a>
-                } *@
-                <a class="btn btn-primary" asp-page="./Details" asp-route-id="@equipo.Id">Detalle</a>
-                <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@equipo.Id">Editar</a>
+                    <a class="btn btn-primary" asp-page="./Details" asp-route-id="@equipo.Id">Detalle</a>
+                    <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@equipo.Id">Editar</a>
                 </td>
-                
-                
-                
             </tr>
         }
     </tbody>

@@ -52,7 +52,7 @@ namespace TorneoDepartamental.App.Persistencia
         }
         public IEnumerable<EstadisticaTorneo> GetAllEstadisticasTorneos()
         {
-            return _appContext.EstadisticasTorneo;
+            return _appContext.EstadisticasTorneo.Include(e => e.Equipo).ToList();
         }
         public Equipo AsignarEquipo(int idEstadisticasTorneo,int idEquipo)
         {

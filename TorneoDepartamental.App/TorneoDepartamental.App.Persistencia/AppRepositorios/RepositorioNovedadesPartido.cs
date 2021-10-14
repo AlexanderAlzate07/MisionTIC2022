@@ -50,7 +50,10 @@ namespace TorneoDepartamental.App.Persistencia
         }
         public IEnumerable<NovedadesPartido> GetAllNovedadesPartidos()
         {
-            return _appContext.NovedadesPartidos;
+            return _appContext.NovedadesPartidos
+                    .Include(e => e.Equipo)
+                    .Include(e => e.Jugador)
+                    .Include(e => e.Partido).ToList();
         }
         public Partido AsignarPartido(int idNovedadesPartido,int idPartido)
         {
