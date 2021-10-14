@@ -2,8 +2,14 @@
 @model TorneoDepartamental.App.Frontend.Pages.Equipos.IndexModel
 @{
 }
-<h1>Lista de equipos</h1>
-
+<form method="get">
+    <div class="form-group">
+        <label for="b">Buscar</label>
+        <input name="b" id="b" asp-for="@Model.bActual" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Buscar</button>
+</form>
+<h1>Lista de equipos</h1><a class="btn btn-primary" asp-page=./Create>Nuevo equipo</a>
 <table class="table">
     <thead class="thead thead-dark">
         <tr>
@@ -28,7 +34,7 @@
                 <td>@equipo.Municipio.Nombre</td>
             }
             <td>
-                <a class="btn btn-primary" asp-page=./Create>Nuevo equipo</a>
+                
                 <a class="btn btn-primary" asp-page="./AddMunicipio" asp-route-id="@equipo.Id">Asignar Municipio</a>
                 <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@equipo.Id">Editar</a>
             </td>
