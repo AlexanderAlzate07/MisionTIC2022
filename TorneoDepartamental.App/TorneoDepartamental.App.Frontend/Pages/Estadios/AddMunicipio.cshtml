@@ -1,0 +1,33 @@
+﻿@page
+@model TorneoDepartamental.App.Frontend.Pages.Estadios.AddMunicipioModel
+@{
+}
+<h1>Asignar Municipio</h1>
+<form method="post">
+    <div class="form-group">
+        <label for="idEstadio">Estadio</label>
+        <input id="idEstadio" name="idEstadio" class="form-control" value="@Model.estadio.Id" readonly>
+        <span class="text-danger" asp-validation-for="estadio.Nombre"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="estadio.Nombre"></label>
+        <input asp-for="estadio.Nombre" class="form-control" value="@Model.estadio.Nombre" readonly>
+        <span class="text-danger" asp-validation-for="estadio.Nombre"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="estadio.Direccion"></label>
+        <input asp-for="estadio.Direccion" class="form-control" value="@Model.estadio.Direccion" readonly>
+        <span class="text-danger" asp-validation-for="estadio.Direccion"></span>
+    </div>
+    <div class="form-group">
+        <label for="idMunicipio">Municipio</label>
+        <select name="idMunicipio" id="idMunicipio" class="form-control">
+            @foreach (var municipio in Model.municipios)
+            {
+                <option value="@municipio.Id">@municipio.Nombre</option>
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Asignar Municipio</button>
+</form>
+<a class="btn btn-secondary" asp-page="./Index">Volver</a>
