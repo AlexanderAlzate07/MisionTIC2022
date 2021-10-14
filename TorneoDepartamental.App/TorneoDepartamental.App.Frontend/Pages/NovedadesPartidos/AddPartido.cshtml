@@ -2,3 +2,21 @@
 @model TorneoDepartamental.App.Frontend.Pages.NovedadesPartidos.AddPartidoModel
 @{
 }
+<h1>Asignar Partido</h1>
+<form method="post">
+    <div class="form-group">
+        <label for="idNovPartido">Novedad Partido</label>
+        <input id="idNovPartido" name="idNovPartido" class="form-control" value="@Model.novPartido.Id" readonly>
+    </div>
+    <div class="form-group">
+        <label for="idPartido">Partido</label>
+        <select name="idPartido" id="idPartido" class="form-control">
+            @foreach (var partido in Model.partidos)
+            {
+                <option value="@partido.Id">@partido.Id - @partido.FechaPartido</option>
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Asignar Partido</button>
+</form>
+<a class="btn btn-secondary" asp-page="./Index">Volver</a>
