@@ -43,5 +43,10 @@ namespace TorneoDepartamental.App.Persistencia
             return _appContext.Municipios
                      .Where(e => e.Nombre.Contains(nombre));
         }
+        public IEnumerable<Municipio> FilterMunicipio(string nombre)
+        {
+            return _appContext.Municipios
+                     .Where(e => e.Nombre.Equals(nombre)).ToList();
+        }
     }
 }

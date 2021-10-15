@@ -23,7 +23,6 @@ namespace TorneoDepartamental.App.Frontend.Pages.Equipos
         }
         public void OnGet(string b, string g)
         {
-            System.Console.WriteLine("parametros al inicio OnGet: "+"b: "+b+" - g: "+g);
             //Search
             if (String.IsNullOrEmpty(b) && String.IsNullOrEmpty(g))
             {
@@ -45,26 +44,6 @@ namespace TorneoDepartamental.App.Frontend.Pages.Equipos
                gActual = "-1";
                Equipos = _repoEquipo.GetAllEquipos();
              }
-             System.Console.WriteLine("parametros al final OnGet: "+"bActual: "+bActual+" - gActual: "+gActual);
-
-
-
-            // Equipos = _repoEquipo.GetAllEquipos();
-            // Municipios = _repoMunicipio.GetAllMunicipios();
-            // var muni = _repoMunicipio.GetMunicipio(1);
-            // foreach (var equipo in Equipos)
-            // {
-                
-            //     // equipo.Municipio = muni;
-            //     System.Console.WriteLine(equipo.Id+" -- "+equipo.Nombre+" -- ");
-            //     foreach (var _property in equipo.GetType().GetProperties())
-            //     {
-            //         var prop = equipo.GetType().GetProperty(_property.Name);
-            //         System.Console.WriteLine(prop);
-                    
-            //     }
-            // }
-            
         }
     }
 }

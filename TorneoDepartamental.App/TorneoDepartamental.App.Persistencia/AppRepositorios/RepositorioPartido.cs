@@ -134,5 +134,16 @@ namespace TorneoDepartamental.App.Persistencia
             .Include(e => e.Arbitro)
             .Where(e => e.FechaPartido.Day == dia.Day);
         }
+        public IEnumerable<Partido> FilterPartido(DateTime dia)
+        {
+            return _appContext.Partidos
+            .Include(e => e.Estadio)
+            .Include(e => e.EquipoLocal)
+            .Include(e => e.EquipoVisitante)
+            .Include(e => e.Arbitro)
+            .Where(e => e.FechaPartido.Day == dia.Day
+                        && e.FechaPartido.Month == dia.Month
+                        && e.FechaPartido.Year == dia.Year).ToList();
+        }
     }
 }

@@ -2,6 +2,20 @@
 @model TorneoDepartamental.App.Frontend.Pages.Municipios.IndexModel
 @{
 }
+<h1>Filtrar Municipio</h1>    
+    <form method="get">
+    <div class="form-group">
+        <label for="g">Filtrar</label>
+        <select name="g" id="g" asp-for="@Model.gActual" class="form-control">
+            <option value="-1">Ver todos</option>
+            @foreach (var municipio in Model.Municipios)
+            {
+                <option value="@municipio.Nombre">@municipio.Nombre</option>
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Filtrar</button>
+</form>
 <h1>Buscar Municipio</h1>
 <form method="get">
     <div class="form-group">

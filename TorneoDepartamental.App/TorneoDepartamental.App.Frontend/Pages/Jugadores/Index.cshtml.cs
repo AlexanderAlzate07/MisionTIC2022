@@ -14,22 +14,33 @@ namespace TorneoDepartamental.App.Frontend.Pages.Jugadores
         private readonly IRepositorioJugador _repoJugador;
         public IEnumerable<Jugador> Jugadores{get;set;}
         public string bActual {get;set;}
+        public string gActual {get;set;}
         public IndexModel(IRepositorioJugador repoJugador){
             _repoJugador = repoJugador;
         }
-        public void OnGet(string b)
+        public void OnGet(string b, string g)
         {
-            if (String.IsNullOrEmpty(b))
+            //Search
+            if (String.IsNullOrEmpty(b) && String.IsNullOrEmpty(g))
             {
                 bActual = "";
                 Jugadores = _repoJugador.GetAllJugadores();
             }
-            else
+            else if (!String.IsNullOrEmpty(b) && String.IsNullOrEmpty(g))
             {
                 bActual = b;
                 Jugadores = _repoJugador.SearchJugador(b);
             }
-            
+            //Filter
+            else if (!String.IsNullOrEmpty(g) && g != "-1")
+            {
+                gActual = g;    
+                Jugadores = _repoJugador.FilterJugador(g);
+            }
+            else if (!String.IsNullOrEmpty(g) && g=="-1"){
+                gActual = "-1";
+                Jugadores = _repoJugador.GetAllJugadores();
+            }
         }
     }
 }

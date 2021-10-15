@@ -2,6 +2,20 @@
 @model TorneoDepartamental.App.Frontend.Pages.Estadios.IndexModel
 @{
 }
+<h1>Filtrar Estadio</h1>    
+    <form method="get">
+    <div class="form-group">
+        <label for="g">Filtrar</label>
+        <select name="g" id="g" asp-for="@Model.gActual" class="form-control">
+            <option value="-1">Ver todos</option>
+            @foreach (var estadio in Model.Estadios)
+            {
+                <option value="@estadio.Nombre">@estadio.Nombre</option>
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Filtrar</button>
+</form>
 <h1>Buscar Estadio</h1>
 <form method="get">
     <div class="form-group">

@@ -15,7 +15,8 @@ namespace TorneoDepartamental.App.Persistencia
         Equipo AsignarEquipoLocal(int idPartido,int idEquipo);
         Equipo AsignarEquipoVisitante(int idPartido,int idEquipo);
         Arbitro AsignarArbitro(int idPartido,int idArbitro);
-        public IEnumerable<Partido> SearchPartido(DateTime dia);
+        IEnumerable<Partido> SearchPartido(DateTime dia);
+        IEnumerable<Partido> FilterPartido(DateTime dia);
 
     }
 }

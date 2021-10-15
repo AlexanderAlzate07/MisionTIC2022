@@ -2,6 +2,20 @@
 @model TorneoDepartamental.App.Frontend.Pages.NovedadesPartidos.IndexModel
 @{
 }
+<h1>Filtrar Novedad Partido</h1>    
+    <form method="get">
+    <div class="form-group">
+        <label for="g">Filtrar</label>
+        <select name="g" id="g" asp-for="@Model.gActual" class="form-control">
+            <option value=@Model.gActual>Ver todos</option>
+            @foreach (var novPartido in Model.NovedadesPartidos)
+            {
+                <option value="@novPartido.Partido.FechaPartido">@novPartido.Partido.FechaPartido</option>
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Filtrar</button>
+</form>
 <h1>Buscar Novedad Partido</h1>
 <form method="get">
     <div class="form-group">

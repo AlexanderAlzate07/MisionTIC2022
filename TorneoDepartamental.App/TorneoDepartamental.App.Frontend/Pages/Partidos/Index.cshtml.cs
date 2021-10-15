@@ -17,19 +17,31 @@ namespace TorneoDepartamental.App.Frontend.Pages.Partidos
             _repoPartido = repoPartido;
         }
         public DateTime bActual {get;set;}
-        public void OnGet(DateTime b)
+        public DateTime gActual {get;set;}
+
+        public void OnGet(DateTime b, DateTime g)
         {
-            if (b.Day==1 && b.Month==1 && b.Year == 1)
+            //Search
+            if ((b.Day==1 && b.Month==1 && b.Year == 1) && (g.Day==1 && g.Month==1 && g.Year == 1))
             {
                 bActual = new DateTime(0001, 1, 1, 0, 0, 0);
                 Partidos = _repoPartido.GetAllPartidos();
             }
-            else
+            else if (!(b.Day==1 && b.Month==1 && b.Year == 1) && (g.Day==1 && g.Month==1 && g.Year == 1))
             {
                 bActual = b;
                 Partidos = _repoPartido.SearchPartido(b);
-            }   
-            
+            }
+            //Filter
+            else if ((b.Day==1 && b.Month==1 && b.Year == 1) && !(g.Day==1 && g.Month==1 && g.Year == 1))
+            {
+                gActual = g;    
+                Partidos = _repoPartido.FilterPartido(g);
+            }
+            else if ((b.Day==1 && b.Month==1 && b.Year == 1) && (g.Day==1 && g.Month==1 && g.Year == 1)){
+                gActual = new DateTime(0001, 1, 1, 0, 0, 0);
+                Partidos = _repoPartido.GetAllPartidos();
+            }
         }
     }
 }

@@ -71,5 +71,10 @@ namespace TorneoDepartamental.App.Persistencia
             return _appContext.Estadios
                      .Where(e => e.Nombre.Contains(nombre));
         }
+        public IEnumerable<Estadio> FilterEstadio(string nombre)
+        {
+            return _appContext.Estadios
+                     .Where(e => e.Nombre.Equals(nombre)).ToList();
+        }
     }
 }

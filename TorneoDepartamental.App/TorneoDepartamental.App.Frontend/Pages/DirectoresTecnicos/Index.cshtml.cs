@@ -17,19 +17,30 @@ namespace TorneoDepartamental.App.Frontend.Pages.DirectoresTecnicos
             _repoDirectorTecnico = repoDirectorTecnico;
         }
         public string bActual {get;set;}
-        public void OnGet(string b)
+        public string gActual {get; set;}
+        public void OnGet(string b, string g)
         {
-            if (String.IsNullOrEmpty(b))
+            //Search
+            if (String.IsNullOrEmpty(b) && String.IsNullOrEmpty(g))
             {
                 bActual = "";
                 DirectorTecnicos = _repoDirectorTecnico.GetAllDirectorTecnicos();
             }
-            else
+            else if (!String.IsNullOrEmpty(b) && String.IsNullOrEmpty(g))
             {
                 bActual = b;
                 DirectorTecnicos = _repoDirectorTecnico.SearchDirectorTecnico(b);
             }
-            
+            //Filter
+            else if (!String.IsNullOrEmpty(g) && g != "-1")
+            {
+                gActual = g;    
+                DirectorTecnicos = _repoDirectorTecnico.FilterDirectorTecnico(g);
+            }
+            else if (!String.IsNullOrEmpty(g) && g=="-1"){
+                gActual = "-1";
+                DirectorTecnicos = _repoDirectorTecnico.GetAllDirectorTecnicos();
+            }
         }
     }
 }

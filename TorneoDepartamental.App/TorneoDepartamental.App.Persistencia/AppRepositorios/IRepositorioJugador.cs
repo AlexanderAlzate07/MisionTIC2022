@@ -12,5 +12,6 @@ namespace TorneoDepartamental.App.Persistencia
         IEnumerable<Jugador> GetAllJugadores();
         Equipo AsignarEquipo(int idJugador,int idEquipo);
         IEnumerable<Jugador> SearchJugador(string nombre);
+        IEnumerable<Jugador> FilterJugador(string nombre);
     }
 }

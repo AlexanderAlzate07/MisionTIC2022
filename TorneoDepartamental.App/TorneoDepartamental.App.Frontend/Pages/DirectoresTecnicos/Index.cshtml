@@ -2,6 +2,20 @@
 @model TorneoDepartamental.App.Frontend.Pages.DirectoresTecnicos.IndexModel
 @{
 }
+<h1>Filtrar Director Tecnico</h1>    
+    <form method="get">
+    <div class="form-group">
+        <label for="g">Filtrar</label>
+        <select name="g" id="g" asp-for="@Model.gActual" class="form-control">
+            <option value="-1">Ver todos</option>
+            @foreach (var tecnico in Model.DirectorTecnicos)
+            {
+                <option value="@tecnico.Nombre">@tecnico.Nombre</option>
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Filtrar</button>
+</form>
 <h1>Buscar Director Tecnico</h1>
 <form method="get">
     <div class="form-group">

@@ -2,6 +2,20 @@
 @model TorneoDepartamental.App.Frontend.Pages.EstadisticasTorneo.IndexModel
 @{
 }
+<h1>Filtrar Estadistica Torneo</h1>    
+    <form method="get">
+    <div class="form-group">
+        <label for="g">Filtrar</label>
+        <select name="g" id="g" asp-for="@Model.gActual" class="form-control">
+            <option value="-1">Ver todos</option>
+            @foreach (var estadistica in Model.EstadisticaTorneos)
+            {
+                <option value="@estadistica.Equipo.Nombre">@estadistica.Equipo.Nombre</option>
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Filtrar</button>
+</form>
 <h1>Buscar Estadistica Torneo</h1>
 <form method="get">
     <div class="form-group">
