@@ -15,23 +15,40 @@ namespace TorneoDepartamental.App.Frontend.Pages.Equipos
         public IEnumerable<Equipo> Equipos{get;set;}
         public IEnumerable<Municipio> Municipios{get;set;}
         public string bActual {get;set;}
+        public string gActual {get; set;}
         public IndexModel(IRepositorioEquipo repoEquipo,IRepositorioMunicipio repoMunicipio){
             _repoEquipo = repoEquipo;
             _repoMunicipio = repoMunicipio;
 
         }
-        public void OnGet(string b)
+        public void OnGet(string b, string g)
         {
-            if (String.IsNullOrEmpty(b))
+            System.Console.WriteLine("parametros al inicio OnGet: "+"b: "+b+" - g: "+g);
+            //Search
+            if (String.IsNullOrEmpty(b) && String.IsNullOrEmpty(g))
             {
                 bActual = "";
                 Equipos = _repoEquipo.GetAllEquipos();
             }
-            else
+            else if (!String.IsNullOrEmpty(b) && String.IsNullOrEmpty(g))
             {
                 bActual = b;
                 Equipos = _repoEquipo.SearchEquipo(b);
             }
+            //Filter
+            else if (!String.IsNullOrEmpty(g) && g != "-1")
+            {
+                gActual = g;    
+                Equipos = _repoEquipo.FilterEquipo(g);
+            }
+            else if (!String.IsNullOrEmpty(g) && g=="-1"){
+               gActual = "-1";
+               Equipos = _repoEquipo.GetAllEquipos();
+             }
+             System.Console.WriteLine("parametros al final OnGet: "+"bActual: "+bActual+" - gActual: "+gActual);
+
+
+
             // Equipos = _repoEquipo.GetAllEquipos();
             // Municipios = _repoMunicipio.GetAllMunicipios();
             // var muni = _repoMunicipio.GetMunicipio(1);

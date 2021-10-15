@@ -10,6 +10,6 @@ namespace TorneoDepartamental.App.Persistencia
         void DeleteArbitro(int idArbitro);
         Arbitro GetArbitro(int idArbitro);
         IEnumerable<Arbitro> GetAllArbitros();
-        public IEnumerable<Arbitro> SearchArbitro(string nombre);
+        IEnumerable<Arbitro> SearchArbitro(string nombre);
     }
 }

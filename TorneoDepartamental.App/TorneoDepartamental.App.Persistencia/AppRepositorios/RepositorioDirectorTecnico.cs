@@ -72,6 +72,11 @@ namespace TorneoDepartamental.App.Persistencia
             return _appContext.DirectoresTecnicos
                      .Where(e => e.Nombre.Contains(nombre));
         }
+        public IEnumerable<DirectorTecnico> FilterDirectorTecnico(string nombre)
+        {
+            return _appContext.DirectoresTecnicos
+                     .Where(e => e.Nombre.Equals(nombre)).ToList();
+        }
 
     }
 }
