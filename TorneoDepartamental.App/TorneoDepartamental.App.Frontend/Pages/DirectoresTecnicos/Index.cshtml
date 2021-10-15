@@ -16,10 +16,10 @@
     <thead class="thead-dark">
         <tr>
             <th scope="col">Id</th>
+            <th scope="col">Equipo</th>
             <th scope="col">Nombre</th>
             <th scope="col">Telefono</th>
             <th scope="col">Documento</th>
-            <th scope="col">Equipo</th>
             <th scope="col">Acciones</th>
         </tr>
     </thead>
@@ -28,18 +28,21 @@
     {
         <tr>
             <td>@tecnico.Id</td>
-            <td>@tecnico.Nombre</td>
-            <td>@tecnico.Telefono</td>
-            <td>@tecnico.Documento</td>
-            @if (tecnico.Equipo == null)
+            @if (tecnico.Equipo != null)
             {
-                <td></td>
+                <td>@tecnico.Equipo.Nombre</td>
+                
             }
             else
             {
-                <td>@tecnico.Equipo.Nombre</td>
+                <td></td>
             }
 
+            
+            <td>@tecnico.Nombre</td>
+            <td>@tecnico.Telefono</td>
+            <td>@tecnico.Documento</td>
+        
 
             <td>
                 <a class="btn btn-primary" asp-page=./Create>Crear</a>

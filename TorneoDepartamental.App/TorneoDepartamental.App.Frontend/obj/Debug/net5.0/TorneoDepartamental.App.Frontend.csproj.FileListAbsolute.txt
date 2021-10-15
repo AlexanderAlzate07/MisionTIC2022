@@ -82,7 +82,6 @@ C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.A
 C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Frontend\obj\Debug\net5.0\Razor\Pages\DirectoresTecnicos\Details.cshtml.g.cs
 C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Frontend\obj\Debug\net5.0\Razor\Pages\Equipos\Index.cshtml.g.cs
 C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Frontend\obj\Debug\net5.0\Razor\Pages\Estadios\Details.cshtml.g.cs
-C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Frontend\obj\Debug\net5.0\Razor\Pages\EstadisticasTorneo\Details.cshtml.g.cs
 C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Frontend\obj\Debug\net5.0\Razor\Pages\EstadisticasTorneo\Index.cshtml.g.cs
 C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Frontend\obj\Debug\net5.0\Razor\Pages\Jugadores\Details.cshtml.g.cs
 C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Frontend\obj\Debug\net5.0\Razor\Pages\Jugadores\Index.cshtml.g.cs
@@ -108,3 +107,6 @@ C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.A
 C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Frontend\obj\Debug\net5.0\Razor\Pages\NovedadPartido\Details.cshtml.g.cs
 C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Frontend\obj\Debug\net5.0\Razor\Pages\NovedadPartido\Index.cshtml.g.cs
 C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Frontend\obj\Debug\net5.0\Razor\Pages\Equipos\Edit.cshtml.g.cs
+C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Frontend\obj\Debug\net5.0\Razor\Pages\EstadisticasTorneo\AsignTeam.cshtml.g.cs
+C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Frontend\obj\Debug\net5.0\Razor\Pages\EstadisticasTorneo\Create.cshtml.g.cs
+C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Frontend\obj\Debug\net5.0\Razor\Pages\EstadisticasTorneo\Edit.cshtml.g.cs

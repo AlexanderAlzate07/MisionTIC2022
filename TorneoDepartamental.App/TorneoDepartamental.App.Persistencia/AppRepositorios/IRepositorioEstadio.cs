@@ -11,5 +11,6 @@ namespace TorneoDepartamental.App.Persistencia
         Estadio GetEstadio(int idEstadio);
         IEnumerable<Estadio> GetAllEstadios();
         Municipio AsignarMunicipio(int idEstadio,int idMunicipio);
+        IEnumerable<Estadio> SearchEstadio(string nombre);
     }
 }

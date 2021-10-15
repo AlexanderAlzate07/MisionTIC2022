@@ -2,3 +2,56 @@
 @model TorneoDepartamental.App.Frontend.Pages.EstadisticasTorneo.IndexModel
 @{
 }
+<h1>Lista de equipos</h1>
+<a class="btn btn-primary" asp-page=./Create>Crear Estadistica</a>
+<table class="table">
+    <thead class="thead thead-dark">
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Equipo</th>
+            <th scope="col">Partidos Jugados</th>
+            <th scope="col">Partidos Ganados</th>
+            <th scope="col">Partidos Empatados</th>
+            <th scope="col">Golea a Favor</th>
+            <th scope="col">Goles en Contra</th>
+            <th scope="col">puntos</th>
+            <th scope="col">Acciones</th>
+
+
+
+        </tr>
+    </thead>
+    </tbody>
+    @foreach (var estadistica in Model.estadisticaTorneos)
+    {
+        <tr>
+            <td>@estadistica.Id</td>
+            @if (estadistica.Equipo != null)
+            {
+                <td>@estadistica.Equipo.Nombre</td>
+
+            }
+            else
+            {
+                <td></td>
+            }
+            
+            <td>@estadistica.CantidadPartidosJugados</td>
+            <td>@estadistica.CantidadPartidosGanados</td>
+            <td>@estadistica.CantidadPartidosEmpatados</td>
+            <td>@estadistica.GolesAfavor</td>
+            <td>@estadistica.GolesEnContra</td>
+            <td>@estadistica.Puntos</td>
+
+
+            <td>
+
+                <a class="btn btn-primary" asp-page="./AsignTeam" asp-route-id="@estadistica.Id">Asignar Equipo</a>
+                <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@estadistica.Id">Editar</a>
+            </td>
+
+        </tr>
+
+    }
+    </tbody>
+</table>

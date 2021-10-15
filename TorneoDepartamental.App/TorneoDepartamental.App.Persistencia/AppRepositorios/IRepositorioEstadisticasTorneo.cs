@@ -11,5 +11,6 @@ namespace TorneoDepartamental.App.Persistencia
         EstadisticaTorneo GetEstadisticasTorneo(int idEstadisticasTorneo);
         IEnumerable<EstadisticaTorneo> GetAllEstadisticasTorneos();
         Equipo AsignarEquipo(int idEstadisticasTorneo,int idEquipo);
+        
     }
 }
