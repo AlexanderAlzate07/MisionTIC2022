@@ -33,3 +33,4 @@ C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.A
 C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Persistencia\obj\Debug\net5.0\ref\TorneoDepartamental.App.Persistencia.dll
 C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Persistencia\obj\Debug\net5.0\TorneoDepartamental.App.Persistencia.pdb
 C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Persistencia\obj\Debug\net5.0\TorneoDepartamental.App.Persistencia.genruntimeconfig.cache
+C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Persistencia\obj\Debug\net5.0\TorneoDepartamental.App.Persistencia.csproj.CopyComplete
