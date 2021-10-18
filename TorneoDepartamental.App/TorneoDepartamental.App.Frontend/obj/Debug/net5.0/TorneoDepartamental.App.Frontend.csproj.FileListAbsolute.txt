@@ -110,3 +110,8 @@ C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.A
 C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Frontend\obj\Debug\net5.0\Razor\Pages\EstadisticasTorneo\AsignTeam.cshtml.g.cs
 C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Frontend\obj\Debug\net5.0\Razor\Pages\EstadisticasTorneo\Create.cshtml.g.cs
 C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Frontend\obj\Debug\net5.0\Razor\Pages\EstadisticasTorneo\Edit.cshtml.g.cs
+C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Frontend\obj\Debug\net5.0\Razor\Pages\NovedadPartido\AssignEquipo.cshtml.g.cs
+C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Frontend\obj\Debug\net5.0\Razor\Pages\NovedadPartido\AssignPartido.cshtml.g.cs
+C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Frontend\obj\Debug\net5.0\Razor\Pages\NovedadPartido\AssingJugador.cshtml.g.cs
+C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Frontend\obj\Debug\net5.0\Razor\Pages\NovedadPartido\Create.cshtml.g.cs
+C:\reto 3 mision tic\MisionTIC2022\TorneoDepartamental.App\TorneoDepartamental.App.Frontend\obj\Debug\net5.0\Razor\Pages\NovedadPartido\Edit.cshtml.g.cs

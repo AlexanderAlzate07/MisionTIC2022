@@ -1,0 +1,44 @@
+﻿@page
+@model TorneoDepartamental.App.Frontend.Pages.EstadisticasTorneo.EditModel
+@{
+}
+<h1>Actualizar Estadistica</h1>
+<form method="post">
+     <div class="form-group">
+        <label asp-for="estadistica.Id"></label>
+        <input asp-for="estadistica.Id" class="form-control" readonly>
+    </div>
+    <div class="form-group">
+        <label asp-for="estadistica.CantidadPartidosJugados "></label>
+        <input asp-for="estadistica.CantidadPartidosJugados" class="form-control">
+        <span asp-validation-for="estadistica.CantidadPartidosJugados" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="estadistica.CantidadPartidosGanados"></label>
+        <input asp-for="estadistica.CantidadPartidosGanados" class="form-control">
+        <span asp-validation-for="estadistica.CantidadPartidosGanados" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="estadistica.CantidadPartidosEmpatados"></label>
+        <input asp-for="estadistica.CantidadPartidosEmpatados" class="form-control">
+        <span asp-validation-for="estadistica.CantidadPartidosEmpatados" class="text-danger"></span>
+    </div>
+     <div class="form-group">
+        <label asp-for="estadistica.GolesAfavor"></label>
+        <input asp-for="estadistica.GolesAfavor" class="form-control">
+        <span asp-validation-for="estadistica.GolesAfavor" class="text-danger"></span>
+    </div>
+     <div class="form-group">
+        <label asp-for="estadistica.GolesEnContra"></label>
+        <input asp-for="estadistica.GolesEnContra" class="form-control">
+        <span asp-validation-for="estadistica.GolesEnContra" class="text-danger"></span>
+    </div>
+     <div class="form-group">
+        <label asp-for="estadistica.Puntos"></label>
+        <input asp-for="estadistica.Puntos" class="form-control">
+        <span asp-validation-for="estadistica.Puntos" class="text-danger"></span>
+    </div>
+     <button type="submit" class="btn btn-primary">Actualizar</button>
+</form> 
+<a class="btn btn-secondary" asp-page="./Index">Volver</a>
+

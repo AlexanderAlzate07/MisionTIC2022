@@ -5,31 +5,20 @@
 <h1> Detalle de las Novedades</h1>
 <table class="table table-dark">
     <tr>
-        <th scope="col">Minuto del Gol</th>
-        <td>@Model.novedadesPartido.MinutoPartido</td>
-    </tr>
-    <tr>
-        <th scope="col">Tarjeta</th>
-        <td>@Model.novedadesPartido.Tarjeta</td>
-    </tr>
-    <tr>
-        <th scope="col">Gol</th>
-        <td>@Model.novedadesPartido.Gol</td>
 
-    </tr>
-    <tr>
-
-        <th scope="col">#Partido</th>
-        @if (Model.novedadesPartido.Partido == null)
+        <th scope="col">Partido</th>
+        @if (Model.novedadesPartido.Partido != null)
         {
-            <td>
-                <a class="btn btn-primary" asp-page="./AddPartido" asp-route-id="@Model.novedadesPartido.Id">Asignar
-                    Partido</a>
-            </td>
+        <tr>
+                <td>@Model.novedadesPartido.Partido.FechaPartido</td>
+                
+        </tr>
         }
         else
         {
-            <td>@Model.novedadesPartido.Partido</td>
+        <a class="btn btn-primary" asp-page="./AddPartido" asp-route-id="@Model.novedadesPartido.Id">Asignar
+            Partido</a>
+
         }
     </tr>
 </table>
