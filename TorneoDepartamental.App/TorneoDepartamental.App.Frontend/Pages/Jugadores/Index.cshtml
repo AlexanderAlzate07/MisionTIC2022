@@ -2,6 +2,28 @@
 @model TorneoDepartamental.App.Frontend.Pages.Jugadores.IndexModel
 @{
 }
+<h1>Filtrar Jugador</h1>
+<form method="get">
+    <div class="form-group">
+        <label for="g">Filtrar</label>
+        <select name="g" id="g" asp-for="@Model.gActual" class="form-control">
+            <option value="-1">Ver todos</option>
+            @foreach (var jugador in Model.Jugadores)
+            {
+                <option value="@jugador.Nombre">@jugador.Nombre</option>
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Filtrar</button>
+</form>
+<h1>Buscar Jugador</h1>
+<form method="get">
+    <div class="form-group">
+        <label for="b">Buscar</label>
+        <input name="b" id="b" asp-for="@Model.bActual" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Buscar</button>
+</form>
 <h1>Listado De Jugadores</h1>
 <a class="btn btn-primary" asp-page=./Create>Nuevo jugador</a>
 <table class="table">
@@ -9,12 +31,12 @@
         <tr>
             <th scope="col">Id</th>
             <th scope="col">Nombre</th>
-            
+
 
         </tr>
     </thead>
     </tbody>
-    @foreach (var jugador in Model.jugadores)
+    @foreach (var jugador in Model.Jugadores)
     {
         <tr>
             <td>@jugador.Id</td>

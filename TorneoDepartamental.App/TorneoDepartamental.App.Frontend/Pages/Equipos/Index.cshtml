@@ -2,6 +2,20 @@
 @model TorneoDepartamental.App.Frontend.Pages.Equipos.IndexModel
 @{
 }
+<h1>Filtrar</h1>
+<form method="get">
+    <div class="form-group">
+        <label for="g">Filtrar</label>
+        <select name="g" id="g" asp-for="@Model.gActual" class="form-control">
+            <option value="-1">Ver todos</option>
+            @foreach (var equipo in Model.Equipos)
+            {
+                <option value="@equipo.Nombre">@equipo.Nombre</option>
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Filtrar</button>
+</form>
 <form method="get">
     <div class="form-group">
         <label for="b">Buscar</label>
@@ -20,7 +34,7 @@
         </tr>
     </thead>
     </tbody>
-    @foreach (var equipo in Model.equipos)
+    @foreach (var equipo in Model.Equipos)
     {
         <tr>
             <td>@equipo.Id</td>
@@ -34,7 +48,7 @@
                 <td>@equipo.Municipio.Nombre</td>
             }
             <td>
-                
+
                 <a class="btn btn-primary" asp-page="./AddMunicipio" asp-route-id="@equipo.Id">Asignar Municipio</a>
                 <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@equipo.Id">Editar</a>
             </td>

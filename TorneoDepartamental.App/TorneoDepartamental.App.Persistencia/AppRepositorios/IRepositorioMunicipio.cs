@@ -10,5 +10,7 @@ namespace TorneoDepartamental.App.Persistencia
         void DeleteMunicipio(int idMunicipio);
         Municipio GetMunicipio(int idMunicipio);
         IEnumerable<Municipio> GetAllMunicipios();
+        IEnumerable<Municipio> SearchMunicipio(string nombre);
+        IEnumerable<Municipio> FilterMunicipio(string nombre);
     }
 }

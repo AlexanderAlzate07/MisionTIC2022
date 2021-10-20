@@ -2,6 +2,28 @@
 @model TorneoDepartamental.App.Frontend.Pages.Partidos.IndexModel
 @{
 }
+<h1>Filtrar Partido</h1>
+<form method="get">
+    <div class="form-group">
+        <label for="g">Filtrar</label>
+        <select name="g" id="g" asp-for="@Model.gActual" class="form-control">
+            <option value=@Model.gActual>Ver todos</option>
+            @foreach (var partido in Model.Partidos)
+            {
+                <option value="@partido.FechaPartido">@partido.FechaPartido</option>
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Filtrar</button>
+</form>
+<h1>Buscar Partido</h1>
+<form method="get">
+    <div class="form-group">
+        <label for="b">Buscar por fecha del partido</label>
+        <input type="date" name="b" id="b" asp-for="@Model.bActual" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Buscar</button>
+</form>
 <h1>Listado de Partidos</h1>
 <a class="btn btn-primary" asp-page="./Create">Nuevo Partido</a>
 <table class="table">
@@ -10,21 +32,22 @@
             <th scope="col">Id</th>
             <th scope="col">Fecha Partido</th>
             @* <th scope="col">HoraPartido</th>
-            <th scope="col">Equipo Local</th>
-            <th scope="col">Equipo Visitante</th> *@
+                <th scope="col">Equipo Local</th>
+                <th scope="col">Equipo Visitante</th> *@
         </tr>
     </thead>
     <tbody>
-        @foreach (var partido in Model.partidos)
+        @foreach (var partido in Model.Partidos)
         {
             <tr>
                 <td>@partido.Id</td>
                 <td>@partido.FechaPartido</td>
-                
-
+                @* <td>@partido.HoraPartido)</td>
+                    <td>@partido.EquipoLocal</td>
+                    <td>@partido.EquipoVisitante</td> *@
                 <td>
-                    <a class="btn btn-primary" asp-page="./Details" asp-route-id="@partido.Id"><i class="fas fa-info-circle fa-lg" aria-hidden="true"></i></a>
-                    <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@partido.Id"><i class="fas fa-address-book fa-lg" aria-hidden="true"></i></a>
+                    <a class="btn btn-primary" asp-page="./Details" asp-route-id="@partido.Id">Detalle</a>
+                    <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@partido.Id">Editar</a>
                 </td>
             </tr>
         }

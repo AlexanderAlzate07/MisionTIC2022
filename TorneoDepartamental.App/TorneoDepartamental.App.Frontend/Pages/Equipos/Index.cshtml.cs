@@ -14,25 +14,37 @@ namespace TorneoDepartamental.App.Frontend.Pages.Equipos
     public class IndexModel : PageModel
     {
         private readonly IRepositorioEquipo _repoEquipo;
-        public IEnumerable<Equipo> equipos { get; set; }
-        public string bActual {get;set;}
+        public IEnumerable<Equipo> Equipos { get; set; }
+        public string bActual { get; set; }
+        public string gActual { get; set; }
         public IndexModel(IRepositorioEquipo repoEquipo)
         {
             _repoEquipo = repoEquipo;
         }
 
-        public void OnGet(string b)
+       public void OnGet(string b, string g)
         {
-            if (String.IsNullOrEmpty(b))
+            //Search
+            if (String.IsNullOrEmpty(b) && String.IsNullOrEmpty(g))
             {
                 bActual = "";
-                equipos = _repoEquipo.GetAllEquipos();
+                Equipos = _repoEquipo.GetAllEquipos();
             }
-            else
+            else if (!String.IsNullOrEmpty(b) && String.IsNullOrEmpty(g))
             {
                 bActual = b;
-                equipos = _repoEquipo.SearchEquipo(b);
+                Equipos = _repoEquipo.SearchEquipo(b);
             }
+            //Filter
+            else if (!String.IsNullOrEmpty(g) && g != "-1")
+            {
+                gActual = g;    
+                Equipos = _repoEquipo.FilterEquipo(g);
+            }
+            else if (!String.IsNullOrEmpty(g) && g=="-1"){
+               gActual = "-1";
+               Equipos = _repoEquipo.GetAllEquipos();
+             }
         }
     }
 }

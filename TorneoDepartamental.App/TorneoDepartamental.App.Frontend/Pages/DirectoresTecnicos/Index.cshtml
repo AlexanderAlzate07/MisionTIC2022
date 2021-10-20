@@ -2,6 +2,20 @@
 @model TorneoDepartamental.App.Frontend.Pages.DirectoresTecnicos.IndexModel
 @{
 }
+<h1>Filtrar</h1>
+<form method="get">
+    <div class="form-group">
+        <label for="g">Filtrar</label>
+        <select name="g" id="g" asp-for="@Model.gActual" class="form-control">
+            <option value="-1">Ver todos</option>
+            @foreach (var tecnico in Model.directorTecnicos)
+            {
+                <option value="@tecnico.Nombre">@tecnico.Nombre</option>
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Filtrar</button>
+</form>
 <form method="get">
     <div class="form-group">
         <label for="b">Buscar</label>
@@ -11,7 +25,7 @@
 </form>
 
 <h1>Lista de Directores tecnicos</h1>
-
+<a class="btn btn-primary" asp-page=./Create>Crear</a>
 <table class="table">
     <thead class="thead-dark">
         <tr>
@@ -31,24 +45,24 @@
             @if (tecnico.Equipo != null)
             {
                 <td>@tecnico.Equipo.Nombre</td>
-                
+
             }
             else
             {
                 <td></td>
             }
 
-            
+
             <td>@tecnico.Nombre</td>
             <td>@tecnico.Telefono</td>
             <td>@tecnico.Documento</td>
-        
+
 
             <td>
-                <a class="btn btn-primary" asp-page=./Create>Crear</a>
+
                 <a class="btn btn-primary" asp-page="./AddEquipo" asp-route-id="@tecnico.Id">Asignar equipo</a>
                 <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@tecnico.Id">Editar</a>
-                
+
             </td>
         </tr>
 

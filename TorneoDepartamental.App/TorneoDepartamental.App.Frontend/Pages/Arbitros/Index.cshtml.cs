@@ -16,23 +16,35 @@ namespace TorneoDepartamental.App.Frontend.Pages.Arbitros
         private readonly IRepositorioArbitro _repoArbitro;
         public IEnumerable<Arbitro> arbitros { get; set; }
         public string bActual { get; set; }
+        public string gActual { get; set; }
         public IndexModel(IRepositorioArbitro repoArbitro)
         {
             _repoArbitro = repoArbitro;
         }
-        public void OnGet(string b)
+        public void OnGet(string b, string g)
         {
-            if (String.IsNullOrEmpty(b))
+            //Search
+            if (String.IsNullOrEmpty(b) && String.IsNullOrEmpty(g))
             {
                 bActual = "";
                 arbitros = _repoArbitro.GetAllArbitros();
             }
-            else
+            else if (!String.IsNullOrEmpty(b) && String.IsNullOrEmpty(g))
             {
                 bActual = b;
                 arbitros = _repoArbitro.SearchArbitros(b);
             }
+            //Filter
+            else if (!String.IsNullOrEmpty(g) && g != "-1")
+            {
+                gActual = g;
+                arbitros = _repoArbitro.FilterArbitro(g);
+            }
+            else if (!String.IsNullOrEmpty(g) && g == "-1")
+            {
+                gActual = "-1";
+                arbitros = _repoArbitro.GetAllArbitros();
+            }
         }
-
     }
 }

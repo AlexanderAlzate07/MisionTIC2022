@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using TorneoDepartamental.App.Dominio;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using TorneoDepartamental.App.Dominio;
 
 namespace TorneoDepartamental.App.Persistencia
 {
@@ -19,7 +19,8 @@ namespace TorneoDepartamental.App.Persistencia
         public Jugador UpdateJugador(Jugador jugador)
         {
             var jugadorEncontrado = _appContext.Jugadores.FirstOrDefault(j => j.Id == jugador.Id);
-            if(jugadorEncontrado != null){
+            if (jugadorEncontrado != null)
+            {
                 jugadorEncontrado.Nombre = jugador.Nombre;
                 jugadorEncontrado.NumeroCamiseta = jugador.NumeroCamiseta;
                 jugadorEncontrado.Posicion = jugador.Posicion;
@@ -31,7 +32,7 @@ namespace TorneoDepartamental.App.Persistencia
         public void DeleteJugador(int idJugador)
         {
             var jugadorEncontrado = _appContext.Jugadores.FirstOrDefault(j => j.Id == idJugador);
-            if(jugadorEncontrado == null)
+            if (jugadorEncontrado == null)
                 return;
             _appContext.Jugadores.Remove(jugadorEncontrado);
             _appContext.SaveChanges();
@@ -48,13 +49,13 @@ namespace TorneoDepartamental.App.Persistencia
         {
             return _appContext.Jugadores;
         }
-        public Equipo AsignarEquipo(int idJugador,int idEquipo)
+        public Equipo AsignarEquipo(int idJugador, int idEquipo)
         {
             var jugadorEncontrado = _appContext.Jugadores.FirstOrDefault(j => j.Id == idJugador);
-            if(jugadorEncontrado != null)
+            if (jugadorEncontrado != null)
             {
                 var equipoEncontrado = _appContext.Equipos.FirstOrDefault(e => e.Id == idEquipo);
-                if(equipoEncontrado != null)
+                if (equipoEncontrado != null)
                 {
                     jugadorEncontrado.Equipo = equipoEncontrado;
                     _appContext.SaveChanges();
@@ -62,6 +63,16 @@ namespace TorneoDepartamental.App.Persistencia
                 return equipoEncontrado;
             }
             return null;
+        }
+        public IEnumerable<Jugador> SearchJugador(string nombre)
+        {
+            return _appContext.Jugadores
+                     .Where(e => e.Nombre.Contains(nombre));
+        }
+        public IEnumerable<Jugador> FilterJugador(string nombre)
+        {
+            return _appContext.Jugadores
+                     .Where(e => e.Nombre.Equals(nombre)).ToList();
         }
     }
 

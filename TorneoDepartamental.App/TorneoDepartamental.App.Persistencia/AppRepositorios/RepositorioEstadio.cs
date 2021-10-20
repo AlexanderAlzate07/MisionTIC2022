@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using TorneoDepartamental.App.Dominio;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using TorneoDepartamental.App.Dominio;
 
 namespace TorneoDepartamental.App.Persistencia
 {
@@ -9,7 +9,7 @@ namespace TorneoDepartamental.App.Persistencia
     {
         private readonly AppContext _appContext = new AppContext();
 
-    
+
 
         public Estadio AddEstadio(Estadio estadio)
         {
@@ -20,7 +20,8 @@ namespace TorneoDepartamental.App.Persistencia
         public Estadio UpdateEstadio(Estadio estadio)
         {
             var estadioEncontrado = _appContext.Estadios.FirstOrDefault(e => e.Id == estadio.Id);
-            if(estadioEncontrado != null){
+            if (estadioEncontrado != null)
+            {
                 estadioEncontrado.Nombre = estadio.Nombre;
                 estadioEncontrado.Direccion = estadio.Direccion;
                 estadioEncontrado.Municipio = estadio.Municipio;
@@ -31,7 +32,7 @@ namespace TorneoDepartamental.App.Persistencia
         public void DeleteEstadio(int idEstadio)
         {
             var estadioEncontrado = _appContext.Estadios.FirstOrDefault(e => e.Id == idEstadio);
-            if(estadioEncontrado == null)
+            if (estadioEncontrado == null)
                 return;
             _appContext.Estadios.Remove(estadioEncontrado);
             _appContext.SaveChanges();
@@ -48,13 +49,13 @@ namespace TorneoDepartamental.App.Persistencia
         {
             return _appContext.Estadios;
         }
-        public Municipio AsignarMunicipio(int idEstadio,int idMunicipio)
+        public Municipio AsignarMunicipio(int idEstadio, int idMunicipio)
         {
             var estadioEncontrado = _appContext.Estadios.FirstOrDefault(e => e.Id == idEstadio);
-            if(estadioEncontrado != null)
+            if (estadioEncontrado != null)
             {
                 var municipioEncontrado = _appContext.Municipios.FirstOrDefault(m => m.Id == idMunicipio);
-                if(municipioEncontrado != null)
+                if (municipioEncontrado != null)
                 {
                     estadioEncontrado.Municipio = municipioEncontrado;
                     _appContext.SaveChanges();
@@ -64,9 +65,15 @@ namespace TorneoDepartamental.App.Persistencia
             return null;
         }
 
-        IEnumerable<Estadio>IRepositorioEstadio.SearchEstadio(string nombre)
+        IEnumerable<Estadio> IRepositorioEstadio.SearchEstadio(string nombre)
         {
             return _appContext.Estadios.Where(e => e.Nombre.Contains(nombre));
+        }
+
+        IEnumerable<Estadio> IRepositorioEstadio.FilterEstadio(string nombre)
+        {
+            return _appContext.Estadios
+                    .Where(e => e.Nombre.Equals(nombre)).ToList();
         }
     }
 }

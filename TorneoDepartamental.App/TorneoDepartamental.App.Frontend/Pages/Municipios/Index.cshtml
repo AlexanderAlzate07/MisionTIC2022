@@ -2,6 +2,28 @@
 @model TorneoDepartamental.App.Frontend.Pages.Municipios.IndexModel
 @{
 }
+<h1>Filtrar Municipio</h1>
+<form method="get">
+    <div class="form-group">
+        <label for="g">Filtrar</label>
+        <select name="g" id="g" asp-for="@Model.gActual" class="form-control">
+            <option value="-1">Ver todos</option>
+            @foreach (var municipio in Model.Municipios)
+            {
+                <option value="@municipio.Nombre">@municipio.Nombre</option>
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Filtrar</button>
+</form>
+<h1>Buscar Municipio</h1>
+<form method="get">
+    <div class="form-group">
+        <label for="b">Buscar</label>
+        <input name="b" id="b" asp-for="@Model.bActual" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Buscar</button>
+</form>
 <h1>Listado De Municipios</h1>
 <a class="btn btn-primary" asp-page="./Create">Nuevo Municipio</a>
 <table class="table">
@@ -12,15 +34,15 @@
         </tr>
     </thead>
     </tbody>
-        @foreach (var municipio in Model.municipios)
-        {
-            <tr>
-                <td>@municipio.Id</td>
-                <td>@municipio.Nombre</td>
-                <td><a class="btn btn-primary" asp-page="./Edit" asp-route-id="@municipio.Id">Editar</a></td>
-            </tr>
-            
-        }
+    @foreach (var municipio in Model.Municipios)
+    {
+        <tr>
+            <td>@municipio.Id</td>
+            <td>@municipio.Nombre</td>
+            <td><a class="btn btn-primary" asp-page="./Edit" asp-route-id="@municipio.Id">Editar</a></td>
+        </tr>
+
+    }
 
     </tbody>
 

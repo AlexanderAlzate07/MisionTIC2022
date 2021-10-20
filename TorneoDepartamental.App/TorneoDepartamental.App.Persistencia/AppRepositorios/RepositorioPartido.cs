@@ -1,7 +1,8 @@
+using System;
 using System.Collections.Generic;
-using TorneoDepartamental.App.Dominio;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using TorneoDepartamental.App.Dominio;
 
 namespace TorneoDepartamental.App.Persistencia
 {
@@ -9,18 +10,19 @@ namespace TorneoDepartamental.App.Persistencia
     {
         private readonly AppContext _appContext = new AppContext();
 
-    
+
         public Partido AddPartido(Partido partido)
         {
             var partidoAdicionado = _appContext.Partidos.Add(partido);
             _appContext.SaveChanges();
             return partidoAdicionado.Entity;
-        
+
         }
         public Partido UpdatePartido(Partido partido)
         {
             var partidoEncontrado = _appContext.Partidos.FirstOrDefault(p => p.Id == partido.Id);
-            if(partidoEncontrado != null){
+            if (partidoEncontrado != null)
+            {
                 partidoEncontrado.Estadio = partido.Estadio;
                 partidoEncontrado.FechaPartido = partido.FechaPartido;
                 partidoEncontrado.HoraPartido = partido.HoraPartido;
@@ -36,7 +38,7 @@ namespace TorneoDepartamental.App.Persistencia
         public void DeletePartido(int idPartido)
         {
             var partidoEncontrado = _appContext.Partidos.FirstOrDefault(p => p.Id == idPartido);
-            if(partidoEncontrado == null)
+            if (partidoEncontrado == null)
                 return;
             _appContext.Partidos.Remove(partidoEncontrado);
             _appContext.SaveChanges();
@@ -57,13 +59,13 @@ namespace TorneoDepartamental.App.Persistencia
         {
             return _appContext.Partidos;
         }
-        public Estadio AsignarEstadio(int idPartido,int idEstadio)
+        public Estadio AsignarEstadio(int idPartido, int idEstadio)
         {
             var partidoEncontrado = _appContext.Partidos.FirstOrDefault(p => p.Id == idPartido);
-            if(partidoEncontrado != null)
+            if (partidoEncontrado != null)
             {
                 var estadioEncontrado = _appContext.Estadios.FirstOrDefault(e => e.Id == idEstadio);
-                if(estadioEncontrado != null)
+                if (estadioEncontrado != null)
                 {
                     partidoEncontrado.Estadio = estadioEncontrado;
                     _appContext.SaveChanges();
@@ -72,13 +74,13 @@ namespace TorneoDepartamental.App.Persistencia
             }
             return null;
         }
-        public Equipo AsignarEquipoLocal(int idPartido,int idEquipo)
+        public Equipo AsignarEquipoLocal(int idPartido, int idEquipo)
         {
             var partidoEncontrado = _appContext.Partidos.FirstOrDefault(p => p.Id == idPartido);
-            if(partidoEncontrado != null)
+            if (partidoEncontrado != null)
             {
                 var equipoEncontrado = _appContext.Equipos.FirstOrDefault(e => e.Id == idEquipo);
-                if(equipoEncontrado != null)
+                if (equipoEncontrado != null)
                 {
                     partidoEncontrado.EquipoLocal = equipoEncontrado;
                     _appContext.SaveChanges();
@@ -87,13 +89,13 @@ namespace TorneoDepartamental.App.Persistencia
             }
             return null;
         }
-        public Equipo AsignarEquipoVisitante(int idPartido,int idEquipo)
+        public Equipo AsignarEquipoVisitante(int idPartido, int idEquipo)
         {
             var partidoEncontrado = _appContext.Partidos.FirstOrDefault(p => p.Id == idPartido);
-            if(partidoEncontrado != null)
+            if (partidoEncontrado != null)
             {
                 var equipoEncontrado = _appContext.Equipos.FirstOrDefault(e => e.Id == idEquipo);
-                if(equipoEncontrado != null)
+                if (equipoEncontrado != null)
                 {
                     partidoEncontrado.EquipoVisitante = equipoEncontrado;
                     _appContext.SaveChanges();
@@ -102,13 +104,13 @@ namespace TorneoDepartamental.App.Persistencia
             }
             return null;
         }
-        public Arbitro AsignarArbitro(int idPartido,int idArbitro)
+        public Arbitro AsignarArbitro(int idPartido, int idArbitro)
         {
             var partidoEncontrado = _appContext.Partidos.FirstOrDefault(p => p.Id == idPartido);
-            if(partidoEncontrado != null)
+            if (partidoEncontrado != null)
             {
                 var arbitroEncontrado = _appContext.Arbitros.FirstOrDefault(e => e.Id == idArbitro);
-                if(arbitroEncontrado != null)
+                if (arbitroEncontrado != null)
                 {
                     partidoEncontrado.Arbitro = arbitroEncontrado;
                     _appContext.SaveChanges();
@@ -116,6 +118,27 @@ namespace TorneoDepartamental.App.Persistencia
                 return arbitroEncontrado;
             }
             return null;
+        }
+
+        IEnumerable<Partido> IRepositorioPartido.SearchPartido(DateTime dia)
+        {
+            return _appContext.Partidos
+            .Include(e => e.Estadio)
+            .Include(e => e.EquipoLocal)
+            .Include(e => e.EquipoVisitante)
+            .Include(e => e.Arbitro)
+            .Where(e => e.FechaPartido.Day == dia.Day);
+        }
+        IEnumerable<Partido> IRepositorioPartido.FilterPartido(DateTime dia)
+        {
+            return _appContext.Partidos
+            .Include(e => e.Estadio)
+            .Include(e => e.EquipoLocal)
+            .Include(e => e.EquipoVisitante)
+            .Include(e => e.Arbitro)
+            .Where(e => e.FechaPartido.Day == dia.Day
+                        && e.FechaPartido.Month == dia.Month
+                        && e.FechaPartido.Year == dia.Year).ToList();
         }
     }
 }

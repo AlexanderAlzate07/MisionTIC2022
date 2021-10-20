@@ -11,5 +11,6 @@ namespace TorneoDepartamental.App.Persistencia
         Arbitro GetArbitro(int idArbitro);
         IEnumerable<Arbitro> GetAllArbitros();
         IEnumerable<Arbitro> SearchArbitros(string nombre);
+        IEnumerable<Arbitro> FilterArbitro(string nombre);
     }
 }

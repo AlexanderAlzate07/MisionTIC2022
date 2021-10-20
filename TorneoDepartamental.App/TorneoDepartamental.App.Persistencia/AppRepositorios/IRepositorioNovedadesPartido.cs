@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using TorneoDepartamental.App.Dominio;
+using System;
 
 namespace TorneoDepartamental.App.Persistencia
 {
@@ -13,5 +14,7 @@ namespace TorneoDepartamental.App.Persistencia
         Partido AsignarPartido(int idNovedadesPartido,int idPartido);
         Equipo AsignarEquipo(int idNovedadesPartido,int idEquipo);
         Jugador AsignarJugador(int idNovedadesPartido,int idJugador);
+         IEnumerable<NovedadesPartido> SearchNovedadPartido(DateTime dia);
+        IEnumerable<NovedadesPartido> FilterNovedadPartido(DateTime dia);
     }
 }

@@ -2,6 +2,28 @@
 @model TorneoDepartamental.App.Frontend.Pages.NovedadPartido.IndexModel
 @{
 }
+<h1>Filtrar Novedad Partido</h1>
+<form method="get">
+    <div class="form-group">
+        <label for="g">Filtrar</label>
+        <select name="g" id="g" asp-for="@Model.gActual" class="form-control">
+            <option value=@Model.gActual>Ver todos</option>
+            @foreach (var novPartido in Model.NovedadesPartidos)
+            {
+                <option value="@novPartido.Partido.FechaPartido">@novPartido.Partido.FechaPartido</option>
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Filtrar</button>
+</form>
+<h1>Buscar Novedad Partido</h1>
+<form method="get">
+    <div class="form-group">
+        <label for="b">Buscar por fecha del partido</label>
+        <input type="date" name="b" id="b" asp-for="@Model.bActual" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Buscar</button>
+</form>
 <h1>Listado de Novedades de Partidos</h1>
 <a class="btn btn-primary" asp-page="./Create">Crear Novedad de Partido</a>
 <table class="table">
@@ -12,23 +34,23 @@
             <th scope="col">Minuto del Gol</th>
             <th scope="col">Tarjeta</th>
             <th scope="col">Gol</th>
-            
+
         </tr>
     </thead>
     </tbody>
-        @foreach (var novPartido in Model.NovedadesPartidos)
-        {
-            <tr>
-                <td>@novPartido.Id</td>
-                <td>@novPartido.MinutoPartido</td>
-                <td>@novPartido.MinutoPartido</td>
-                <td>@novPartido.Tarjeta</td>
-                <td>@novPartido.Gol</td>
+    @foreach (var novPartido in Model.NovedadesPartidos)
+    {
+        <tr>
+            <td>@novPartido.Id</td>
+            <td>@novPartido.MinutoPartido</td>
+            <td>@novPartido.MinutoPartido</td>
+            <td>@novPartido.Tarjeta</td>
+            <td>@novPartido.Gol</td>
 
-                
-                <td><a class="btn btn-primary" asp-page="./Details" asp-route-id="@novPartido.Id">Detalle</a></td>
-                <td><a class="btn btn-primary" asp-page="./Edit" asp-route-id="@novPartido.Id">Editar</a></td>
-            </tr>
-        }
+
+            <td><a class="btn btn-primary" asp-page="./Details" asp-route-id="@novPartido.Id">Detalle</a></td>
+            <td><a class="btn btn-primary" asp-page="./Edit" asp-route-id="@novPartido.Id">Editar</a></td>
+        </tr>
+    }
     </tbody>
 </table>

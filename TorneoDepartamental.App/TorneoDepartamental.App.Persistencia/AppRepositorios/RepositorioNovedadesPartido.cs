@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using TorneoDepartamental.App.Dominio;
+using System;
 
 namespace TorneoDepartamental.App.Persistencia
 {
@@ -98,6 +99,24 @@ namespace TorneoDepartamental.App.Persistencia
                 return jugadorEncontrado;
             }
             return null;
+        }
+        public IEnumerable<NovedadesPartido> SearchNovedadPartido(DateTime dia)
+        {
+            return _appContext.NovedadesPartidos
+                    .Include(e => e.Equipo)
+                    .Include(e => e.Jugador)
+                    .Include(e => e.Partido)
+                    .Where(e => e.Partido.FechaPartido.Day == dia.Day);
+        }
+        public IEnumerable<NovedadesPartido> FilterNovedadPartido(DateTime dia)
+        {
+            return _appContext.NovedadesPartidos
+                    .Include(e => e.Equipo)
+                    .Include(e => e.Jugador)
+                    .Include(e => e.Partido)
+                    .Where(e => e.Partido.FechaPartido.Day == dia.Day
+                                && e.Partido.FechaPartido.Month == dia.Month
+                                && e.Partido.FechaPartido.Year == dia.Year).ToList();
         }
     }
 }

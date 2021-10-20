@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using TorneoDepartamental.App.Dominio;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using TorneoDepartamental.App.Dominio;
 
 namespace TorneoDepartamental.App.Persistencia
 {
@@ -19,7 +19,8 @@ namespace TorneoDepartamental.App.Persistencia
         public EstadisticaTorneo UpdateEstadisticasTorneo(EstadisticaTorneo estadisticasTorneo)
         {
             var estadisticaTorneoEncontrado = _appContext.EstadisticasTorneo.FirstOrDefault(est => est.Id == estadisticasTorneo.Id);
-            if(estadisticaTorneoEncontrado != null){
+            if (estadisticaTorneoEncontrado != null)
+            {
                 estadisticaTorneoEncontrado.CantidadPartidosJugados = estadisticasTorneo.CantidadPartidosJugados;
                 estadisticaTorneoEncontrado.CantidadPartidosGanados = estadisticasTorneo.CantidadPartidosGanados;
                 estadisticaTorneoEncontrado.CantidadPartidosEmpatados = estadisticasTorneo.CantidadPartidosEmpatados;
@@ -33,30 +34,30 @@ namespace TorneoDepartamental.App.Persistencia
         public void DeleteEstadisticasTorneo(int idEstadisticasTorneo)
         {
             var estadisticaTorneoEncontrado = _appContext.EstadisticasTorneo.FirstOrDefault(est => est.Id == idEstadisticasTorneo);
-            if(estadisticaTorneoEncontrado == null)
+            if (estadisticaTorneoEncontrado == null)
                 return;
             _appContext.EstadisticasTorneo.Remove(estadisticaTorneoEncontrado);
             _appContext.SaveChanges();
         }
         public EstadisticaTorneo GetEstadisticasTorneo(int idEstadisticasTorneo)
         {
-             var estadisticaTorneo = _appContext.EstadisticasTorneo
-            .Where(e => e.Id == idEstadisticasTorneo)
-            .Include(e => e.Equipo)
-            .FirstOrDefault();
+            var estadisticaTorneo = _appContext.EstadisticasTorneo
+           .Where(e => e.Id == idEstadisticasTorneo)
+           .Include(e => e.Equipo)
+           .FirstOrDefault();
             return estadisticaTorneo;
         }
         public IEnumerable<EstadisticaTorneo> GetAllEstadisticasTorneos()
         {
             return _appContext.EstadisticasTorneo.Include(et => et.Equipo).ToList();
         }
-        public Equipo AsignarEquipo(int idEstadisticasTorneo,int idEquipo)
+        public Equipo AsignarEquipo(int idEstadisticasTorneo, int idEquipo)
         {
             var estadisticaTorneoEncontrado = _appContext.EstadisticasTorneo.FirstOrDefault(est => est.Id == idEstadisticasTorneo);
-            if(estadisticaTorneoEncontrado != null)
+            if (estadisticaTorneoEncontrado != null)
             {
                 var equipoEncontrado = _appContext.Equipos.FirstOrDefault(e => e.Id == idEquipo);
-                if(equipoEncontrado != null)
+                if (equipoEncontrado != null)
                 {
                     estadisticaTorneoEncontrado.Equipo = equipoEncontrado;
                     _appContext.SaveChanges();
@@ -64,6 +65,17 @@ namespace TorneoDepartamental.App.Persistencia
                 return equipoEncontrado;
             }
             return null;
+        }
+
+        public IEnumerable<EstadisticaTorneo> SearchEstadisticasTorneo(string nombre)
+        {
+            return _appContext.EstadisticasTorneo.Include(e => e.Equipo)
+                     .Where(e => e.Equipo.Nombre.Contains(nombre));
+        }
+        public IEnumerable<EstadisticaTorneo> FilterEstadisticasTorneo(string nombre)
+        {
+            return _appContext.EstadisticasTorneo.Include(e => e.Equipo)
+                     .Where(e => e.Equipo.Nombre.Equals(nombre)).ToList();
         }
 
     }
