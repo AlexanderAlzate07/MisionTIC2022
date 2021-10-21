@@ -12,11 +12,11 @@ namespace TorneoDepartamental.App.Frontend.Pages.Partidos
     public class CreateModel : PageModel
     {
         private readonly IRepositorioPartido _repoPartido;
-        public Partido partido{get;set;}
+        public Partido partido { get; set; }
         public CreateModel(IRepositorioPartido repoPartido)
         {
             _repoPartido = repoPartido;
-            
+
         }
         public void OnGet()
         {
@@ -24,12 +24,16 @@ namespace TorneoDepartamental.App.Frontend.Pages.Partidos
         }
         public IActionResult OnPost(Partido partido)
         {
-            if(!ModelState.IsValid){
+            if (ModelState.IsValid)
+            {
+                _repoPartido.AddPartido(partido);
+                return RedirectToPage("Index");
+            }
+            else
+            {
                 return Page();
             }
-            _repoPartido.AddPartido(partido);
-            return RedirectToPage("Index");
-            
+
         }
     }
 }

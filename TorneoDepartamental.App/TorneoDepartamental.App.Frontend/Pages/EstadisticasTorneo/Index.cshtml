@@ -2,20 +2,20 @@
 @model TorneoDepartamental.App.Frontend.Pages.EstadisticasTorneo.IndexModel
 @{
 }
-<h1>Filtrar Estadistica Torneo</h1>
-<form method="get">
+@*<h1>Filtrar Estadistica Torneo</h1>
+    <form method="get">
     <div class="form-group">
-        <label for="g">Filtrar</label>
-        <select name="g" id="g" asp-for="@Model.gActual" class="form-control">
-            <option value="-1">Ver todos</option>
-            @foreach (var estadistica in Model.EstadisticaTorneos)
-            {
-                <option value="@estadistica.Equipo.Nombre">@estadistica.Equipo.Nombre</option>
-            }
-        </select>
+    <label for="g">Filtrar</label>
+    <select name="g" id="g" asp-for="@Model.gActual" class="form-control">
+    <option value="-1">Ver todos</option>
+    @foreach (var estadistica in Model.EstadisticaTorneos)
+    {
+    <option value="@estadistica.Equipo.Nombre">@estadistica.Equipo.Nombre</option>
+    }
+    </select>
     </div>
     <button type="submit" class="btn btn-primary">Filtrar</button>
-</form>
+    </form>*@
 <h1>Buscar Estadistica Torneo</h1>
 <form method="get">
     <div class="form-group">
@@ -24,56 +24,51 @@
     </div>
     <button type="submit" class="btn btn-primary">Buscar</button>
 </form>
-<h1>Lista de equipos</h1>
-<a class="btn btn-primary" asp-page=./Create>Crear Estadistica</a>
+<h1>Listado de Estadisticas del Torneo</h1>
+<a class="btn btn-primary" asp-page="./Create">Nueva Estadisticas Torneo</a>
 <table class="table">
-    <thead class="thead thead-dark">
+    <thead>
         <tr>
             <th scope="col">Id</th>
             <th scope="col">Equipo</th>
-            <th scope="col">Partidos Jugados</th>
-            <th scope="col">Partidos Ganados</th>
-            <th scope="col">Partidos Empatados</th>
-            <th scope="col">Golea a Favor</th>
-            <th scope="col">Goles en Contra</th>
-            <th scope="col">puntos</th>
-            <th scope="col">Acciones</th>
-
-
+            <th scope="col">Cantidad Partidos Jugados</th>
+            <th scope="col">Cantidad Partidos Ganados</th>
+            <th scope="col">Cantidad Partidos Empatados</th>
+            <th scope="col">Goles A favor</th>
+            <th scope="col">Goles En Contra</th>
+            <th scope="col">Puntos</th>
 
         </tr>
     </thead>
-    </tbody>
-    @foreach (var estadistica in Model.EstadisticaTorneos)
-    {
-        <tr>
-            <td>@estadistica.Id</td>
-            @if (estadistica.Equipo != null)
-            {
-                <td>@estadistica.Equipo.Nombre</td>
+    <tbody>
+        @foreach (var estadistica in Model.EstadisticaTorneos)
+        {
 
-            }
-            else
-            {
-                <td></td>
-            }
+            <tr>
 
-            <td>@estadistica.CantidadPartidosJugados</td>
-            <td>@estadistica.CantidadPartidosGanados</td>
-            <td>@estadistica.CantidadPartidosEmpatados</td>
-            <td>@estadistica.GolesAfavor</td>
-            <td>@estadistica.GolesEnContra</td>
-            <td>@estadistica.Puntos</td>
+                <td>@estadistica.Id</td>
+
+                @if (estadistica.Equipo == null)
+                {
+                    <td></td>
+                }
+                else
+                {
+                    <td>@estadistica.Equipo.Nombre</td>
+                }
+                <td>@estadistica.CantidadPartidosJugados</td>
+                <td>@estadistica.CantidadPartidosGanados</td>
+                <td>@estadistica.CantidadPartidosEmpatados</td>
+                <td>@estadistica.GolesAfavor</td>
+                <td>@estadistica.GolesEnContra</td>
+                <td>@estadistica.Puntos</td>
 
 
-            <td>
-
-                <a class="btn btn-primary" asp-page="./AsignTeam" asp-route-id="@estadistica.Id">Asignar Equipo</a>
-                <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@estadistica.Id">Editar</a>
-            </td>
-
-        </tr>
-
-    }
+                <td>
+                    <a class="btn btn-primary" asp-page="./AsignTeam" asp-route-id="@estadistica.Id">Asignar Equipo</a>
+                    <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@estadistica.Id">Editar</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

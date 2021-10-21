@@ -31,26 +31,62 @@
         <tr>
             <th scope="col">Id</th>
             <th scope="col">Minuto Partido</th>
-            <th scope="col">Minuto del Gol</th>
             <th scope="col">Tarjeta</th>
             <th scope="col">Gol</th>
+            <th scope="col">Partido</th>
+            <th scope="col">Equipo</th>
+            <th scope="col">Jugador</th>
 
         </tr>
     </thead>
-    </tbody>
-    @foreach (var novPartido in Model.NovedadesPartidos)
-    {
-        <tr>
-            <td>@novPartido.Id</td>
-            <td>@novPartido.MinutoPartido</td>
-            <td>@novPartido.MinutoPartido</td>
-            <td>@novPartido.Tarjeta</td>
-            <td>@novPartido.Gol</td>
+    <tbody>
+        @foreach (var novPartido in Model.NovedadesPartidos)
+        {
+            <tr>
+                <td>@novPartido.Id</td>
+                <td>@novPartido.MinutoPartido</td>
+                <td>@novPartido.Tarjeta</td>
+                <td>@novPartido.Gol</td>
+                @if (novPartido.Partido == null)
+                {
+                    <td></td>
 
+                }
+                else
+                {
 
-            <td><a class="btn btn-primary" asp-page="./Details" asp-route-id="@novPartido.Id">Detalle</a></td>
-            <td><a class="btn btn-primary" asp-page="./Edit" asp-route-id="@novPartido.Id">Editar</a></td>
-        </tr>
-    }
+                    <td>@novPartido.Partido.FechaPartido</td>
+                }
+
+                @if (novPartido.Equipo == null)
+                {
+                    <td></td>
+
+                }
+                else
+                {
+
+                    <td>@novPartido.Equipo.Nombre</td>
+                }
+
+                @if (novPartido.Jugador == null)
+                {
+                    <td>
+                        <a class="btn btn-primary" asp-page="./AssignPartido" asp-route-id="@Model.novPartido.Id">Asignar
+                            Partido</a>
+                    </td>
+
+                }
+                else
+                {
+
+                    <td>@novPartido.Jugador.Nombre</td>
+                }
+                <td>
+
+                    <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@novPartido.Id">Editar</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

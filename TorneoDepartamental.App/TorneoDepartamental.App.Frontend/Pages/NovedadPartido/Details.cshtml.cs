@@ -12,15 +12,15 @@ namespace TorneoDepartamental.App.Frontend.Pages.NovedadPartido
     public class DetailsModel : PageModel
     {
         private readonly IRepositorioNovedadesPartido _repoNovedadesPartido;
-        public NovedadesPartido novedadesPartido { get; set; }
+        public NovedadesPartido novPartido { get; set; }
         public DetailsModel(IRepositorioNovedadesPartido repoNovedadesPartido)
         {
             _repoNovedadesPartido = repoNovedadesPartido;
         }
         public IActionResult OnGet(int id)
         {
-            novedadesPartido = _repoNovedadesPartido.GetNovedadesPartido(id);
-            if (novedadesPartido == null)
+            novPartido = _repoNovedadesPartido.GetNovedadesPartido(id);
+            if (novPartido == null)
             {
                 return NotFound();
             }

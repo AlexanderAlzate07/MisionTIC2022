@@ -6,7 +6,7 @@
 <input type="hidden" asp-for="partido.Id">
 <table class="table">
 
-<th scope="col">Id</th>
+    <th scope="col">Id</th>
     <tr>
         <th scope="col">Id</th>
         <td>@Model.partido.Id</td>
@@ -16,7 +16,8 @@
         @if (Model.partido.Estadio == null)
         {
             <td>
-                <a class="btn btn-primary" asp-page="./AddEstadio" asp-route-id="@Model.partido.Id">Asignar Estadio</a></td>
+                <a class="btn btn-primary" asp-page="./AddEstadio" asp-route-id="@Model.partido.Id">Asignar Estadio</a>
+            </td>
         }
         else
         {
@@ -36,7 +37,9 @@
         @if (Model.partido.EquipoLocal == null)
         {
             <td>
-                <a class="btn btn-primary" asp-page="./AddEquipoLocal" asp-route-id="@Model.partido.Id">Asignar Equipo Local</a></td>
+                <a class="btn btn-primary" asp-page="./AddEquipoLocal" asp-route-id="@Model.partido.Id">Asignar Equipo
+                    Local</a>
+            </td>
         }
         else
         {
@@ -52,7 +55,9 @@
         @if (Model.partido.EquipoVisitante == null)
         {
             <td>
-                <a class="btn btn-primary" asp-page="./AddEquipoVisitante" asp-route-id="@Model.partido.Id">Asignar Equipo Visitante</a></td>
+                <a class="btn btn-primary" asp-page="./AddEquipoVisitante" asp-route-id="@Model.partido.Id">Asignar Equipo
+                    Visitante</a>
+            </td>
         }
         else
         {
@@ -68,7 +73,8 @@
         @if (Model.partido.Arbitro == null)
         {
             <td>
-                <a class="btn btn-primary" asp-page="./AddArbitro" asp-route-id="@Model.partido.Id">Asignar Arbitro</a></td>
+                <a class="btn btn-primary" asp-page="./AddArbitro" asp-route-id="@Model.partido.Id">Asignar Arbitro</a>
+            </td>
         }
         else
         {

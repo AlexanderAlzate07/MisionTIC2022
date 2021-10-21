@@ -120,7 +120,7 @@ namespace TorneoDepartamental.App.Persistencia
             return null;
         }
 
-        IEnumerable<Partido> IRepositorioPartido.SearchPartido(DateTime dia)
+         public IEnumerable<Partido> SearchPartido(DateTime dia)
         {
             return _appContext.Partidos
             .Include(e => e.Estadio)
@@ -129,7 +129,7 @@ namespace TorneoDepartamental.App.Persistencia
             .Include(e => e.Arbitro)
             .Where(e => e.FechaPartido.Day == dia.Day);
         }
-        IEnumerable<Partido> IRepositorioPartido.FilterPartido(DateTime dia)
+        public IEnumerable<Partido> FilterPartido(DateTime dia)
         {
             return _appContext.Partidos
             .Include(e => e.Estadio)

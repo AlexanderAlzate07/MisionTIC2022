@@ -100,7 +100,7 @@ namespace TorneoDepartamental.App.Persistencia
             }
             return null;
         }
-        public IEnumerable<NovedadesPartido> SearchNovedadPartido(DateTime dia)
+         public IEnumerable<NovedadesPartido> SearchNovedadPartido(DateTime dia)
         {
             return _appContext.NovedadesPartidos
                     .Include(e => e.Equipo)

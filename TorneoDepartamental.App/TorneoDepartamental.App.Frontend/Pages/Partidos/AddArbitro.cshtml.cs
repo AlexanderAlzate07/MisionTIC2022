@@ -31,7 +31,7 @@ namespace TorneoDepartamental.App.Frontend.Pages.Partidos
         public IActionResult OnPost(int idPartido, int idArbitro)
         {
             _repoPartido.AsignarArbitro(idPartido, idArbitro);
-            return RedirectToPage("Index");
+            return RedirectToPage("Details", new{id=idPartido});
         }
     }
 }
