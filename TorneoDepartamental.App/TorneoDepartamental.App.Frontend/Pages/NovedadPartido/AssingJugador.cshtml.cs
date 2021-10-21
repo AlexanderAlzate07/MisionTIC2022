@@ -28,14 +28,15 @@ namespace TorneoDepartamental.App.Frontend.Pages.NovedadPartido
             novPartido = _repoNovedadesPartido.GetNovedadesPartido(id);
             jugadores = _repoJugador.GetAllJugadores();
         }
-        public IActionResult OnPost(int idNovPartido, int idJugador)
+               public IActionResult OnPost(int idNovPartido, int idJugador)
         {
             if (!ModelState.IsValid)
             {
                 return Page();
             }
             _repoNovedadesPartido.AsignarJugador(idNovPartido, idJugador);
-            return RedirectToPage("Details", new { id = idNovPartido });
+            return RedirectToPage("Index");
         }
+        
     }
 }

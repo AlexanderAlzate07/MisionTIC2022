@@ -2,7 +2,7 @@
 @model TorneoDepartamental.App.Frontend.Pages.NovedadPartido.IndexModel
 @{
 }
-<h1>Filtrar Novedad Partido</h1>
+@*<h1>Filtrar Novedad Partido</h1>
 <form method="get">
     <div class="form-group">
         <label for="g">Filtrar</label>
@@ -15,7 +15,7 @@
         </select>
     </div>
     <button type="submit" class="btn btn-primary">Filtrar</button>
-</form>
+</form>*@
 <h1>Buscar Novedad Partido</h1>
 <form method="get">
     <div class="form-group">
@@ -49,7 +49,9 @@
                 <td>@novPartido.Gol</td>
                 @if (novPartido.Partido == null)
                 {
-                    <td></td>
+                    <td>
+                        <a class="btn btn-primary" asp-page="./AssignPartido" asp-route-id="@novPartido.Id">Asignar Partido</a>
+                    </td>
 
                 }
                 else
@@ -60,7 +62,9 @@
 
                 @if (novPartido.Equipo == null)
                 {
-                    <td></td>
+                    <td>
+                        <a class="btn btn-primary" asp-page="./AssignEquipo" asp-route-id="@novPartido.Id">Asignar Equipo</a>
+                    </td>
 
                 }
                 else
@@ -72,8 +76,7 @@
                 @if (novPartido.Jugador == null)
                 {
                     <td>
-                        <a class="btn btn-primary" asp-page="./AssignPartido" asp-route-id="@Model.novPartido.Id">Asignar
-                            Partido</a>
+                        <a class="btn btn-primary" asp-page="./AssingJugador" asp-route-id="@novPartido.Id">Asignar Jugador</a>
                     </td>
 
                 }
@@ -83,7 +86,7 @@
                     <td>@novPartido.Jugador.Nombre</td>
                 }
                 <td>
-
+                    
                     <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@novPartido.Id">Editar</a>
                 </td>
             </tr>

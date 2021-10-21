@@ -33,7 +33,7 @@ namespace TorneoDepartamental.App.Frontend.Pages.NovedadPartido
                 return Page();
             }
             _repoNovedadesPartido.AsignarPartido(idNovPartido, idPartido);
-            return RedirectToPage("Details", new { id = idNovPartido });
+            return RedirectToPage("Index");
         }
     }
 }

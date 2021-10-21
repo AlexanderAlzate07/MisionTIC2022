@@ -15669,11 +15669,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\reto 3 mision tic\\MisionTIC2022\\TorneoDepartamental.App\\TorneoDepartamental.App.Frontend\\Pages\\NovedadPartido\\Details.cshtml",
-      "TargetPath": "Pages\\NovedadPartido\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\reto 3 mision tic\\MisionTIC2022\\TorneoDepartamental.App\\TorneoDepartamental.App.Frontend\\Pages\\DirectoresTecnicos\\Edit.cshtml",
       "TargetPath": "Pages\\DirectoresTecnicos\\Edit.cshtml",
       "FileKind": "mvc"
