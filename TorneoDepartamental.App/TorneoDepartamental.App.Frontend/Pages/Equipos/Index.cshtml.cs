@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using TorneoDepartamental.App.Persistencia;
 using TorneoDepartamental.App.Dominio;
+
 namespace TorneoDepartamental.App.Frontend.Pages.Equipos
 {
     public class IndexModel : PageModel
