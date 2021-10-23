@@ -35,6 +35,7 @@ namespace TorneoDepartamental.App.Frontend
             services.AddSingleton<IRepositorioJugador, RepositorioJugador>();
             services.AddSingleton<IRepositorioNovedadesPartido, RepositorioNovedadesPartido>();
             services.AddSingleton<IRepositorioPartido, RepositorioPartido>();
+            services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -60,6 +61,10 @@ namespace TorneoDepartamental.App.Frontend
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(
+                    name:"default",
+                    pattern:"{controller=conference}/{action=Index}/{id?}"
+                );
                 endpoints.MapRazorPages();
             });
         }
